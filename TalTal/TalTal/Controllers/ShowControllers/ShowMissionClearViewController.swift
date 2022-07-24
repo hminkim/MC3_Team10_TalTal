@@ -1,14 +1,15 @@
 //
-//  ReflectionViewController.swift
+//  ShowMissionClearViewController.swift
 //  TalTal
 //
 //  Created by Ruyha on 2022/07/25.
-//  Ruyha를 작업자 이름으로 변경후 이 주석은 삭제 바람
 //
+//  MARK: 사라질 VC입니다.
+//  MissionClearView를 Show하기위해 만들어진 스토리보드와 연결된 VC 아마 사용할일 거의 없을듯
 
 import UIKit
 
-class ReflectionViewController: UIViewController {
+class ShowMissionClearViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

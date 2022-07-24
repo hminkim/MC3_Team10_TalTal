@@ -15,6 +15,8 @@
 		70AAD5E7288DD397001CEE5F /* MissionClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5E6288DD397001CEE5F /* MissionClearViewController.swift */; };
 		70AAD5E9288DD3A0001CEE5F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5E8288DD3A0001CEE5F /* HistoryViewController.swift */; };
 		70AAD5EB288DD3AE001CEE5F /* ReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */; };
+		70AAD5ED288DDE3E001CEE5F /* ShowMissionClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5EC288DDE3E001CEE5F /* ShowMissionClearViewController.swift */; };
+		70AAD5F0288DDE63001CEE5F /* ShowReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5EF288DDE63001CEE5F /* ShowReflectionViewController.swift */; };
 		B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BA28894B960013EEC6 /* AppDelegate.swift */; };
 		B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BC28894B960013EEC6 /* SceneDelegate.swift */; };
 		B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BE28894B960013EEC6 /* TabbarViewController.swift */; };
@@ -33,6 +35,8 @@
 		70AAD5E6288DD397001CEE5F /* MissionClearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionClearViewController.swift; sourceTree = "<group>"; };
 		70AAD5E8288DD3A0001CEE5F /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionViewController.swift; sourceTree = "<group>"; };
+		70AAD5EC288DDE3E001CEE5F /* ShowMissionClearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMissionClearViewController.swift; sourceTree = "<group>"; };
+		70AAD5EF288DDE63001CEE5F /* ShowReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowReflectionViewController.swift; sourceTree = "<group>"; };
 		B25B12B728894B960013EEC6 /* TalTal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalTal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25B12BA28894B960013EEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B25B12BC28894B960013EEC6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,8 +79,18 @@
 				70AAD5E6288DD397001CEE5F /* MissionClearViewController.swift */,
 				70AAD5E8288DD3A0001CEE5F /* HistoryViewController.swift */,
 				70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */,
+				70AAD5EE288DDE44001CEE5F /* ShowControllers */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		70AAD5EE288DDE44001CEE5F /* ShowControllers */ = {
+			isa = PBXGroup;
+			children = (
+				70AAD5EC288DDE3E001CEE5F /* ShowMissionClearViewController.swift */,
+				70AAD5EF288DDE63001CEE5F /* ShowReflectionViewController.swift */,
+			);
+			path = ShowControllers;
 			sourceTree = "<group>";
 		};
 		B25B12AE28894B960013EEC6 = {
@@ -185,10 +199,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70AAD5F0288DDE63001CEE5F /* ShowReflectionViewController.swift in Sources */,
 				B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */,
 				B25B12C528894B960013EEC6 /* TalTal.xcdatamodeld in Sources */,
 				70AAD5E7288DD397001CEE5F /* MissionClearViewController.swift in Sources */,
 				70AAD5EB288DD3AE001CEE5F /* ReflectionViewController.swift in Sources */,
+				70AAD5ED288DDE3E001CEE5F /* ShowMissionClearViewController.swift in Sources */,
 				B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */,
 				B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */,
 				70AAD5E9288DD3A0001CEE5F /* HistoryViewController.swift in Sources */,
