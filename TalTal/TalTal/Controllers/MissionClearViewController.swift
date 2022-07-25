@@ -2,8 +2,7 @@
 //  MissionClearViewController.swift
 //  TalTal
 //
-//  Created by Ruyha on 2022/07/25.
-//  Ruyha를 작업자 이름으로 변경후 이 주석은 삭제 바람
+//  Created by Toby on 2022/07/25.
 //
 
 
