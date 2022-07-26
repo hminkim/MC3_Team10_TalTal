@@ -17,6 +17,9 @@
 		70AAD5EB288DD3AE001CEE5F /* ReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */; };
 		70AAD5ED288DDE3E001CEE5F /* ShowMissionClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5EC288DDE3E001CEE5F /* ShowMissionClearViewController.swift */; };
 		70AAD5F0288DDE63001CEE5F /* ShowReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5EF288DDE63001CEE5F /* ShowReflectionViewController.swift */; };
+		70ACFB04288E7B20006C23E5 /* MissionQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */; };
+		70ACFB07288E7B67006C23E5 /* MissionQuestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */; };
+		70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */; };
 		B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BA28894B960013EEC6 /* AppDelegate.swift */; };
 		B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BC28894B960013EEC6 /* SceneDelegate.swift */; };
 		B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BE28894B960013EEC6 /* TabbarViewController.swift */; };
@@ -37,6 +40,9 @@
 		70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionViewController.swift; sourceTree = "<group>"; };
 		70AAD5EC288DDE3E001CEE5F /* ShowMissionClearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMissionClearViewController.swift; sourceTree = "<group>"; };
 		70AAD5EF288DDE63001CEE5F /* ShowReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowReflectionViewController.swift; sourceTree = "<group>"; };
+		70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionQuestView.swift; sourceTree = "<group>"; };
+		70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionQuestView.xib; sourceTree = "<group>"; };
+		70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B25B12B728894B960013EEC6 /* TalTal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalTal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25B12BA28894B960013EEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B25B12BC28894B960013EEC6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,8 +68,8 @@
 		70AAD5DA288DD04C001CEE5F /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				70ACFB05288E7B48006C23E5 /* Mission */,
 				B25B12C028894B960013EEC6 /* Tabbar.storyboard */,
-				70AAD5DC288DD303001CEE5F /* Mission.storyboard */,
 				70AAD5DE288DD317001CEE5F /* MissionClear.storyboard */,
 				70AAD5E0288DD32B001CEE5F /* History.storyboard */,
 				70AAD5E2288DD342001CEE5F /* Reflection.storyboard */,
@@ -74,8 +80,8 @@
 		70AAD5DB288DD064001CEE5F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				70ACFB02288E7AEA006C23E5 /* Mission */,
 				B25B12BE28894B960013EEC6 /* TabbarViewController.swift */,
-				70AAD5E4288DD37B001CEE5F /* MissionViewController.swift */,
 				70AAD5E6288DD397001CEE5F /* MissionClearViewController.swift */,
 				70AAD5E8288DD3A0001CEE5F /* HistoryViewController.swift */,
 				70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */,
@@ -91,6 +97,32 @@
 				70AAD5EF288DDE63001CEE5F /* ShowReflectionViewController.swift */,
 			);
 			path = ShowControllers;
+			sourceTree = "<group>";
+		};
+		70ACFB02288E7AEA006C23E5 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				70AAD5E4288DD37B001CEE5F /* MissionViewController.swift */,
+				70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		70ACFB05288E7B48006C23E5 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				70AAD5DC288DD303001CEE5F /* Mission.storyboard */,
+				70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		70ACFB08288E7BE2006C23E5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		B25B12AE28894B960013EEC6 = {
@@ -112,6 +144,7 @@
 		B25B12B928894B960013EEC6 /* TalTal */ = {
 			isa = PBXGroup;
 			children = (
+				70ACFB08288E7BE2006C23E5 /* Extension */,
 				70AAD5DB288DD064001CEE5F /* Controllers */,
 				70AAD5DA288DD04C001CEE5F /* StoryBoard */,
 				B25B12BA28894B960013EEC6 /* AppDelegate.swift */,
@@ -186,6 +219,7 @@
 				B25B12C728894B990013EEC6 /* Assets.xcassets in Resources */,
 				B25B12C228894B960013EEC6 /* Tabbar.storyboard in Resources */,
 				70AAD5DD288DD303001CEE5F /* Mission.storyboard in Resources */,
+				70ACFB07288E7B67006C23E5 /* MissionQuestView.xib in Resources */,
 				70AAD5DF288DD317001CEE5F /* MissionClear.storyboard in Resources */,
 				70AAD5E3288DD342001CEE5F /* Reflection.storyboard in Resources */,
 				70AAD5E1288DD32B001CEE5F /* History.storyboard in Resources */,
@@ -205,6 +239,8 @@
 				70AAD5E7288DD397001CEE5F /* MissionClearViewController.swift in Sources */,
 				70AAD5EB288DD3AE001CEE5F /* ReflectionViewController.swift in Sources */,
 				70AAD5ED288DDE3E001CEE5F /* ShowMissionClearViewController.swift in Sources */,
+				70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */,
+				70ACFB04288E7B20006C23E5 /* MissionQuestView.swift in Sources */,
 				B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */,
 				B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */,
 				70AAD5E9288DD3A0001CEE5F /* HistoryViewController.swift in Sources */,

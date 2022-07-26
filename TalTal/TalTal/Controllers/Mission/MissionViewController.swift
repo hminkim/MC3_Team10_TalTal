@@ -10,8 +10,14 @@ import UIKit
 
 class MissionViewController: UIViewController {
 
+    @IBOutlet weak var dailyView: MissionQuestView!
+    @IBOutlet weak var weeklyView: MissionQuestView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dailyView.configureView(type: .daily, quest: "깔깔깔갈갈갈갈ㅇㅇㅇㅇ갈갉깔깔깔갈ㅇㅇㅇㅇㅇ갈갈갈갈")
+        self.weeklyView
+            .configureView(type: .weekly, quest: "가나다라마바사아자차카타바파하아카카ㅏ캌")
+
         // Do any additional setup after loading the view.
     }
     

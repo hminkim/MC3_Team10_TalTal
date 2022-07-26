@@ -15,11 +15,34 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUM-rU-Zwc" customClass="MissionQuestView" customModule="TalTal" customModuleProvider="target">
+                                <rect key="frame" x="16" y="171" width="382" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="403-bO-kez"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dn3-G3-cbW" customClass="MissionQuestView" customModule="TalTal" customModuleProvider="target">
+                                <rect key="frame" x="87" y="663" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aUM-rU-Zwc" secondAttribute="trailing" constant="16" id="7cj-Dn-yu0"/>
+                            <constraint firstItem="aUM-rU-Zwc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="127" id="VNL-e3-6q3"/>
+                            <constraint firstItem="aUM-rU-Zwc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="nEt-AO-8JZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mission" image="square.and.arrow.up.fill" catalog="system" id="fzo-8E-c5x"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dailyView" destination="aUM-rU-Zwc" id="meW-Kv-L1M"/>
+                        <outlet property="weeklyView" destination="Dn3-G3-cbW" id="ohC-yF-1yh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
