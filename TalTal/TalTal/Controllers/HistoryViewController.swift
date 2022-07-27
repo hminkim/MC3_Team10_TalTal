@@ -37,8 +37,7 @@ class HistoryViewController: UIViewController {
 			status = "dailyMissionCell"
 			segmentedController.selectedSegmentTintColor = UIColor(named: "PointPink")
 			missionTableView.reloadData()
-		}
-		else if sender.selectedSegmentIndex == 1 {
+		} else if sender.selectedSegmentIndex == 1 {
 			status = "weeklyMissionCell"
 			segmentedController.selectedSegmentTintColor = UIColor(named: "PointBlue")
 			missionTableView.reloadData()
@@ -54,9 +53,7 @@ extension HistoryViewController: UITableViewDataSource {
 		// 미션 데이터의 갯수만큼 셀 생성
 		if status == "dailyMissionCell" {
 			return missionDataManager.getDailyMissionData().count
-		}
-		
-		else if status == "weeklyMissionCell" {
+		} else if status == "weeklyMissionCell" {
 			return missionDataManager.getWeeklyMissionData().count
 		}
 		
@@ -76,9 +73,7 @@ extension HistoryViewController: UITableViewDataSource {
 			cell.cellView.backgroundColor = UIColor(named: "PointLightPink")
 			cell.missionLabel.text = missionDataManager.getDailyMissionData()[indexPath.row].mission
 			cell.dateLabel.text = missionDataManager.getDailyMissionData()[indexPath.row].missionClearDate
-		}
-		
-		else if status == "weeklyMissionCell" {
+		} else if status == "weeklyMissionCell" {
 			cell.cellView.backgroundColor = UIColor(named: "PointLightBlue")
 			cell.missionLabel.text = missionDataManager.getWeeklyMissionData()[indexPath.row].mission
 			cell.dateLabel.text = missionDataManager.getWeeklyMissionData()[indexPath.row].missionClearDate
