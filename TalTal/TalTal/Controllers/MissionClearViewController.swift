@@ -10,8 +10,6 @@ import UIKit
 import SwiftUI
 
 class MissionClearViewController: UIViewController {
-
-	//MARK: 마크마크
 	@IBOutlet var missionTypeLabel: UILabel!
 	@IBOutlet var reflectionView: UIView!
 	@IBOutlet var reflectionTextView: UITextView!
@@ -25,12 +23,11 @@ class MissionClearViewController: UIViewController {
 
 		reflectionTextView.delegate = self
 		view.backgroundColor = UIColor(red: 248 / 255, green: 248 / 255, blue: 248 / 255, alpha: 1)
-		initblblMissionType()
+		initMissionTypeLabel()
 		initReflection()
-		// Do any additional setup after loading the view.
 	}
 
-	private func initblblMissionType() {
+	private func initMissionTypeLabel() {
 		missionTypeLabel.clipsToBounds = true
 		missionTypeLabel.layer.cornerRadius = 13
 		view.addSubview(missionTypeLabel)
@@ -50,8 +47,6 @@ class MissionClearViewController: UIViewController {
 
 	@IBAction func actionBtnCancel(_ sender: Any) {
 		//TODO: Close Modal
-		//BUG:
-		//FIXME: 이거 고쳐야함
 	}
 
 	@IBAction func actionBtnConfirm(_ sender: Any) {
@@ -79,7 +74,6 @@ extension MissionClearViewController: UITextViewDelegate {
 			let range = start..<end
 			textView.text = String(textView.text[range])
 		}
-
 		reflectionTextCountLable.text = "\(textView.text.count) / 50"
 	}
 
