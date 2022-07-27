@@ -23,14 +23,4 @@ class HistoryCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-//    func changeCellColor(_ missionType: String) {
-//        if missionType == "dailyMissionCell" {
-//            cellView.backgroundColor = UIColor(named: "PointLightPink")
-//        }
-//        else if missionType == "weeklyMissionCell" {
-//            cellView.backgroundColor = UIColor(named: "PointLightBlue")
-//        }
-//    }
-
 }
