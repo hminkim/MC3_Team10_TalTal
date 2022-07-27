@@ -20,6 +20,7 @@
 		70ACFB04288E7B20006C23E5 /* MissionQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */; };
 		70ACFB07288E7B67006C23E5 /* MissionQuestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */; };
 		70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */; };
+		70DEFD9A28912CD300F6C0F8 /* MissionAessts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DEFD9928912CD300F6C0F8 /* MissionAessts.swift */; };
 		B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BA28894B960013EEC6 /* AppDelegate.swift */; };
 		B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BC28894B960013EEC6 /* SceneDelegate.swift */; };
 		B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BE28894B960013EEC6 /* TabbarViewController.swift */; };
@@ -43,6 +44,7 @@
 		70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionQuestView.swift; sourceTree = "<group>"; };
 		70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionQuestView.xib; sourceTree = "<group>"; };
 		70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		70DEFD9928912CD300F6C0F8 /* MissionAessts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionAessts.swift; sourceTree = "<group>"; };
 		B25B12B728894B960013EEC6 /* TalTal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalTal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25B12BA28894B960013EEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B25B12BC28894B960013EEC6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				70AAD5E4288DD37B001CEE5F /* MissionViewController.swift */,
 				70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */,
+				70DEFD9928912CD300F6C0F8 /* MissionAessts.swift */,
 			);
 			path = Mission;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			files = (
 				70AAD5F0288DDE63001CEE5F /* ShowReflectionViewController.swift in Sources */,
 				B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */,
+				70DEFD9A28912CD300F6C0F8 /* MissionAessts.swift in Sources */,
 				B25B12C528894B960013EEC6 /* TalTal.xcdatamodeld in Sources */,
 				70AAD5E7288DD397001CEE5F /* MissionClearViewController.swift in Sources */,
 				70AAD5EB288DD3AE001CEE5F /* ReflectionViewController.swift in Sources */,

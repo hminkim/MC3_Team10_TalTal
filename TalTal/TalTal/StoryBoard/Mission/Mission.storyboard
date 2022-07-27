@@ -32,30 +32,30 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaL-93-oRU" userLabel="TextLabel">
-                                        <rect key="frame" x="0.0" y="68.666666666666671" width="358" height="61.000000000000014"/>
+                                        <rect key="frame" x="0.0" y="91" width="358" height="79"/>
                                         <string key="text">지금까지
 25 개의 일일 미션과
 3 개의 주간 미션을 완료했어요!</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gb9-fk-IKS" userLabel="LabelStack View">
-                                        <rect key="frame" x="0.0" y="157.33333333333334" width="358" height="472.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="220.33333333333334" width="358" height="409.33333333333326"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vef-Eq-EtZ" userLabel="DailyView" customClass="MissionQuestView" customModule="TalTal" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="358" height="226.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="194.66666666666666"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3Q-3d-0gR" userLabel="WeeklyView" customClass="MissionQuestView" customModule="TalTal" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="246.33333333333331" width="358" height="226"/>
+                                                <rect key="frame" x="0.0" y="214.66666666666669" width="358" height="194.66666666666669"/>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                             </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Gb9-fk-IKS" firstAttribute="height" secondItem="kVy-Fn-qBl" secondAttribute="height" multiplier="0.75" id="UZn-sF-mrd"/>
+                                    <constraint firstItem="Gb9-fk-IKS" firstAttribute="height" secondItem="kVy-Fn-qBl" secondAttribute="height" multiplier="0.65" id="UZn-sF-mrd"/>
                                     <constraint firstItem="MaL-93-oRU" firstAttribute="width" secondItem="2Jd-us-X4p" secondAttribute="width" id="ayv-Wf-Alf"/>
                                     <constraint firstItem="2Jd-us-X4p" firstAttribute="width" secondItem="kVy-Fn-qBl" secondAttribute="width" id="d2l-rg-xGn"/>
                                 </constraints>
@@ -79,7 +79,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dailyView" destination="Vef-Eq-EtZ" id="gdf-Ha-GQy"/>
-                        <outlet property="textLabel" destination="MaL-93-oRU" id="90p-Ah-f2C"/>
+                        <outlet property="questTextLabel" destination="MaL-93-oRU" id="90p-Ah-f2C"/>
                         <outlet property="weeklyView" destination="a3Q-3d-0gR" id="Aor-vP-8T6"/>
                     </connections>
                 </viewController>

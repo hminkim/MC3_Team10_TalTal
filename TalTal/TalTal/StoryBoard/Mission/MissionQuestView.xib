@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MissionQuestView" customModule="TalTal" customModuleProvider="target">
             <connections>
-                <outlet property="questBtn" destination="deN-rm-VdK" id="CBH-Wg-SEQ"/>
+                <outlet property="questButton" destination="deN-rm-VdK" id="CBH-Wg-SEQ"/>
                 <outlet property="questLabel" destination="5NP-yW-AIf" id="mEe-qB-zrQ"/>
                 <outlet property="titleLabel" destination="tQ8-ML-ern" id="jwR-vV-HMq"/>
             </connections>
@@ -21,19 +21,20 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQ8-ML-ern" userLabel="titleLabel">
                     <rect key="frame" x="16" y="16" width="368" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deN-rm-VdK">
                     <rect key="frame" x="16" y="224" width="368" height="60"/>
                     <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Button"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="questLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NP-yW-AIf" userLabel="questLabel">
                     <rect key="frame" x="16" y="46" width="368" height="178"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
