@@ -14,6 +14,8 @@ class MissionClearViewController: UIViewController, UITextViewDelegate {
 	@IBOutlet var viewReflection: UIView!
 	@IBOutlet var textViewReflection: UITextView!
 	@IBOutlet var lblReflectionCount: UILabel!
+	@IBOutlet var btnConfirm: UIButton!
+	@IBOutlet var btnCancel: UIButton!
 	private var isTextViewSelected: Bool = true
 	
     override func viewDidLoad() {
@@ -57,16 +59,10 @@ class MissionClearViewController: UIViewController, UITextViewDelegate {
 		lblReflectionCount.text = "\(textView.text.count) / 50"
 	}
 	
-	func textViewDidChangeSelection(_ textView: UITextView) {
-//		if isTextViewSelected {
-//			textView.text = ""
-//			isTextViewSelected = false
-//		}
-	}
-	
 	func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
 		if isTextViewSelected {
 			textView.text = ""
+			textView.textColor = .black
 			isTextViewSelected = false
 		}
 		return true
@@ -76,7 +72,19 @@ class MissionClearViewController: UIViewController, UITextViewDelegate {
 		if textView.text.count == 0 {
 			isTextViewSelected = true
 			textView.text = "50자 이내로 적어주세요."
+			textView.textColor = UIColor(red: 199/255, green: 199/255, blue: 204/255, alpha: 1)
 		}
 	}
+	
+	@IBAction func actionBtnCancel(_ sender: Any) {
+		//TODO: Close Modal
+	}
+	
+	
+	@IBAction func actionBtnConfirm(_ sender: Any) {
+		//TODO: Save Reflection & Close Modal
+	}
+	
+	
 }
 
