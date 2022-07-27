@@ -53,14 +53,14 @@ extension MissionQuestView{
     
     // questButton을 설정하기위한 코드들입니다.
     //  보라색 글씨를 검색하면 어떻게 사용하는건지 구글신이 알려주실겁니다.
-    func questButtonSetting(type: MissionQuest){
+    private func questButtonSetting(type: MissionQuest){
         self.questButton.setTitle("미션완료", for: .normal)
         self.questButton.setTitleColor(.white, for: .normal)
         self.questButton.backgroundColor = setBtnColor(type: type)
         self.questButton.layer.cornerRadius = 14
     }
     
-    func titleLabelSetting(type: MissionQuest){
+    private func titleLabelSetting(type: MissionQuest){
         self.titleLabel.text = setTitleLabelText(type: type)
         self.titleLabel.textColor = setTitleLabeTextlColor(type: type)
     }
