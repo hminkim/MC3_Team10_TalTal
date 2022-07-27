@@ -24,7 +24,6 @@
 		B25B12C528894B960013EEC6 /* TalTal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B25B12C328894B960013EEC6 /* TalTal.xcdatamodeld */; };
 		B25B12C728894B990013EEC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25B12C628894B990013EEC6 /* Assets.xcassets */; };
 		B25B12CA28894B990013EEC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25B12C828894B990013EEC6 /* LaunchScreen.storyboard */; };
-		B25EB584289063DB00AD296F /* TextViewReflectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EB583289063DB00AD296F /* TextViewReflectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +46,6 @@
 		B25B12C628894B990013EEC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B25B12C928894B990013EEC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B25B12CB28894B990013EEC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B25EB583289063DB00AD296F /* TextViewReflectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewReflectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +67,6 @@
 				70AAD5DE288DD317001CEE5F /* MissionClear.storyboard */,
 				70AAD5E0288DD32B001CEE5F /* History.storyboard */,
 				70AAD5E2288DD342001CEE5F /* Reflection.storyboard */,
-				B25EB583289063DB00AD296F /* TextViewReflectionView.swift */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -203,7 +200,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				70AAD5F0288DDE63001CEE5F /* ShowReflectionViewController.swift in Sources */,
-				B25EB584289063DB00AD296F /* TextViewReflectionView.swift in Sources */,
 				B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */,
 				B25B12C528894B960013EEC6 /* TalTal.xcdatamodeld in Sources */,
 				70AAD5E7288DD397001CEE5F /* MissionClearViewController.swift in Sources */,
