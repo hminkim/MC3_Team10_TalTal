@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,21 +14,124 @@
             <objects>
                 <viewController storyboardIdentifier="History" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="HistoryViewController" customModule="TalTal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DG-cM-HgV">
+                                <rect key="frame" x="16" y="88" width="343" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ege-A2-Oop">
+                                <rect key="frame" x="16" y="145" width="343" height="32"/>
+                                <segments>
+                                    <segment title="일간 미션"/>
+                                    <segment title="주간 미션"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" name="PointPink"/>
+                                <connections>
+                                    <action selector="switchMissionType:" destination="Y6W-OH-hqX" eventType="valueChanged" id="0zl-W0-TaS"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TMn-Q6-S1c">
+                                <rect key="frame" x="16" y="196" width="343" height="533"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="missionCell" id="ClA-kA-nKz" customClass="HistoryCell" customModule="TalTal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="343" height="87.666664123535156"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ClA-kA-nKz" id="Nr6-vS-hi8">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="87.666664123535156"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRW-LA-fNK">
+                                                    <rect key="frame" x="0.0" y="6" width="343" height="75.666666666666671"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="XiI-Kg-rvv">
+                                                            <rect key="frame" x="20" y="19.999999999999996" width="303" height="35.666666666666657"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션이 들어갈 자리" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMQ-6S-8sq">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="303" height="17"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜가 들어갈 자리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vif-gp-oxx">
+                                                                    <rect key="frame" x="0.0" y="21" width="303" height="14.666666666666664"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="14.666666666666664" id="jyy-Vi-WU0"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" name="TextDarkGray"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="XiI-Kg-rvv" firstAttribute="leading" secondItem="RRW-LA-fNK" secondAttribute="leading" constant="20" id="WZ3-gw-32Y"/>
+                                                        <constraint firstAttribute="trailing" secondItem="XiI-Kg-rvv" secondAttribute="trailing" constant="20" id="aTd-9A-7zO"/>
+                                                        <constraint firstItem="XiI-Kg-rvv" firstAttribute="top" secondItem="RRW-LA-fNK" secondAttribute="top" constant="20" id="if8-Am-m8R"/>
+                                                        <constraint firstAttribute="bottom" secondItem="XiI-Kg-rvv" secondAttribute="bottom" constant="20" id="oPo-fx-fpH"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RRW-LA-fNK" firstAttribute="leading" secondItem="Nr6-vS-hi8" secondAttribute="leading" id="MMB-g2-QOk"/>
+                                                <constraint firstAttribute="bottom" secondItem="RRW-LA-fNK" secondAttribute="bottom" constant="6" id="Z9X-5X-cXO"/>
+                                                <constraint firstAttribute="trailing" secondItem="RRW-LA-fNK" secondAttribute="trailing" id="gAO-lB-ueY"/>
+                                                <constraint firstItem="RRW-LA-fNK" firstAttribute="top" secondItem="Nr6-vS-hi8" secondAttribute="top" constant="6" id="wOH-oS-bt9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellView" destination="RRW-LA-fNK" id="dud-Uy-hve"/>
+                                            <outlet property="dateLabel" destination="Vif-gp-oxx" id="hJx-dF-uYp"/>
+                                            <outlet property="missionLabel" destination="EMQ-6S-8sq" id="AwS-ly-ak9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TMn-Q6-S1c" secondAttribute="trailing" constant="16" id="8gP-gT-0i8"/>
+                            <constraint firstItem="TMn-Q6-S1c" firstAttribute="top" secondItem="ege-A2-Oop" secondAttribute="bottom" constant="20" id="9vA-74-zSF"/>
+                            <constraint firstItem="TMn-Q6-S1c" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="BJ0-kI-UNL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ege-A2-Oop" secondAttribute="trailing" constant="16" id="F7Z-6K-YSe"/>
+                            <constraint firstItem="ege-A2-Oop" firstAttribute="top" secondItem="2DG-cM-HgV" secondAttribute="bottom" constant="20" id="MGF-To-lnP"/>
+                            <constraint firstItem="TMn-Q6-S1c" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="kc0-WN-jLE"/>
+                            <constraint firstItem="ege-A2-Oop" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="o8R-Pf-7KK"/>
+                            <constraint firstItem="2DG-cM-HgV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="ojr-yp-d6h"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2DG-cM-HgV" secondAttribute="trailing" constant="16" id="piy-dH-X3L"/>
+                            <constraint firstItem="TMn-Q6-S1c" firstAttribute="trailing" secondItem="ege-A2-Oop" secondAttribute="trailing" id="ruw-jY-kFD"/>
+                            <constraint firstItem="TMn-Q6-S1c" firstAttribute="leading" secondItem="ege-A2-Oop" secondAttribute="leading" id="yaS-co-6K7"/>
+                            <constraint firstItem="2DG-cM-HgV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="zz9-Hl-o14"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="square.and.arrow.up.on.square.fill" catalog="system" id="uUb-wh-bae"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="historyMainLabel" destination="2DG-cM-HgV" id="7mE-Z1-QKF"/>
+                        <outlet property="missioSegmentedControl" destination="ege-A2-Oop" id="QLw-Ax-JMb"/>
+                        <outlet property="missionTableView" destination="TMn-Q6-S1c" id="kHm-bo-AnS"/>
+                        <outlet property="segmentedController" destination="ege-A2-Oop" id="Zka-3Y-69G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="106"/>
+            <point key="canvasLocation" x="60" y="105.92417061611374"/>
         </scene>
     </scenes>
     <resources>
         <image name="square.and.arrow.up.on.square.fill" catalog="system" width="117" height="128"/>
+        <namedColor name="PointPink">
+            <color red="1" green="0.50588235294117645" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextDarkGray">
+            <color red="0.54117647058823526" green="0.54117647058823526" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
