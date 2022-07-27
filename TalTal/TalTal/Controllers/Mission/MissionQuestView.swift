@@ -72,7 +72,7 @@ extension MissionQuestView{
 // 깔끔하고 보기가 좋습니다.
 extension MissionQuestView{
     
-    func setTitleLabelText(type: MissionQuest) -> String{
+    private func setTitleLabelText(type: MissionQuest) -> String{
         switch type{
         case.daily:
             return "오늘 해봐요"
@@ -81,7 +81,7 @@ extension MissionQuestView{
         }
     }
     
-    func setTitleLabeTextlColor(type: MissionQuest) -> UIColor{
+    private func setTitleLabeTextlColor(type: MissionQuest) -> UIColor{
         switch type{
         case.daily:
             return UIColor(hex: "FF8166")
@@ -91,7 +91,7 @@ extension MissionQuestView{
     }
     
     
-    func setBackgroundColor(type: MissionQuest) -> UIColor{
+    private func setBackgroundColor(type: MissionQuest) -> UIColor{
         switch type{
         case.daily:
             return UIColor(hex: "FFF6F4")
@@ -100,7 +100,7 @@ extension MissionQuestView{
         }
     }
     
-    func setBtnColor(type: MissionQuest) -> UIColor{
+    private func setBtnColor(type: MissionQuest) -> UIColor{
         switch type{
         case.daily:
             return UIColor(hex: "FF8166")

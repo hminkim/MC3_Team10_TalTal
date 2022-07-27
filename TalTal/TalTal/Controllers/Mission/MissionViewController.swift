@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class MissionViewController: UIViewController {
+@IBDesignable
+final class MissionViewController: UIViewController {
     let missionAessts = MissionAessts()
     // MissionAessts()를 사용하기위해 선언
     
