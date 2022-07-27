@@ -28,6 +28,9 @@
 		B25B12C528894B960013EEC6 /* TalTal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B25B12C328894B960013EEC6 /* TalTal.xcdatamodeld */; };
 		B25B12C728894B990013EEC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25B12C628894B990013EEC6 /* Assets.xcassets */; };
 		B25B12CA28894B990013EEC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25B12C828894B990013EEC6 /* LaunchScreen.storyboard */; };
+		FBDA9119288EEFCD00D126E6 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA9118288EEFCD00D126E6 /* MissionModel.swift */; };
+		FBDA911B288EEFE600D126E6 /* MissionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA911A288EEFE600D126E6 /* MissionDataManager.swift */; };
+		FBDA9121288EF31500D126E6 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA9120288EF31400D126E6 /* HistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		B25B12C628894B990013EEC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B25B12C928894B990013EEC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B25B12CB28894B990013EEC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBDA9118288EEFCD00D126E6 /* MissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
+		FBDA911A288EEFE600D126E6 /* MissionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDataManager.swift; sourceTree = "<group>"; };
+		FBDA9120288EF31400D126E6 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				70ACFB08288E7BE2006C23E5 /* Extension */,
+				FBDA9111288EEC8300D126E6 /* Views */,
+				FBDA9110288EEC7800D126E6 /* Models */,
 				70AAD5DB288DD064001CEE5F /* Controllers */,
 				70AAD5DA288DD04C001CEE5F /* StoryBoard */,
 				B25B12BA28894B960013EEC6 /* AppDelegate.swift */,
@@ -158,6 +166,23 @@
 				B25B12C328894B960013EEC6 /* TalTal.xcdatamodeld */,
 			);
 			path = TalTal;
+			sourceTree = "<group>";
+		};
+		FBDA9110288EEC7800D126E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FBDA9118288EEFCD00D126E6 /* MissionModel.swift */,
+				FBDA911A288EEFE600D126E6 /* MissionDataManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FBDA9111288EEC8300D126E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FBDA9120288EF31400D126E6 /* HistoryCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,11 +262,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				70AAD5F0288DDE63001CEE5F /* ShowReflectionViewController.swift in Sources */,
+				FBDA911B288EEFE600D126E6 /* MissionDataManager.swift in Sources */,
 				B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */,
 				70DEFD9A28912CD300F6C0F8 /* MissionAessts.swift in Sources */,
+				FBDA9121288EF31500D126E6 /* HistoryCell.swift in Sources */,
 				B25B12C528894B960013EEC6 /* TalTal.xcdatamodeld in Sources */,
 				70AAD5E7288DD397001CEE5F /* MissionClearViewController.swift in Sources */,
 				70AAD5EB288DD3AE001CEE5F /* ReflectionViewController.swift in Sources */,
+				FBDA9119288EEFCD00D126E6 /* MissionModel.swift in Sources */,
 				70AAD5ED288DDE3E001CEE5F /* ShowMissionClearViewController.swift in Sources */,
 				70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */,
 				70ACFB04288E7B20006C23E5 /* MissionQuestView.swift in Sources */,
@@ -395,7 +423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P2UJWPTGRX;
+				DEVELOPMENT_TEAM = 2D5CY8C92L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TalTal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -404,6 +432,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -425,7 +454,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P2UJWPTGRX;
+				DEVELOPMENT_TEAM = 2D5CY8C92L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TalTal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -434,6 +463,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
