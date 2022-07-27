@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k3p-SS-JF4">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="Reflection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ReflectionViewController" customModule="TalTal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일일 미션" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gK-0M-WjE">
@@ -35,7 +34,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="v1I-vQ-nFP">
-                                <rect key="frame" x="16" y="88" width="382" height="48.5"/>
+                                <rect key="frame" x="16" y="88" width="568" height="48.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일어나서 스트레칭 하기" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJj-ix-51Q">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="26.5"/>
@@ -52,10 +51,10 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rd6-vB-bFZ">
-                                <rect key="frame" x="16" y="153.5" width="382" height="136"/>
+                                <rect key="frame" x="16" y="153.5" width="568" height="136"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAo-IN-zPB">
-                                        <rect key="frame" x="24" y="13" width="334" height="19.5"/>
+                                        <rect key="frame" x="24" y="13" width="520" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -76,16 +75,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="무엇을 느끼셨나요?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAW-0j-qb7">
-                                <rect key="frame" x="16" y="324.5" width="382" height="21.5"/>
+                                <rect key="frame" x="16" y="324.5" width="568" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnv-Xu-uBU">
-                                <rect key="frame" x="16" y="361" width="382" height="150"/>
+                                <rect key="frame" x="16" y="361" width="568" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNC-ha-Em3">
-                                        <rect key="frame" x="24" y="13" width="334" height="19.5"/>
+                                        <rect key="frame" x="24" y="13" width="520" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -106,7 +105,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmU-OT-kS7">
-                                <rect key="frame" x="177" y="14" width="60" height="5"/>
+                                <rect key="frame" x="270" y="14" width="60" height="5"/>
                                 <color key="backgroundColor" name="Black"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="3AM-AA-rWi"/>
@@ -145,9 +144,9 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dateLabel" destination="CH8-mR-R3O" id="UOE-Eg-5RZ"/>
-                        <outlet property="informationLabel" destination="ZNC-ha-Em3" id="bT6-Cd-NUw"/>
+                        <outlet property="missionInformationLabel" destination="ZNC-ha-Em3" id="bT6-Cd-NUw"/>
                         <outlet property="missionLabel" destination="KJj-ix-51Q" id="Rd1-Me-hBH"/>
-                        <outlet property="missionType" destination="4gK-0M-WjE" id="aDO-9J-RXX"/>
+                        <outlet property="missionTypeLabel" destination="4gK-0M-WjE" id="aDO-9J-RXX"/>
                         <outlet property="reflectionLabel" destination="aAo-IN-zPB" id="rwB-xb-gSN"/>
                     </connections>
                 </viewController>
@@ -160,11 +159,11 @@
             <objects>
                 <viewController id="k3p-SS-JF4" customClass="ShowReflectionViewController" customModule="TalTal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BuQ-Fs-L7e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZY-Fx-BOZ">
-                                <rect key="frame" x="140.5" y="432.5" width="133" height="31"/>
+                                <rect key="frame" x="233.5" y="284.5" width="133" height="31"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="여기누르면모달나옴">
