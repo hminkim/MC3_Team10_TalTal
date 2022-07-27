@@ -8,19 +8,19 @@
 import UIKit
 
 class HistoryCell: UITableViewCell {
-    
-    @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var missionLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+	
+	@IBOutlet weak var cellView: UIView!
+	@IBOutlet weak var missionLabel: UILabel!
+	@IBOutlet weak var dateLabel: UILabel!
+	
+	override func awakeFromNib() {
+		super.awakeFromNib()
 		// Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+	}
+	
+	override func setSelected(_ selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+		
+		// Configure the view for the selected state
+	}
 }
