@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,46 +13,91 @@
             <objects>
                 <viewController storyboardIdentifier="Mission" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MissionViewController" customModule="TalTal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUM-rU-Zwc" customClass="MissionQuestView" customModule="TalTal" customModuleProvider="target">
-                                <rect key="frame" x="16" y="171" width="382" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1B1-34-mdi" userLabel="404Label">
+                                <rect key="frame" x="0.0" y="44" width="390" height="57.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kVy-Fn-qBl" userLabel="fullStack View">
+                                <rect key="frame" x="16" y="101.33333333333331" width="358" height="629.66666666666674"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jd-us-X4p" userLabel="TitleLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="40.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaL-93-oRU" userLabel="TextLabel">
+                                        <rect key="frame" x="0.0" y="68.666666666666671" width="358" height="61.000000000000014"/>
+                                        <string key="text">지금까지
+25 개의 일일 미션과
+3 개의 주간 미션을 완료했어요!</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gb9-fk-IKS" userLabel="LabelStack View">
+                                        <rect key="frame" x="0.0" y="157.33333333333334" width="358" height="472.33333333333326"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vef-Eq-EtZ" userLabel="DailyView" customClass="MissionQuestView" customModule="TalTal" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="226.33333333333334"/>
+                                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3Q-3d-0gR" userLabel="WeeklyView" customClass="MissionQuestView" customModule="TalTal" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="246.33333333333331" width="358" height="226"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="403-bO-kez"/>
+                                    <constraint firstItem="Gb9-fk-IKS" firstAttribute="height" secondItem="kVy-Fn-qBl" secondAttribute="height" multiplier="0.75" id="UZn-sF-mrd"/>
+                                    <constraint firstItem="MaL-93-oRU" firstAttribute="width" secondItem="2Jd-us-X4p" secondAttribute="width" id="ayv-Wf-Alf"/>
+                                    <constraint firstItem="2Jd-us-X4p" firstAttribute="width" secondItem="kVy-Fn-qBl" secondAttribute="width" id="d2l-rg-xGn"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dn3-G3-cbW" customClass="MissionQuestView" customModule="TalTal" customModuleProvider="target">
-                                <rect key="frame" x="87" y="663" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aUM-rU-Zwc" secondAttribute="trailing" constant="16" id="7cj-Dn-yu0"/>
-                            <constraint firstItem="aUM-rU-Zwc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="127" id="VNL-e3-6q3"/>
-                            <constraint firstItem="aUM-rU-Zwc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="nEt-AO-8JZ"/>
+                            <constraint firstItem="1B1-34-mdi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="3g4-Te-pMx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kVy-Fn-qBl" secondAttribute="bottom" constant="30" id="6ux-UK-otf"/>
+                            <constraint firstItem="1B1-34-mdi" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.08" id="8cF-5U-cea"/>
+                            <constraint firstItem="kVy-Fn-qBl" firstAttribute="top" secondItem="1B1-34-mdi" secondAttribute="bottom" id="JKs-97-C7U"/>
+                            <constraint firstItem="1B1-34-mdi" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="aAs-Jh-VUG"/>
+                            <constraint firstItem="kVy-Fn-qBl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="av6-e9-7lw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1B1-34-mdi" secondAttribute="trailing" id="fcl-SX-ndx"/>
+                            <constraint firstItem="kVy-Fn-qBl" firstAttribute="bottom" secondItem="Gb9-fk-IKS" secondAttribute="bottom" id="h1Q-Ak-7nv"/>
+                            <constraint firstAttribute="trailing" secondItem="kVy-Fn-qBl" secondAttribute="trailing" constant="16" id="ufb-ie-gT9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mission" image="square.and.arrow.up.fill" catalog="system" id="fzo-8E-c5x"/>
+                    <tabBarItem key="tabBarItem" title="Mission" image="checkmark.square.fill" catalog="system" id="fzo-8E-c5x"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="dailyView" destination="aUM-rU-Zwc" id="meW-Kv-L1M"/>
-                        <outlet property="weeklyView" destination="Dn3-G3-cbW" id="ohC-yF-1yh"/>
+                        <outlet property="dailyView" destination="Vef-Eq-EtZ" id="gdf-Ha-GQy"/>
+                        <outlet property="textLabel" destination="MaL-93-oRU" id="90p-Ah-f2C"/>
+                        <outlet property="weeklyView" destination="a3Q-3d-0gR" id="Aor-vP-8T6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="106"/>
+            <point key="canvasLocation" x="-159.42028985507247" y="67.633928571428569"/>
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
