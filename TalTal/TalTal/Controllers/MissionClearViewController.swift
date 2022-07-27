@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-class MissionClearViewController: UIViewController {
+class MissionClearViewController: UIViewController, UITextViewDelegate {
 	@IBOutlet var lblMissionType: UILabel!
 	@IBOutlet var viewReflection: UIView!
 	@IBOutlet var textViewReflection: UITextView!
@@ -19,6 +19,7 @@ class MissionClearViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		textViewReflection.delegate = self
 		view.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1)
 		initblblMissionType()
 		initReflection()
@@ -43,6 +44,39 @@ class MissionClearViewController: UIViewController {
 		viewReflection.addSubview(textViewReflection)
 		
 		viewReflection.addSubview(lblReflectionCount)
+	}
+	
+	func textViewDidChange(_ textView: UITextView) {
+		if textView.text.count > 50 {
+			let start = textView.text.startIndex
+			let end = textView.text.index(textView.text.startIndex, offsetBy: 50)
+			let range = start..<end
+			textView.text = String(textView.text[range])
+		}
+		
+		lblReflectionCount.text = "\(textView.text.count) / 50"
+	}
+	
+	func textViewDidChangeSelection(_ textView: UITextView) {
+//		if isTextViewSelected {
+//			textView.text = ""
+//			isTextViewSelected = false
+//		}
+	}
+	
+	func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+		if isTextViewSelected {
+			textView.text = ""
+			isTextViewSelected = false
+		}
+		return true
+	}
+	
+	func textViewDidEndEditing(_ textView: UITextView) {
+		if textView.text.count == 0 {
+			isTextViewSelected = true
+			textView.text = "50자 이내로 적어주세요."
+		}
 	}
 }
 
