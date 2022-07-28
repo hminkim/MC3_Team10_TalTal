@@ -71,12 +71,12 @@ extension HistoryViewController: UITableViewDataSource {
 		
 		if status == "dailyMissionCell" {
 			cell.cellView.backgroundColor = UIColor(named: "PointLightPink")
-			cell.missionLabel.text = missionDataManager.getDailyMissionData()[indexPath.row].mission
-			cell.dateLabel.text = missionDataManager.getDailyMissionData()[indexPath.row].missionClearDate
+//			cell.missionLabel.text = missionDataManager.getDailyMissionData()[indexPath.row].mission
+//			cell.dateLabel.text = missionDataManager.getDailyMissionData()[indexPath.row].missionClearDate
 		} else if status == "weeklyMissionCell" {
 			cell.cellView.backgroundColor = UIColor(named: "PointLightBlue")
-			cell.missionLabel.text = missionDataManager.getWeeklyMissionData()[indexPath.row].mission
-			cell.dateLabel.text = missionDataManager.getWeeklyMissionData()[indexPath.row].missionClearDate
+//			cell.missionLabel.text = missionDataManager.getWeeklyMissionData()[indexPath.row].mission
+//			cell.dateLabel.text = missionDataManager.getWeeklyMissionData()[indexPath.row].missionClearDate
 		}
 		
 		return cell
