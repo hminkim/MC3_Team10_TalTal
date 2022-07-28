@@ -8,7 +8,7 @@
 import UIKit
 @IBDesignable
 final class MissionViewController: UIViewController {
-    let missionAessts = MissionAessts()
+    let missionAessts = MissionAssets()
     // MissionAessts()를 사용하기위해 선언
     
     //스토리보드에 있는 객체들을 연결

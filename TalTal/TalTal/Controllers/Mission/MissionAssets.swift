@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct MissionAessts{
+struct MissionAssets{
     // CornerRadius의 기본값을 설정해두었습니다.
     let viewCornerRadius = 20.0
     
