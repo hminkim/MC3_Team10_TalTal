@@ -8,7 +8,85 @@
 import Foundation
 
 class MissionDataManager {
+	static var shared = MissionDataManager()
 
+	private init() { }
+
+	
+	// MARK: - requestDailyMission
+	/// 출력 값
+	/// - Mission Type 정상 출력
+	/// - nil 모든 임무 완수
+	func requestDailyMission(stage: MissionStage) -> Mission? {
+		var missions: [Mission]
+		
+		switch stage{
+		case .beginner:
+			missions = beginnerDailyMissions
+		case .intermediate:
+			missions = intermediateDailyMissions
+		case .advancded:
+			missions = advancedDailyMissions
+		}
+		
+		//TODO: 코어 데이터에서 스위치에 맞는 미션들 갖고오기
+		
+		//TODO: missions = missions - 코어 데이터에서 갖고온 Missions 뺴기
+		
+		let result = missions.randomElement()
+		//FIXME: 위에 ToDo에 기반해서 고치기
+		
+		if result == nil {
+			switch stage {
+			case .beginner:
+				return requestDailyMission(stage: .intermediate)
+			case .intermediate:
+				return requestDailyMission(stage: .advancded)
+			case .advancded:
+				return nil
+			}
+		} else {
+			return result
+		}
+	} // reqeustDailyMission
+	
+	
+	// MARK: - requestWeeklyMission
+	/// 출력 값
+	/// - Mission Type 정상 출력
+	/// - nil 모든 임무 완수
+	func requestWeeklyMission(stage: MissionStage) -> Mission? {
+		var missions: [Mission]
+		
+		switch stage{
+		case .beginner:
+			missions = beginnerWeeklyMissions
+		case .intermediate:
+			missions = intermediateWeeklyMissions
+		case .advancded:
+			missions = advancedWeeklyMissions
+		}
+		
+		//TODO: 코어 데이터에서 스위치에 맞는 미션들 갖고오기
+		
+		//TODO: missions = missions - 코어 데이터에서 갖고온 Missions 뺴기
+		
+		let result = missions.randomElement()
+		//FIXME: 위에 ToDo에 기반해서 고치기
+		
+		if result == nil {
+			switch stage {
+			case .beginner:
+				return requestWeeklyMission(stage: .intermediate)
+			case .intermediate:
+				return requestWeeklyMission(stage: .advancded)
+			case .advancded:
+				return nil
+			}
+		} else {
+			return result
+		}
+	} // reqeustWeeklyMission
 } // MissionDataManager
 
 
