@@ -110,7 +110,7 @@
                             <constraint firstItem="2DG-cM-HgV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="zz9-Hl-o14"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" image="square.and.arrow.up.on.square.fill" catalog="system" id="uUb-wh-bae"/>
+                    <tabBarItem key="tabBarItem" title="History" image="square.text.square" catalog="system" id="uUb-wh-bae"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="historyMainLabel" destination="2DG-cM-HgV" id="7mE-Z1-QKF"/>
@@ -125,9 +125,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.up.on.square.fill" catalog="system" width="117" height="128"/>
+        <image name="square.text.square" catalog="system" width="128" height="114"/>
         <namedColor name="PointPink">
-            <color red="1" green="0.50588235294117645" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.50599998235702515" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextDarkGray">
             <color red="0.54117647058823526" green="0.54117647058823526" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
