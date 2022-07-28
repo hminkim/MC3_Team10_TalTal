@@ -14,7 +14,7 @@ class HistoryViewController: UIViewController {
 	@IBOutlet weak var missionTableView: UITableView!
 	@IBOutlet weak var segmentedController: UISegmentedControl!
 	
-	var missionDataManager = MissionDataManager()
+    var missionDataManager = MissionDataManager.shared
 	
 	// segmentedControl에 따른 다른 히스토리를 보여주기 위한 변수
 	var status: String = "dailyMissionCell"
@@ -25,7 +25,7 @@ class HistoryViewController: UIViewController {
 		missionTableView.delegate = self
 		
 		// DataManger 클래스의 makeMissionData 메서드를 통해 미션 데이터 생성
-		missionDataManager.makeMissionData()
+//		missionDataManager.makeMissionData()
 	}
 	
 	// segmentedControl에 따라서
@@ -52,9 +52,9 @@ extension HistoryViewController: UITableViewDataSource {
 		
 		// 미션 데이터의 갯수만큼 셀 생성
 		if status == "dailyMissionCell" {
-			return missionDataManager.getDailyMissionData().count
+//			return missionDataManager.getDailyMissionData().count
 		} else if status == "weeklyMissionCell" {
-			return missionDataManager.getWeeklyMissionData().count
+//			return missionDataManager.getWeeklyMissionData().count
 		}
 		
 		return 0
@@ -96,7 +96,7 @@ extension HistoryViewController: UITableViewDelegate {
 			
 			// getDailyMissionData에서 일일 미션을 받아옴
 			//TODO: WeeklyMissionData도 받아올 수 있는 미션 추가 -> Kkoma
-			let dailyMissionDatas = missionDataManager.getDailyMissionData()
+//			let dailyMissionDatas = missionDataManager.getDailyMissionData()
 			
 			// tableView 함수에서 sender를 통해 indexPath를 받은 후 타입 캐스팅하여 데이터를 사용할 수 있음
 			let indexPath = sender as! IndexPath
