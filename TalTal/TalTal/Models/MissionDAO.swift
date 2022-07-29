@@ -22,7 +22,7 @@ final class MissionDAO {
 	lazy var context = appDelegate?.persistentContainer.viewContext
 	
 	//MARK: [Read] 코어데이터에 저장된 Mission 데이터 읽어오는 메서드
-	func getMissionData() -> [CompleteMission] {
+	func fetchMissionData() -> [CompleteMission] {
 		
 		var completeMission: [CompleteMission] = []
 		
