@@ -22,15 +22,17 @@
 		70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */; };
 		70DEFD9A28912CD300F6C0F8 /* MissionAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DEFD9928912CD300F6C0F8 /* MissionAssets.swift */; };
 		B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BA28894B960013EEC6 /* AppDelegate.swift */; };
+		B25B12BB28894B960013EEC6 /*  AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BA28894B960013EEC6 /*  AppDelegate.swift */; };
 		B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BC28894B960013EEC6 /* SceneDelegate.swift */; };
 		B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BE28894B960013EEC6 /* TabbarViewController.swift */; };
 		B25B12C228894B960013EEC6 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25B12C028894B960013EEC6 /* Tabbar.storyboard */; };
-		B25B12C528894B960013EEC6 /* TalTal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B25B12C328894B960013EEC6 /* TalTal.xcdatamodeld */; };
 		B25B12C728894B990013EEC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25B12C628894B990013EEC6 /* Assets.xcassets */; };
 		B25B12CA28894B990013EEC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25B12C828894B990013EEC6 /* LaunchScreen.storyboard */; };
-		FBDA9119288EEFCD00D126E6 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA9118288EEFCD00D126E6 /* MissionModel.swift */; };
-		FBDA911B288EEFE600D126E6 /* MissionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA911A288EEFE600D126E6 /* MissionDataManager.swift */; };
+		FBDA911B288EEFE600D126E6 /* MissionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA911A288EEFE600D126E6 /* MissionDAO.swift */; };
 		FBDA9121288EF31500D126E6 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA9120288EF31400D126E6 /* HistoryCell.swift */; };
+		FBE0137B2892B8C9007D1819 /* TalTal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B25B12C328894B960013EEC6 /* TalTal.xcdatamodeld */; };
+		FBE0139228937E9C007D1819 /* CompleteMission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE0139028937E9C007D1819 /* CompleteMission+CoreDataClass.swift */; };
+		FBE0139328937E9C007D1819 /* CompleteMission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE0139128937E9C007D1819 /* CompleteMission+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +51,7 @@
 		70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		70DEFD9928912CD300F6C0F8 /* MissionAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionAssets.swift; sourceTree = "<group>"; };
 		B25B12B728894B960013EEC6 /* TalTal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalTal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B25B12BA28894B960013EEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B25B12BA28894B960013EEC6 /*  AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AppDelegate.swift"; sourceTree = "<group>"; };
 		B25B12BC28894B960013EEC6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B25B12BE28894B960013EEC6 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		B25B12C128894B960013EEC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tabbar.storyboard; sourceTree = "<group>"; };
@@ -57,9 +59,10 @@
 		B25B12C628894B990013EEC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B25B12C928894B990013EEC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B25B12CB28894B990013EEC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBDA9118288EEFCD00D126E6 /* MissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
-		FBDA911A288EEFE600D126E6 /* MissionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDataManager.swift; sourceTree = "<group>"; };
+		FBDA911A288EEFE600D126E6 /* MissionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDAO.swift; sourceTree = "<group>"; };
 		FBDA9120288EF31400D126E6 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		FBE0139028937E9C007D1819 /* CompleteMission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompleteMission+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FBE0139128937E9C007D1819 /* CompleteMission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompleteMission+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +161,7 @@
 				FBDA9110288EEC7800D126E6 /* Models */,
 				70AAD5DB288DD064001CEE5F /* Controllers */,
 				70AAD5DA288DD04C001CEE5F /* StoryBoard */,
-				B25B12BA28894B960013EEC6 /* AppDelegate.swift */,
+				B25B12BA28894B960013EEC6 /*  AppDelegate.swift */,
 				B25B12BC28894B960013EEC6 /* SceneDelegate.swift */,
 				B25B12C628894B990013EEC6 /* Assets.xcassets */,
 				B25B12C828894B990013EEC6 /* LaunchScreen.storyboard */,
@@ -168,11 +171,20 @@
 			path = TalTal;
 			sourceTree = "<group>";
 		};
+		FB8C480B2892711E0061AB52 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FBE0139028937E9C007D1819 /* CompleteMission+CoreDataClass.swift */,
+				FBE0139128937E9C007D1819 /* CompleteMission+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		FBDA9110288EEC7800D126E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FBDA9118288EEFCD00D126E6 /* MissionModel.swift */,
-				FBDA911A288EEFE600D126E6 /* MissionDataManager.swift */,
+				FB8C480B2892711E0061AB52 /* CoreData */,
+				FBDA911A288EEFE600D126E6 /* MissionDAO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,19 +274,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				70AAD5F0288DDE63001CEE5F /* ShowReflectionViewController.swift in Sources */,
-				FBDA911B288EEFE600D126E6 /* MissionDataManager.swift in Sources */,
+				FBDA911B288EEFE600D126E6 /* MissionDAO.swift in Sources */,
 				B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */,
 				70DEFD9A28912CD300F6C0F8 /* MissionAssets.swift in Sources */,
+				FBE0139328937E9C007D1819 /* CompleteMission+CoreDataProperties.swift in Sources */,
 				FBDA9121288EF31500D126E6 /* HistoryCell.swift in Sources */,
-				B25B12C528894B960013EEC6 /* TalTal.xcdatamodeld in Sources */,
 				70AAD5E7288DD397001CEE5F /* MissionClearViewController.swift in Sources */,
 				70AAD5EB288DD3AE001CEE5F /* ReflectionViewController.swift in Sources */,
-				FBDA9119288EEFCD00D126E6 /* MissionModel.swift in Sources */,
 				70AAD5ED288DDE3E001CEE5F /* ShowMissionClearViewController.swift in Sources */,
 				70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */,
 				70ACFB04288E7B20006C23E5 /* MissionQuestView.swift in Sources */,
 				B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */,
+				FBE0139228937E9C007D1819 /* CompleteMission+CoreDataClass.swift in Sources */,
+				B25B12BB28894B960013EEC6 /*  AppDelegate.swift in Sources */,
 				B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */,
+				FBE0137B2892B8C9007D1819 /* TalTal.xcdatamodeld in Sources */,
 				70AAD5E9288DD3A0001CEE5F /* HistoryViewController.swift in Sources */,
 				70AAD5E5288DD37B001CEE5F /* MissionViewController.swift in Sources */,
 			);
