@@ -17,30 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="일일 미션" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASJ-Ji-XEc">
-                                <rect key="frame" x="20" y="285" width="70" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="PointPink"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <color key="textColor" name="White"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="퀘스트 Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xii-Cp-8Ij">
-                                <rect key="frame" x="20" y="332" width="117" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="퀘스트 Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xii-Cp-8Ij">
+                                <rect key="frame" x="16" y="136.33333333333334" width="117" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="미션을 진행해 보니 어떤 느낌이 들었나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ro-dN-Ltm">
-                                <rect key="frame" x="20" y="368" width="264" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션을 진행해 보니 어떤 느낌이 들었나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ro-dN-Ltm">
+                                <rect key="frame" x="16" y="169.33333333333334" width="264" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxs-gx-qlp" userLabel="404TopLabel">
+                                <rect key="frame" x="0.0" y="56" width="428" height="26"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uiD-AI-hID">
-                                <rect key="frame" x="20" y="403" width="388" height="136"/>
+                                <rect key="frame" x="16" y="202" width="388" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="50자 이내로 적어주세요." translatesAutoresizingMaskIntoConstraints="NO" id="QWg-fT-OIy">
@@ -64,33 +61,51 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9b-7u-RMk">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="56"/>
                                 <items>
-                                    <navigationItem title="미션완료" id="5QE-MJ-Hun">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="8i6-X7-iqO">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lUl-IQ-osJ">
-                                                <rect key="frame" x="20" y="11" width="95" height="34.333333333333336"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="취소"/>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Rcj-aH-BZk">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4Dz-i0-Lzh">
-                                                <rect key="frame" x="313" y="11" width="95" height="34.333333333333336"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
-                                            </button>
-                                        </barButtonItem>
+                                    <navigationItem title="미션완료" id="rVD-IV-Yvn">
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="t9L-w7-cRO"/>
+                                        <barButtonItem key="rightBarButtonItem" title="확인" id="YBr-WC-ip1"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일일 미션" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASJ-Ji-XEc">
+                                <rect key="frame" x="16" y="82" width="75" height="28"/>
+                                <color key="backgroundColor" name="PointPink"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="3zl-T5-agQ"/>
+                                    <constraint firstAttribute="width" constant="75" id="wQF-iG-u8M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" name="White"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXn-TR-p0r" userLabel="404Top2edLabel">
+                                <rect key="frame" x="0.0" y="110" width="428" height="26.333333333333343"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="XXn-TR-p0r" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="8gd-F2-HZz"/>
+                            <constraint firstItem="xii-Cp-8Ij" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="H7K-DF-eEi"/>
                             <constraint firstItem="G9b-7u-RMk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="JnT-gm-9wK"/>
                             <constraint firstItem="G9b-7u-RMk" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="LEH-5O-XC7"/>
+                            <constraint firstItem="ASJ-Ji-XEc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="N3L-Ig-58N"/>
+                            <constraint firstItem="Cxs-gx-qlp" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="OGX-by-H8f"/>
+                            <constraint firstItem="xii-Cp-8Ij" firstAttribute="top" secondItem="XXn-TR-p0r" secondAttribute="bottom" id="QH9-FA-fj4"/>
+                            <constraint firstItem="4Ro-dN-Ltm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ryo-Ms-TBP" userLabel="미션을...leading"/>
+                            <constraint firstItem="ASJ-Ji-XEc" firstAttribute="top" secondItem="Cxs-gx-qlp" secondAttribute="bottom" id="Urb-2T-nry"/>
+                            <constraint firstItem="Cxs-gx-qlp" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.03" id="Vfn-0J-eBS"/>
+                            <constraint firstItem="XXn-TR-p0r" firstAttribute="top" secondItem="ASJ-Ji-XEc" secondAttribute="bottom" id="VzG-Ve-uMV"/>
+                            <constraint firstItem="Cxs-gx-qlp" firstAttribute="top" secondItem="G9b-7u-RMk" secondAttribute="bottom" id="XFn-C4-UIx"/>
                             <constraint firstItem="G9b-7u-RMk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="a3Y-Rh-mdp"/>
+                            <constraint firstItem="Cxs-gx-qlp" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lRl-0n-Uw2"/>
+                            <constraint firstItem="XXn-TR-p0r" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.03" id="oyj-0d-Tqk"/>
+                            <constraint firstItem="4Ro-dN-Ltm" firstAttribute="top" secondItem="xii-Cp-8Ij" secondAttribute="bottom" constant="4" id="qHg-Gi-jl3" userLabel="미션을 ...Top"/>
+                            <constraint firstItem="XXn-TR-p0r" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rxh-jc-lsG"/>
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -142,6 +157,9 @@
     </scenes>
     <resources>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="PointPink">
             <color red="1" green="0.50599998235702515" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
