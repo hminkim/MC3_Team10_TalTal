@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3653E5042893BE44005E6E30 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3653E5022893BE44005E6E30 /* MissionModel.swift */; };
+		3653E5052893BE44005E6E30 /* MissionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3653E5032893BE44005E6E30 /* MissionDataManager.swift */; };
 		70AAD5DD288DD303001CEE5F /* Mission.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70AAD5DC288DD303001CEE5F /* Mission.storyboard */; };
 		70AAD5DF288DD317001CEE5F /* MissionClear.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70AAD5DE288DD317001CEE5F /* MissionClear.storyboard */; };
 		70AAD5E1288DD32B001CEE5F /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70AAD5E0288DD32B001CEE5F /* History.storyboard */; };
@@ -21,7 +23,6 @@
 		70ACFB07288E7B67006C23E5 /* MissionQuestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */; };
 		70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */; };
 		70DEFD9A28912CD300F6C0F8 /* MissionAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DEFD9928912CD300F6C0F8 /* MissionAssets.swift */; };
-		B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BA28894B960013EEC6 /* AppDelegate.swift */; };
 		B25B12BB28894B960013EEC6 /*  AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BA28894B960013EEC6 /*  AppDelegate.swift */; };
 		B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BC28894B960013EEC6 /* SceneDelegate.swift */; };
 		B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BE28894B960013EEC6 /* TabbarViewController.swift */; };
@@ -36,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3653E5022893BE44005E6E30 /* MissionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
+		3653E5032893BE44005E6E30 /* MissionDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDataManager.swift; sourceTree = "<group>"; };
 		70AAD5DC288DD303001CEE5F /* Mission.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mission.storyboard; sourceTree = "<group>"; };
 		70AAD5DE288DD317001CEE5F /* MissionClear.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MissionClear.storyboard; sourceTree = "<group>"; };
 		70AAD5E0288DD32B001CEE5F /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 			children = (
 				FB8C480B2892711E0061AB52 /* CoreData */,
 				FBDA911A288EEFE600D126E6 /* MissionDAO.swift */,
+				3653E5032893BE44005E6E30 /* MissionDataManager.swift */,
+				3653E5022893BE44005E6E30 /* MissionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,8 +289,10 @@
 				70AAD5ED288DDE3E001CEE5F /* ShowMissionClearViewController.swift in Sources */,
 				70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */,
 				70ACFB04288E7B20006C23E5 /* MissionQuestView.swift in Sources */,
-				B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */,
+				B25B12BB28894B960013EEC6 /*  AppDelegate.swift in Sources */,
 				FBE0139228937E9C007D1819 /* CompleteMission+CoreDataClass.swift in Sources */,
+				3653E5042893BE44005E6E30 /* MissionModel.swift in Sources */,
+				3653E5052893BE44005E6E30 /* MissionDataManager.swift in Sources */,
 				B25B12BB28894B960013EEC6 /*  AppDelegate.swift in Sources */,
 				B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */,
 				FBE0137B2892B8C9007D1819 /* TalTal.xcdatamodeld in Sources */,
