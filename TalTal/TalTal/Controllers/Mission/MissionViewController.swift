@@ -87,46 +87,48 @@ extension MissionViewController {
             defaults.set(Date.now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
             defaults.set(Date.now.addingTimeInterval(3600 * 24 * 7), forKey: "refreshWeeklyMissionDate")
             defaults.set(MissionStage.beginner.rawValue, forKey: "userStage")
-            defaults.set(MissionDataManager.shared.requestDailyMission(stage: .beginner)?.content, forKey: "currentDailyMission")
-            defaults.set(MissionDataManager.shared.requestDailyMission(stage: .beginner)?.content, forKey: "currentWeeklyMission")
+            defaults.set(MissionDataManager.shared.requestDailyMission(stage: .beginner)!.content, forKey: "currentDailyMission")
+            defaults.set(MissionDataManager.shared.requestDailyMission(stage: .beginner)!.content, forKey: "currentWeeklyMission")
+            defaults.set(0, forKey: "dailyClearMission")
+            defaults.set(0, forKey: "weeklyClearMission")
             return
         }
         
         // 앱에 접속한 날짜와 refresh가 되어야 할 날짜를 비교하기 위해 DateFormatter을 사용했습니다
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.dateFormat = "YYYY.MM.dd."
         
-        // 현재 userStage 구하기
-        guard let currentUserStage = MissionStage(rawValue: defaults.integer(forKey: "userStage")) else { return }
+        guard let currentUserStage = MissionStage(rawValue: defaults.string(forKey: "userStage") ?? "") else { return }
+        // TODO: 모든 미션을 깬 경우 처리를 해야합니다(엔딩뷰)
+        guard let nextDailyMission = MissionDataManager.shared.requestDailyMission(stage: currentUserStage),
+              let nextWeeklyMission = MissionDataManager.shared.requestWeeklyMission(stage: currentUserStage) else { return }
         
         // 필요하면 일일 미션 변경
         if dateFormatter.string(from: Date.now) >= dateFormatter.string(from: defaults.object(forKey: "refreshDailyMissionDate") as? Date ?? Date.now) {
             
-            let nextDailyMission = MissionDataManager.shared.requestDailyMission(stage: currentUserStage)
-            
             // 유저디폴트 업데이트
             defaults.set(Date.now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
-            defaults.set(nextDailyMission?.content, forKey: "currentDailyMission")
-            // TODO: 일일 미션과 주간 미션의 stage를 구분해야 할 거 같아요
-            defaults.set(nextDailyMission?.stage.rawValue, forKey: "userStage")
+            defaults.set(nextDailyMission.content, forKey: "currentDailyMission")
+            defaults.set(defaults.integer(forKey: "dailyClearMission") + 1, forKey: "dailyClearMission")
             
         }
         
         // 필요하면 주간 미션 변경
         if dateFormatter.string(from: Date.now) >= dateFormatter.string(from: defaults.object(forKey: "refreshWeeklyMissionDate") as? Date ?? Date.now) {
             
-            let nextWeeklyMission = MissionDataManager.shared.requestWeeklyMission(stage: currentUserStage)
-            
             // 유저디폴트 업데이트
             defaults.set(Date.now.addingTimeInterval(3600 * 24 * 7), forKey: "refreshWeeklyMissionDate")
-            defaults.set(nextWeeklyMission?.content, forKey: "currentWeeklyMission")
-            defaults.set(nextWeeklyMission?.stage.rawValue, forKey: "userStage")
+            defaults.set(nextWeeklyMission.content, forKey: "currentWeeklyMission")
+            defaults.set(defaults.integer(forKey: "weeklyClearMission") + 1, forKey: "weeklyClearMission")
             
         }
-        // 디버깅용 코드입니다
-//        print(Date.now)
-//        print(defaults.string(forKey: "currentDailyMission"))
-//        print(MissionStage(rawValue: defaults.integer(forKey: "userStage")))
+        
+        // 미션 클리어 갯수를 체크하여 userStage를 변경합니다
+        if defaults.integer(forKey: "dailyClearMission") >= 7 {
+            defaults.set(MissionStage.intermediate.rawValue, forKey: "userStage")
+        } else if defaults.integer(forKey: "dailyClearMission") >= 13 {
+            defaults.set(MissionStage.advancded.rawValue, forKey: "userStage")
+        }
     }
     
 }
