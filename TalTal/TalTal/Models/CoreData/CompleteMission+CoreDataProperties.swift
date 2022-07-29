@@ -25,14 +25,14 @@ extension CompleteMission {
 	@NSManaged public var intention: String?
 	@NSManaged public var clearDate: Date?
 	@NSManaged public var typeValue: String
-	@NSManaged public var missionStageValue: String
+	@NSManaged public var stageValue: String
 	
 	// Enum을 지원하지 않는 CoreData에 Enum rawValue를 통해 필터링 하기 위한 코드
-	public var missionStage: MissionStage {
+	public var stage: MissionStage {
 		get {
-			return MissionStage(rawValue: self.missionStageValue)! }
+			return MissionStage(rawValue: self.stageValue)! }
 		set {
-			self.missionStageValue = newValue.rawValue
+			self.stageValue = newValue.rawValue
 		}
 	}
 	

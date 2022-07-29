@@ -46,7 +46,7 @@ final class MissionDAO {
 	}
 	
 	//MARK: [Create] 코어데이터에 데이터 생성하는 메서드 (회고 저장)
-	func saveReflection(type: Status, content: String?, reflection: String?, intention: String?) {
+	func saveReflection(type: Status, stage: MissionStage, content: String?, reflection: String?, intention: String?) {
 		if let context = context {
 			// context에 있는 데이터를 그려줄 형태 파악
 			if let entity = NSEntityDescription.entity(forEntityName: "CompleteMission", in: context) {
@@ -55,6 +55,7 @@ final class MissionDAO {
 					
 					// mission에 실제 데이터를 할당
 					completeMission.type = type
+					completeMission.stage = stage
 					completeMission.content = content
 					completeMission.reflection = reflection
 					completeMission.clearDate = Date()
