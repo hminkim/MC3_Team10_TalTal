@@ -14,6 +14,7 @@ class HistoryViewController: UIViewController {
 	@IBOutlet weak var missionTableView: UITableView!
 	@IBOutlet weak var segmentedController: UISegmentedControl!
 	
+
 	// 코어데이터에서 저장된 데이터를 가져오는 모델
 	let missionDataManager = MissionDAO.shared
 	
@@ -56,7 +57,7 @@ class HistoryViewController: UIViewController {
 extension HistoryViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		
+
 		// 미션에 타입에 따라 미션 데이터의 갯수만큼 셀 생성
 		if status == .daily {
 			return completeDailyMission.count
@@ -113,10 +114,10 @@ extension HistoryViewController: UITableViewDelegate {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "toDetail" {
 			let reflectionViewController = segue.destination as! ReflectionViewController
-			
+      
 			// getMissionData에서 미션을 받아옴
-			let dailyMissionDatas = missionDataManager.getMissionData()
-			
+			let dailyMissionDatas = missionDataManager.getMissionData()			
+      
 			// tableView 함수에서 sender를 통해 indexPath를 받은 후 타입 캐스팅하여 데이터를 사용할 수 있음
 			let indexPath = sender as! IndexPath
 			

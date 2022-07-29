@@ -16,6 +16,9 @@ final class MissionViewController: UIViewController {
     @IBOutlet weak var weeklyView: MissionQuestView!
     @IBOutlet weak var questTextLabel: UILabel!
     
+    // 유저디폴트
+    let defaults = UserDefaults.standard
+    
     //더미 데이터입니다.
     var dailyClearQuest = 5
     var dailyQuestStirng = "햇빛이 선명하게 나뭇잎을 핥고 있었다.햇빛이 선명하게 나뭇잎을 핥고 있었다"
@@ -29,6 +32,7 @@ final class MissionViewController: UIViewController {
         questTextLabel.textColor = UIColor(hex: "8A8A8E")
         settingQuestView()
         settingTextLabel()
+        configureMission()
     }
     
 }
@@ -71,3 +75,60 @@ extension MissionViewController{
  해당 view를 사용하기위해서 설정 하는 함수를 불러와 사용했으며
  view의 cornerRadius를 추가하기위해 값을 주었습니다.
  */
+
+
+extension MissionViewController {
+    
+    private func configureMission() {
+        
+        // 앱 첫 실행 검사
+        guard let _ = defaults.object(forKey: "refreshDailyMissionDate") else {
+            // 앱이 처음으로 켜지면 기본 값을 유저디폴트에 저장
+            defaults.set(Date.now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
+            defaults.set(Date.now.addingTimeInterval(3600 * 24 * 7), forKey: "refreshWeeklyMissionDate")
+            defaults.set(MissionStage.beginner.rawValue, forKey: "userStage")
+            defaults.set(MissionDataManager.shared.requestDailyMission(stage: .beginner)!.content, forKey: "currentDailyMission")
+            defaults.set(MissionDataManager.shared.requestDailyMission(stage: .beginner)!.content, forKey: "currentWeeklyMission")
+            defaults.set(0, forKey: "dailyClearMission")
+            defaults.set(0, forKey: "weeklyClearMission")
+            return
+        }
+        
+        // 앱에 접속한 날짜와 refresh가 되어야 할 날짜를 비교하기 위해 DateFormatter을 사용했습니다
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY.MM.dd."
+        
+        guard let currentUserStage = MissionStage(rawValue: defaults.string(forKey: "userStage") ?? "") else { return }
+        // TODO: 모든 미션을 깬 경우 처리를 해야합니다(엔딩뷰)
+        guard let nextDailyMission = MissionDataManager.shared.requestDailyMission(stage: currentUserStage),
+              let nextWeeklyMission = MissionDataManager.shared.requestWeeklyMission(stage: currentUserStage) else { return }
+        
+        // 필요하면 일일 미션 변경
+        if dateFormatter.string(from: Date.now) >= dateFormatter.string(from: defaults.object(forKey: "refreshDailyMissionDate") as? Date ?? Date.now) {
+            
+            // 유저디폴트 업데이트
+            defaults.set(Date.now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
+            defaults.set(nextDailyMission.content, forKey: "currentDailyMission")
+            defaults.set(defaults.integer(forKey: "dailyClearMission") + 1, forKey: "dailyClearMission")
+            
+        }
+        
+        // 필요하면 주간 미션 변경
+        if dateFormatter.string(from: Date.now) >= dateFormatter.string(from: defaults.object(forKey: "refreshWeeklyMissionDate") as? Date ?? Date.now) {
+            
+            // 유저디폴트 업데이트
+            defaults.set(Date.now.addingTimeInterval(3600 * 24 * 7), forKey: "refreshWeeklyMissionDate")
+            defaults.set(nextWeeklyMission.content, forKey: "currentWeeklyMission")
+            defaults.set(defaults.integer(forKey: "weeklyClearMission") + 1, forKey: "weeklyClearMission")
+            
+        }
+        
+        // 미션 클리어 갯수를 체크하여 userStage를 변경합니다
+        if defaults.integer(forKey: "dailyClearMission") >= 7 {
+            defaults.set(MissionStage.intermediate.rawValue, forKey: "userStage")
+        } else if defaults.integer(forKey: "dailyClearMission") >= 13 {
+            defaults.set(MissionStage.advancded.rawValue, forKey: "userStage")
+        }
+    }
+    
+}
