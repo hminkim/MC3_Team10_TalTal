@@ -95,7 +95,7 @@ extension HistoryViewController: UITableViewDelegate {
 	func setupMission() {
 		missionTableView.dataSource = self
 		
-		completeMission = missionDataManager.getMissionData()
+		completeMission = missionDataManager.fetchMissionData()
 		// 미션 타입을 통해 미션의 종류를 분류하여 배열에 담음
 		completeDailyMission = completeMission.filter({ CompleteMission in
 			CompleteMission.type == .daily
@@ -116,7 +116,7 @@ extension HistoryViewController: UITableViewDelegate {
 			let reflectionViewController = segue.destination as! ReflectionViewController
       
 			// getMissionData에서 미션을 받아옴
-			let dailyMissionDatas = missionDataManager.getMissionData()			
+			let dailyMissionDatas = missionDataManager.fetchMissionData()
       
 			// tableView 함수에서 sender를 통해 indexPath를 받은 후 타입 캐스팅하여 데이터를 사용할 수 있음
 			let indexPath = sender as! IndexPath
