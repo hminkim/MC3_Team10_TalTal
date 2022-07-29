@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDelegate {
+class HistoryViewController: UIViewController {
 	
 	@IBOutlet var historyMainLabel: UILabel!
 	@IBOutlet var missioSegmentedControl: UISegmentedControl!
@@ -34,21 +34,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		setupMission()
-	}
-	
-	// 처음 뷰를 그려줄 때 데이터 정리하는 함수
-	func setupMission() {
-		missionTableView.dataSource = self
-		
-		completeMission = missionDataManager.getMissionData()
-		// 미션 타입을 통해 미션의 종류를 분류하여 배열에 담음
-		completeDailyMission = completeMission.filter({ CompleteMission in
-			CompleteMission.type == .daily
-		})
-		completeWeeklyMission = completeMission.filter({ CompleteMission in
-			CompleteMission.type == .weekly
-		})
-		missionTableView.reloadData()
 	}
 	
 	// segmentedControl에 따라서
@@ -103,28 +88,43 @@ extension HistoryViewController: UITableViewDataSource {
 }
 
 //TODO: 테이블 뷰 셀을 클릭했을 때 ReflectionView로 연결 -> Joon
-//extension HistoryViewController: UITableViewDelegate {
-//	
-//	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//		performSegue(withIdentifier: "toDetail", sender: indexPath)
-//		//TODO: ReflectionView에서 toDetail을 identifier로 설정 -> Joon
-//	}
-//	
-//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		if segue.identifier == "toDetail" {
-//			let reflectionViewController = segue.destination as! ReflectionViewController
-//			
-//			// getMissionData에서 미션을 받아옴
-//			let dailyMissionDatas = missionDataManager.getMissionData()
-//			
-//			// tableView 함수에서 sender를 통해 indexPath를 받은 후 타입 캐스팅하여 데이터를 사용할 수 있음
-//			let indexPath = sender as! IndexPath
-//			
-//			// reflectionViewController.missionData = dailyMissionDatas[indexPath.row]
-//			// Data 넘겨주는 코드
-//			// ReflectionViewController에
-//			// var missionData: Mission?
-//			// 코드 추가 후 사용
-//		}
-//	}
-//}
+extension HistoryViewController: UITableViewDelegate {
+	
+	// 처음 뷰를 그려줄 때 데이터 정리하는 함수
+	func setupMission() {
+		missionTableView.dataSource = self
+		
+		completeMission = missionDataManager.getMissionData()
+		// 미션 타입을 통해 미션의 종류를 분류하여 배열에 담음
+		completeDailyMission = completeMission.filter({ CompleteMission in
+			CompleteMission.type == .daily
+		})
+		completeWeeklyMission = completeMission.filter({ CompleteMission in
+			CompleteMission.type == .weekly
+		})
+		missionTableView.reloadData()
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		performSegue(withIdentifier: "toDetail", sender: indexPath)
+		//TODO: ReflectionView에서 toDetail을 identifier로 설정 -> Joon
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "toDetail" {
+			let reflectionViewController = segue.destination as! ReflectionViewController
+			
+			// getMissionData에서 미션을 받아옴
+			let dailyMissionDatas = missionDataManager.getMissionData()
+			
+			// tableView 함수에서 sender를 통해 indexPath를 받은 후 타입 캐스팅하여 데이터를 사용할 수 있음
+			let indexPath = sender as! IndexPath
+			
+			// reflectionViewController.missionData = dailyMissionDatas[indexPath.row]
+			// Data 넘겨주는 코드
+			// ReflectionViewController에
+			// var missionData: Mission?
+			// 코드 추가 후 사용
+		}
+	}
+}
