@@ -11,7 +11,7 @@ enum MissionStage: String {
 	case advancded
 }
 
-struct Mission {
+struct Mission: Hashable {
 	let content: String
 	let stage: MissionStage
 	let intention: String
