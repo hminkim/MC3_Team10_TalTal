@@ -5,7 +5,7 @@
 //  Created by kimhyeongmin on 2022/07/26.
 //
 
-enum MissionStage: Int {
+enum MissionStage: String {
 	case beginner
 	case intermediate
 	case advancded
