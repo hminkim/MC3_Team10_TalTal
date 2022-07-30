@@ -42,6 +42,9 @@ final class MissionViewController: UIViewController {
 extension MissionViewController : MissionQuestViewDelegate{
     func didQuestButton(type: MissionQuest) {
         print("이거눌림 \(type)")
+        let storyboard = UIStoryboard(name: "MissionClear", bundle: nil)
+             let secondVC = storyboard.instantiateViewController(identifier: "MissionClear")
+             show(secondVC, sender: self)
     }
 }
 
@@ -70,22 +73,6 @@ extension MissionViewController{
         weeklyView.layer.cornerRadius = missionAessts.viewCornerRadius
     }
 }
-
-/*
- 하단주석 1
- changeTextColor함수의 한계점을 해결하기위해 두가지 파트로 나눠서 작성하였습니다.
- for문을 사용하면 조금더 짧게 제작 할 수 있지만 굳이 두번밖에 반복이 안되기에 이렇게 사용했으며
- 추후 여러군데서 사용하게 된다면 Assets로 제작 하겠습니다.
- 코드를 간단히 설명하면
- 하단주석 2 questText1과 questText2의 문자열의 특정 부분을 원하는 색상으로 변경후
- questText1에 questText2를 추가해서 해당 label에 추가 하는 코드입니다.
- 
- 하단 주석2
- dailyView와 weekilyView는 제작한 xib파일입니다. (같은 파일)
- 해당 view를 사용하기위해서 설정 하는 함수를 불러와 사용했으며
- view의 cornerRadius를 추가하기위해 값을 주었습니다.
- */
-
 
 extension MissionViewController {
     
@@ -142,3 +129,20 @@ extension MissionViewController {
     }
     
 }
+
+
+
+/*
+ 하단주석 1
+ changeTextColor함수의 한계점을 해결하기위해 두가지 파트로 나눠서 작성하였습니다.
+ for문을 사용하면 조금더 짧게 제작 할 수 있지만 굳이 두번밖에 반복이 안되기에 이렇게 사용했으며
+ 추후 여러군데서 사용하게 된다면 Assets로 제작 하겠습니다.
+ 코드를 간단히 설명하면
+ 하단주석 2 questText1과 questText2의 문자열의 특정 부분을 원하는 색상으로 변경후
+ questText1에 questText2를 추가해서 해당 label에 추가 하는 코드입니다.
+ 
+ 하단 주석2
+ dailyView와 weekilyView는 제작한 xib파일입니다. (같은 파일)
+ 해당 view를 사용하기위해서 설정 하는 함수를 불러와 사용했으며
+ view의 cornerRadius를 추가하기위해 값을 주었습니다.
+ */
