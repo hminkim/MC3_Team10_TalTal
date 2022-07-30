@@ -5,7 +5,7 @@
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="intention" optional="YES" attributeType="String"/>
         <attribute name="reflection" optional="YES" attributeType="String"/>
-        <attribute name="stage" attributeType="String"/>
+        <attribute name="stageValue" attributeType="String"/>
         <attribute name="typeValue" attributeType="String" customClassName="Status"/>
     </entity>
     <elements>
