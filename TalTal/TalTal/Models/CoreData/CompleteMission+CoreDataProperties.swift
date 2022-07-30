@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-public enum Status: String {
+public enum MissionQuest: String {
 	case daily
 	case weekly
 }
@@ -36,9 +36,9 @@ extension CompleteMission {
 		}
 	}
 	
-	public var type: Status {
+	public var type: MissionQuest {
 		get {
-			return Status(rawValue: self.typeValue)! }
+			return MissionQuest(rawValue: self.typeValue)! }
 		set {
 			self.typeValue = newValue.rawValue
 		}

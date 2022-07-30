@@ -19,7 +19,7 @@ class HistoryViewController: UIViewController {
 	let missionDataManager = MissionDAO.shared
 	
 	// segmentedControl에 따른 다른 히스토리를 보여주기 위한 변수
-	var status: Status = .daily
+	var status: MissionQuest = .daily
 	
 	// 타입 별 미션을 담아둘 배열 선언
 	var completeMission:[CompleteMission] = []

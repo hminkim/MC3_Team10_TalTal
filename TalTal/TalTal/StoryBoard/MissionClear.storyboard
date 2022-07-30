@@ -39,8 +39,16 @@
                                 <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <items>
                                     <navigationItem title="미션완료" id="rVD-IV-Yvn">
-                                        <barButtonItem key="leftBarButtonItem" title="취소" id="t9L-w7-cRO"/>
-                                        <barButtonItem key="rightBarButtonItem" title="확인" id="YBr-WC-ip1"/>
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="t9L-w7-cRO">
+                                            <connections>
+                                                <action selector="cancelButtonAction:" destination="Y6W-OH-hqX" id="n7V-3X-cGq"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="확인" id="YBr-WC-ip1">
+                                            <connections>
+                                                <action selector="confirmButtonAction:" destination="Y6W-OH-hqX" id="SqZ-K4-rkz"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -75,7 +83,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARp-hV-lF9">
                                         <rect key="frame" x="10" y="126.33333333333334" width="376" height="17"/>
@@ -128,6 +136,8 @@
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="t9L-w7-cRO" id="sQb-M3-csw"/>
+                        <outlet property="confirmButton" destination="YBr-WC-ip1" id="zRj-P5-qJB"/>
                         <outlet property="missionTypeLabel" destination="ASJ-Ji-XEc" id="jSh-ya-EQb"/>
                         <outlet property="reflectionTextCountLable" destination="ARp-hV-lF9" id="0rN-n7-u0O"/>
                         <outlet property="reflectionTextView" destination="QWg-fT-OIy" id="riq-PW-fXS"/>

@@ -26,7 +26,7 @@ final class MissionViewController: UIViewController {
     //더미 데이터입니다.
     var weeklyClearQuest = 1
     var weeklyQuestStirng = "햇빛이 선명하게 나뭇잎을 핥고 있었다.햇빛이 선명하게 나뭇잎을 핥고 있었다"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         questTextLabel.textColor = UIColor(hex: "8A8A8E")
@@ -42,10 +42,45 @@ final class MissionViewController: UIViewController {
 extension MissionViewController : MissionQuestViewDelegate{
     func didQuestButton(type: MissionQuest) {
         print("이거눌림 \(type)")
+        
+        //코드로 뷰를 Show하는 부분 입니다.
         let storyboard = UIStoryboard(name: "MissionClear", bundle: nil)
-             let secondVC = storyboard.instantiateViewController(identifier: "MissionClear")
-             show(secondVC, sender: self)
+        let secondVC = storyboard.instantiateViewController(identifier: "MissionClear") as! MissionClearViewController
+        secondVC.missionType = type
+        secondVC.delegate = self
+        show(secondVC, sender: self)
     }
+}
+
+//MARK: 미션 클리어 뷰가 닫힐떄 미션뷰가 소환한 미션퀘스트뷰에 접근해 버튼을 비활성화 시킨다.
+extension MissionViewController : MissionClearViewDelegate{
+    func confirmButtonClicked(type: MissionQuest) {
+        questButtonIsUnabled(type: type)
+      }
+    
+    //굳이 confirmButtonClicked안에 안넣은 이유는
+    //뷰가 로드 될때도 사용해야되기 때문
+    //버튼 사용불가 만들기
+    func questButtonIsUnabled(type:MissionQuest){
+        switch type{
+        case.daily:
+            dailyView.questButtonClose()
+        case.weekly:
+            weeklyView.questButtonClose()
+        }
+    }
+    
+    //버튼 사용 가능 만들기
+    //그냥 뷰를 리로드 시키면 될지도..?
+    func questButtonIsEnabled(type:MissionQuest){
+        switch type{
+        case.daily:
+            dailyView.questButtonClose()
+        case.weekly:
+            weeklyView.questButtonClose()
+        }
+    }
+    
 }
 
 //MARK: view의 생명주기 함수에 들어가는 부분들을 함수화 및 extension으로 빼서 사용하면 깔끔해집니다.
@@ -55,7 +90,7 @@ extension MissionViewController{
     private func settingTextLabel(){
         let questText1 = "지금까지\n\(dailyClearQuest)개의 일일 미션과\n"
         let questText2 = "\(weeklyClearQuest)개의 주간 미션을 완료했어요!"
-
+        
         let questTextLabelString = missionAessts.changeTextColor(fullText: questText1, color: UIColor(hex: "FF8166"),changeWords: ["\(dailyClearQuest)","일일 미션"])
         
         let questTextLabelStringPart2 =  missionAessts.changeTextColor(fullText: questText2, color: UIColor(hex: "6261F8"),changeWords: ["\(weeklyClearQuest)","주간 미션"])
