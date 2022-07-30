@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+//MissionQuest로 수정바람 Status는 enum의 명칭으로 쓰기엔 너무 에메함
 public enum Status: String {
 	case daily
 	case weekly

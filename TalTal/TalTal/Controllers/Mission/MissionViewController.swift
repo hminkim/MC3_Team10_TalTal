@@ -40,15 +40,32 @@ final class MissionViewController: UIViewController {
 //MARK: MissionQuestVeiw의 questButton이 클릭 되었때 동작하는 것
 //델리게이트 패턴을 사용해 데일리인지 위클리 인지 확인한다.
 extension MissionViewController : MissionQuestViewDelegate{
-    func didQuestButton(type: MissionQuest) {
+    func didQuestButton(type: Status) {
         print("이거눌림 \(type)")
         
         //코드로 뷰를 Show하는 부분 입니다.
         let storyboard = UIStoryboard(name: "MissionClear", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "MissionClear") as! MissionClearViewController
         secondVC.missionType = type
+        secondVC.delegate = self
         show(secondVC, sender: self)
     }
+}
+
+extension MissionViewController : MissionClearViewDelegate{
+    func confirmButton(type: Status) {
+        
+        switch type{
+        case.daily:
+            dailyView.questButton.isEnabled = false
+            dailyView.questButton.backgroundColor = UIColor(hex: "A8A8A8")
+            
+        case.weekly:
+            weeklyView.questButton.isEnabled = false
+            weeklyView.questButton.backgroundColor = UIColor(hex: "A8A8A8")
+        }
+        
+      }
 }
 
 //MARK: view의 생명주기 함수에 들어가는 부분들을 함수화 및 extension으로 빼서 사용하면 깔끔해집니다.

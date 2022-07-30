@@ -5,15 +5,21 @@
 //  Created by Toby on 2022/07/25.
 //
 
-
 import UIKit
 import SwiftUI
 
+protocol MissionClearViewDelegate {
+    func confirmButton(type: Status)
+}
+
 class MissionClearViewController: UIViewController {
     
-    //타입설정
-    var missionType : MissionQuest = .daily
+    var delegate: MissionClearViewDelegate?
     
+    //타입설정
+    var missionType : Status = .daily
+    private var isTextViewSelected: Bool = true
+
 	@IBOutlet var missionTypeLabel: UILabel!
 	@IBOutlet var reflectionView: UIView!
 	@IBOutlet var reflectionTextView: UITextView!
@@ -21,46 +27,29 @@ class MissionClearViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var confirmButton: UIBarButtonItem!
 
+    @IBAction func cancelButtonAction(_ sender: Any) {
+        //TODO: Close Modal
+        self.dismiss(animated: true, completion: nil)
+    }
     
-    private var isTextViewSelected: Bool = true
+    @IBAction func confirmButtonAction(_ sender: Any) {
+        //TODO: Save Reflection & Close Modal
+        delegate?.confirmButton(type: missionType)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
         settingViewDesign()
 		reflectionTextView.delegate = self
+        reflectionTextView.returnKeyType = .done
+        
 		view.backgroundColor = UIColor(red: 248 / 255, green: 248 / 255, blue: 248 / 255, alpha: 1)
 		initMissionTypeLabel()
 		initReflection()
 	}
 
-	private func initMissionTypeLabel() {
-		missionTypeLabel.clipsToBounds = true
-		missionTypeLabel.layer.cornerRadius = 13
-		view.addSubview(missionTypeLabel)
-	}
-
-	private func initReflection() {
-		reflectionView.clipsToBounds = true
-		reflectionView.backgroundColor = .white
-		reflectionView.layer.cornerRadius = 15
-		view.addSubview(reflectionView)
-
-		reflectionTextView.clipsToBounds = true
-		reflectionTextView.backgroundColor = .clear
-		reflectionView.addSubview(reflectionTextView)
-		reflectionView.addSubview(reflectionTextCountLable)
-	}
-
-
-    @IBAction func cancelButtonAction(_ sender: Any) {
-        //TODO: Close Modal
-        self.dismiss(animated: true, completion: nil)
-    }
-    @IBAction func confirmButtonAction(_ sender: Any) {
-        //TODO: Save Reflection & Close Modal
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 }
 
 //MARK: 주간미션 일간 미션 구분을 위한 셋팅
@@ -82,6 +71,27 @@ extension MissionClearViewController{
             return  ["주간 미션", UIColor(named: "PointBlue")!]
         }
     }
+    
+    private func initMissionTypeLabel() {
+        missionTypeLabel.clipsToBounds = true
+        missionTypeLabel.layer.cornerRadius = 13
+        view.addSubview(missionTypeLabel)
+    }
+
+    private func initReflection() {
+        reflectionView.clipsToBounds = true
+        reflectionView.backgroundColor = .white
+        reflectionView.layer.cornerRadius = 15
+        view.addSubview(reflectionView)
+
+        //라인제한
+        reflectionTextView.textContainer.maximumNumberOfLines = 5
+        reflectionTextView.clipsToBounds = true
+        reflectionTextView.backgroundColor = .clear
+        reflectionView.addSubview(reflectionTextView)
+        reflectionView.addSubview(reflectionTextCountLable)
+    }
+    
     
 }
 
@@ -107,6 +117,7 @@ extension MissionClearViewController: UITextViewDelegate {
 		}
 		reflectionTextCountLable.text = "\(textView.text.count) / 50"
 	}
+    
 
 	func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
 		if isTextViewSelected {
@@ -125,4 +136,15 @@ extension MissionClearViewController: UITextViewDelegate {
 			textView.textColor = UIColor(red: 199 / 255, green: 199 / 255, blue: 204 / 255, alpha: 1)
 		}
 	}
+    
+    //done누르면 창 키보드내려가게 만듬 혹시 만들어 놓고 주석처리
+    //    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    //         if(text == "\n") {
+    //             textView.resignFirstResponder()
+    //             return false
+    //         }
+    //         return true
+    //     }
+    //
+
 }
