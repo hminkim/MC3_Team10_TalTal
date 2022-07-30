@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 protocol MissionClearViewDelegate {
-    func confirmButton(type: Status)
+    func confirmButtonClicked(type: Status)
 }
 
 class MissionClearViewController: UIViewController {
@@ -34,7 +34,7 @@ class MissionClearViewController: UIViewController {
     
     @IBAction func confirmButtonAction(_ sender: Any) {
         //TODO: Save Reflection & Close Modal
-        delegate?.confirmButton(type: missionType)
+        delegate?.confirmButtonClicked(type: missionType)
         self.dismiss(animated: true, completion: nil)
     }
     

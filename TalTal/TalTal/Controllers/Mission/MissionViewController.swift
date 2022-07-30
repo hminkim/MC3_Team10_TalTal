@@ -52,20 +52,35 @@ extension MissionViewController : MissionQuestViewDelegate{
     }
 }
 
+//MARK: 미션 클리어 뷰가 닫힐떄 미션뷰가 소환한 미션퀘스트뷰에 접근해 버튼을 비활성화 시킨다.
 extension MissionViewController : MissionClearViewDelegate{
-    func confirmButton(type: Status) {
-        
+    func confirmButtonClicked(type: Status) {
+        questButtonIsUnabled(type: type)
+      }
+    
+    //굳이 confirmButtonClicked안에 안넣은 이유는
+    //뷰가 로드 될때도 사용해야되기 때문
+    //버튼 사용불가 만들기
+    func questButtonIsUnabled(type:Status){
         switch type{
         case.daily:
-            dailyView.questButton.isEnabled = false
-            dailyView.questButton.backgroundColor = UIColor(hex: "A8A8A8")
-            
+            dailyView.questButtonClose()
         case.weekly:
-            weeklyView.questButton.isEnabled = false
-            weeklyView.questButton.backgroundColor = UIColor(hex: "A8A8A8")
+            weeklyView.questButtonClose()
         }
-        
-      }
+    }
+    
+    //버튼 사용 가능 만들기
+    //그냥 뷰를 리로드 시키면 될지도..?
+    func questButtonIsEnabled(type:Status){
+        switch type{
+        case.daily:
+            dailyView.questButtonClose()
+        case.weekly:
+            weeklyView.questButtonClose()
+        }
+    }
+    
 }
 
 //MARK: view의 생명주기 함수에 들어가는 부분들을 함수화 및 extension으로 빼서 사용하면 깔끔해집니다.

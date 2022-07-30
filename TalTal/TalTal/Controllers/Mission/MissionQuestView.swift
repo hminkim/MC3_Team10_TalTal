@@ -81,6 +81,23 @@ extension MissionQuestView{
     }
 }
 
+//MARK: 이뷰를 소환하는 곳에서 사용할 함수 모음
+extension MissionQuestView{
+    func questButtonClose(){
+        self.questButton.isEnabled = false
+        self.questButton.backgroundColor = UIColor(hex: "A8A8A8")
+    }
+    
+    func questButtonOpen(type:Status){
+        self.questButton.isEnabled = true
+        switch type{
+        case.daily:
+            self.questButton.backgroundColor = UIColor(named: "PointPink")
+        case.weekly:
+            self.questButton.backgroundColor = UIColor(named: "PointBlue")
+        }
+    }
+}
 
 // MARK: 재사용 관련된 함수모음
 // 추후 월간 미션이 생길 수도 있으니... 확장성을 고려해서 이런 방식으로 구현 하였습니다.
