@@ -108,7 +108,6 @@ extension HistoryViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		performSegue(withIdentifier: "toDetail", sender: indexPath)
-		//TODO: ReflectionView에서 toDetail을 identifier로 설정 -> Joon
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -116,12 +115,20 @@ extension HistoryViewController: UITableViewDelegate {
 			let reflectionViewController = segue.destination as! ReflectionViewController
       
 			// getMissionData에서 미션을 받아옴
-			let dailyMissionDatas = missionDataManager.fetchMissionData()
-      
-			// tableView 함수에서 sender를 통해 indexPath를 받은 후 타입 캐스팅하여 데이터를 사용할 수 있음
-			let indexPath = sender as! IndexPath
-			
-			// reflectionViewController.missionData = dailyMissionDatas[indexPath.row]
+            switch status {
+            case .daily:
+                let missionDatas = missionDataManager.fetchMissionData().filter { $0.type == .daily }
+                let indexPath = sender as! IndexPath
+                
+                reflectionViewController.missionData = missionDatas[indexPath.row]
+                print(missionDatas[indexPath.row])
+            case .weekly:
+                let missionDatas = missionDataManager.fetchMissionData().filter { $0.type == .weekly }
+                let indexPath = sender as! IndexPath
+                
+                reflectionViewController.missionData = missionDatas[indexPath.row]
+                print(missionDatas[indexPath.row])
+            }
 			// Data 넘겨주는 코드
 			// ReflectionViewController에
 			// var missionData: Mission?

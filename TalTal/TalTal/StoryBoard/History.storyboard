@@ -124,11 +124,20 @@
                         <outlet property="missioSegmentedControl" destination="ege-A2-Oop" id="QLw-Ax-JMb"/>
                         <outlet property="missionTableView" destination="TMn-Q6-S1c" id="kHm-bo-AnS"/>
                         <outlet property="segmentedController" destination="ege-A2-Oop" id="Zka-3Y-69G"/>
+                        <segue destination="9Ek-6Z-lIh" kind="presentation" identifier="toDetail" id="ZW3-bb-cCt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="60" y="105.92417061611374"/>
+        </scene>
+        <!--Reflection-->
+        <scene sceneID="CkJ-Pv-81N">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Reflection" id="9Ek-6Z-lIh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Fx-Lv-2aI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="843" y="92"/>
         </scene>
     </scenes>
     <resources>
