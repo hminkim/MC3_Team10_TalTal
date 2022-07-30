@@ -7,20 +7,34 @@
 
 import UIKit
 
-//MARK: 열거형을 사용하면 코드를 조금더 안전하게 사용이 가능합니다.
-enum MissionQuest{
-    case daily
-    case weekly
+
+protocol MissionQuestViewDelegate {
+    func didQuestButton(type: MissionQuest)
 }
 
 // MARK: @IBDesignable을 사용하면 코드로 구현한 것을 스토리보드에서 확인가능하다고 합니다.
 @IBDesignable
 final class MissionQuestView: UIView {
     
+    //값을 전달하기위해 델리게이트 패턴 사용
+    var delegate: MissionQuestViewDelegate?
+    
+    //데일리 view인지 위클리 view인지 구분하기 위한 변수 기본값은 뭘 주든 상관없다.
+    var missionType : MissionQuest = .daily
+ 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var questLabel: UILabel!
+    
+    // questButton의 디자인등을 수정하기 위해 연결된것
     @IBOutlet weak var questButton: UIButton!
     
+    // questButton이 클릭되었을때 동작을 실행 시키키 위한 것
+    @IBAction func questButton(_ sender: UIButton) {
+        print("..?")
+        delegate?.didQuestButton(type: missionType)
+    }
+    
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,6 +56,7 @@ final class MissionQuestView: UIView {
     func configureView(type: MissionQuest, quest: String){
         self.questLabel.text = quest
         self.backgroundColor = setBackgroundColor(type: type)
+        missionType = type
         questButtonSetting(type: type)
         titleLabelSetting(type: type)
     }
@@ -66,6 +81,23 @@ extension MissionQuestView{
     }
 }
 
+//MARK: 이뷰를 소환하는 곳에서 사용할 함수 모음
+extension MissionQuestView{
+    func questButtonClose(){
+        self.questButton.isEnabled = false
+        self.questButton.backgroundColor = UIColor(hex: "A8A8A8")
+    }
+    
+    func questButtonOpen(type:MissionQuest){
+        self.questButton.isEnabled = true
+        switch type{
+        case.daily:
+            self.questButton.backgroundColor = UIColor(named: "PointPink")
+        case.weekly:
+            self.questButton.backgroundColor = UIColor(named: "PointBlue")
+        }
+    }
+}
 
 // MARK: 재사용 관련된 함수모음
 // 추후 월간 미션이 생길 수도 있으니... 확장성을 고려해서 이런 방식으로 구현 하였습니다.

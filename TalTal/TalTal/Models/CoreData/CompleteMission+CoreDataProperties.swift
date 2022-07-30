@@ -9,9 +9,9 @@
 import Foundation
 import CoreData
 
-public enum Status: Int64 {
-	case daily = 0
-	case weekly = 1
+public enum MissionQuest: String {
+	case daily
+	case weekly
 }
 
 extension CompleteMission {
@@ -24,12 +24,21 @@ extension CompleteMission {
 	@NSManaged public var reflection: String?
 	@NSManaged public var intention: String?
 	@NSManaged public var clearDate: Date?
-	@NSManaged public var typeValue: Int64
+	@NSManaged public var typeValue: String
+	@NSManaged public var stageValue: String
 	
 	// Enum을 지원하지 않는 CoreData에 Enum rawValue를 통해 필터링 하기 위한 코드
-	public var type: Status {
+	public var stage: MissionStage {
 		get {
-			return Status(rawValue: self.typeValue)! }
+			return MissionStage(rawValue: self.stageValue)! }
+		set {
+			self.stageValue = newValue.rawValue
+		}
+	}
+	
+	public var type: MissionQuest {
+		get {
+			return MissionQuest(rawValue: self.typeValue)! }
 		set {
 			self.typeValue = newValue.rawValue
 		}

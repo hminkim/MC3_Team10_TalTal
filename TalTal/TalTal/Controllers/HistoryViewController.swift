@@ -19,7 +19,7 @@ class HistoryViewController: UIViewController {
 	let missionDataManager = MissionDAO.shared
 	
 	// segmentedControl에 따른 다른 히스토리를 보여주기 위한 변수
-	var status: Status = .daily
+	var status: MissionQuest = .daily
 	
 	// 타입 별 미션을 담아둘 배열 선언
 	var completeMission:[CompleteMission] = []
@@ -95,7 +95,7 @@ extension HistoryViewController: UITableViewDelegate {
 	func setupMission() {
 		missionTableView.dataSource = self
 		
-		completeMission = missionDataManager.getMissionData()
+		completeMission = missionDataManager.fetchMissionData()
 		// 미션 타입을 통해 미션의 종류를 분류하여 배열에 담음
 		completeDailyMission = completeMission.filter({ CompleteMission in
 			CompleteMission.type == .daily
@@ -108,7 +108,6 @@ extension HistoryViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		performSegue(withIdentifier: "toDetail", sender: indexPath)
-		//TODO: ReflectionView에서 toDetail을 identifier로 설정 -> Joon
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -116,12 +115,20 @@ extension HistoryViewController: UITableViewDelegate {
 			let reflectionViewController = segue.destination as! ReflectionViewController
       
 			// getMissionData에서 미션을 받아옴
-			let dailyMissionDatas = missionDataManager.getMissionData()			
-      
-			// tableView 함수에서 sender를 통해 indexPath를 받은 후 타입 캐스팅하여 데이터를 사용할 수 있음
-			let indexPath = sender as! IndexPath
-			
-			// reflectionViewController.missionData = dailyMissionDatas[indexPath.row]
+            switch status {
+            case .daily:
+                let missionDatas = missionDataManager.fetchMissionData().filter { $0.type == .daily }
+                let indexPath = sender as! IndexPath
+                
+                reflectionViewController.missionData = missionDatas[indexPath.row]
+                print(missionDatas[indexPath.row])
+            case .weekly:
+                let missionDatas = missionDataManager.fetchMissionData().filter { $0.type == .weekly }
+                let indexPath = sender as! IndexPath
+                
+                reflectionViewController.missionData = missionDatas[indexPath.row]
+                print(missionDatas[indexPath.row])
+            }
 			// Data 넘겨주는 코드
 			// ReflectionViewController에
 			// var missionData: Mission?
