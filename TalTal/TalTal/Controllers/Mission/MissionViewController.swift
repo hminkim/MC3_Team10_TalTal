@@ -37,6 +37,14 @@ final class MissionViewController: UIViewController {
     
 }
 
+//MARK: MissionQuestVeiw의 questButton이 클릭 되었때 동작하는 것
+//델리게이트 패턴을 사용해 데일리인지 위클리 인지 확인한다.
+extension MissionViewController : MissionQuestViewDelegate{
+    func didQuestButton(type: MissionQuest) {
+        print("이거눌림 \(type)")
+    }
+}
+
 //MARK: view의 생명주기 함수에 들어가는 부분들을 함수화 및 extension으로 빼서 사용하면 깔끔해집니다.
 extension MissionViewController{
     
@@ -56,6 +64,8 @@ extension MissionViewController{
     private func settingQuestView(){
         self.dailyView.configureView(type: .daily, quest: dailyQuestStirng)
         self.weeklyView.configureView(type: .weekly, quest: weeklyQuestStirng)
+        dailyView.delegate = self
+        weeklyView.delegate = self
         dailyView.layer.cornerRadius = missionAessts.viewCornerRadius
         weeklyView.layer.cornerRadius = missionAessts.viewCornerRadius
     }
