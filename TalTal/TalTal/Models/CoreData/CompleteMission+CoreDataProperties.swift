@@ -9,8 +9,7 @@
 import Foundation
 import CoreData
 
-//MissionQuest로 수정바람 Status는 enum의 명칭으로 쓰기엔 너무 에메함
-public enum Status: String {
+public enum MissionQuest: String {
 	case daily
 	case weekly
 }
@@ -37,9 +36,9 @@ extension CompleteMission {
 		}
 	}
 	
-	public var type: Status {
+	public var type: MissionQuest {
 		get {
-			return Status(rawValue: self.typeValue)! }
+			return MissionQuest(rawValue: self.typeValue)! }
 		set {
 			self.typeValue = newValue.rawValue
 		}

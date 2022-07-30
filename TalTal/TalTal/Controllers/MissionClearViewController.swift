@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 protocol MissionClearViewDelegate {
-    func confirmButtonClicked(type: Status)
+    func confirmButtonClicked(type: MissionQuest)
 }
 
 class MissionClearViewController: UIViewController {
@@ -17,7 +17,7 @@ class MissionClearViewController: UIViewController {
     var delegate: MissionClearViewDelegate?
     
     //타입설정
-    var missionType : Status = .daily
+    var missionType : MissionQuest = .daily
     private var isTextViewSelected: Bool = true
 
 	@IBOutlet var missionTypeLabel: UILabel!

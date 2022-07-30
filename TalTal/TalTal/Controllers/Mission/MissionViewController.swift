@@ -40,7 +40,7 @@ final class MissionViewController: UIViewController {
 //MARK: MissionQuestVeiw의 questButton이 클릭 되었때 동작하는 것
 //델리게이트 패턴을 사용해 데일리인지 위클리 인지 확인한다.
 extension MissionViewController : MissionQuestViewDelegate{
-    func didQuestButton(type: Status) {
+    func didQuestButton(type: MissionQuest) {
         print("이거눌림 \(type)")
         
         //코드로 뷰를 Show하는 부분 입니다.
@@ -54,14 +54,14 @@ extension MissionViewController : MissionQuestViewDelegate{
 
 //MARK: 미션 클리어 뷰가 닫힐떄 미션뷰가 소환한 미션퀘스트뷰에 접근해 버튼을 비활성화 시킨다.
 extension MissionViewController : MissionClearViewDelegate{
-    func confirmButtonClicked(type: Status) {
+    func confirmButtonClicked(type: MissionQuest) {
         questButtonIsUnabled(type: type)
       }
     
     //굳이 confirmButtonClicked안에 안넣은 이유는
     //뷰가 로드 될때도 사용해야되기 때문
     //버튼 사용불가 만들기
-    func questButtonIsUnabled(type:Status){
+    func questButtonIsUnabled(type:MissionQuest){
         switch type{
         case.daily:
             dailyView.questButtonClose()
@@ -72,7 +72,7 @@ extension MissionViewController : MissionClearViewDelegate{
     
     //버튼 사용 가능 만들기
     //그냥 뷰를 리로드 시키면 될지도..?
-    func questButtonIsEnabled(type:Status){
+    func questButtonIsEnabled(type:MissionQuest){
         switch type{
         case.daily:
             dailyView.questButtonClose()
