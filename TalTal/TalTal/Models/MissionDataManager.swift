@@ -35,7 +35,7 @@ class MissionDataManager {
 
 
 		var filterMissons: Set<Mission> = missions
-		
+
 		for ele in completeMissions {
 			if ele.stage == stage && ele.type == .daily {
 				filterMissons.remove(.init(content: ele.content!, stage: ele.stage, intention: ele.intention!))
@@ -76,7 +76,7 @@ class MissionDataManager {
 		}
 
 		var filterMissons: Set<Mission> = missions
-		
+
 		for ele in completeMissions {
 			if ele.stage == stage && ele.type == .weekly {
 				filterMissons.remove(.init(content: ele.content!, stage: ele.stage, intention: ele.intention!))
@@ -99,6 +99,10 @@ class MissionDataManager {
 			return result
 		}
 	} // reqeustWeeklyMission
+
+	func saveMission(mission: Mission, reflection: String?, type: MissionQuest) {
+		MissionDAO.shared.saveReflection(type: type, stage: mission.stage, content: mission.content, reflection: reflection, intention: mission.intention)
+	}
 
 } // MissionDataManager
 
