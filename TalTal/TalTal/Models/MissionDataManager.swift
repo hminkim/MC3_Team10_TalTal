@@ -33,15 +33,11 @@ class MissionDataManager {
 			missions = advancedDailyMissions
 		}
 
-		//TODO: 코어 데이터에서 스위치에 맞는 미션들 갖고오기
 
-		//TODO: missions = missions - 코어 데이터에서 갖고온 Missions 뺴기
 		var filterMissons: Set<Mission> = missions
 		
 		for ele in completeMissions {
-			//TODO: 꼬마 CoreData 확인하기
-			//TODO: remove -> init -> stage 값 확인해보기
-			if ele.stage == stage {
+			if ele.stage == stage && ele.type == .daily {
 				filterMissons.remove(.init(content: ele.content!, stage: ele.stage, intention: ele.intention!))
 			}
 		}
@@ -68,7 +64,7 @@ class MissionDataManager {
 	/// - Mission Type 정상 출력
 	/// - nil 모든 임무 완수
 	func requestWeeklyMission(stage: MissionStage) -> Mission? {
-		var missions: [Mission]
+		var missions: Set<Mission>
 
 		switch stage {
 		case .beginner:
@@ -79,9 +75,13 @@ class MissionDataManager {
 			missions = advancedWeeklyMissions
 		}
 
-		//TODO: 코어 데이터에서 스위치에 맞는 미션들 갖고오기
-
-		//TODO: missions = missions - 코어 데이터에서 갖고온 Missions 뺴기
+		var filterMissons: Set<Mission> = missions
+		
+		for ele in completeMissions {
+			if ele.stage == stage && ele.type == .weekly {
+				filterMissons.remove(.init(content: ele.content!, stage: ele.stage, intention: ele.intention!))
+			}
+		}
 
 		let result = missions.randomElement()
 		//FIXME: 위에 ToDo에 기반해서 고치기
