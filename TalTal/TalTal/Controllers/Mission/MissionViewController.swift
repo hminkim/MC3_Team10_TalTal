@@ -26,7 +26,7 @@ final class MissionViewController: UIViewController {
     //더미 데이터입니다.
     var weeklyClearQuest = 1
     var weeklyQuestStirng = "햇빛이 선명하게 나뭇잎을 핥고 있었다.햇빛이 선명하게 나뭇잎을 핥고 있었다"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         questTextLabel.textColor = UIColor(hex: "8A8A8E")
@@ -42,9 +42,12 @@ final class MissionViewController: UIViewController {
 extension MissionViewController : MissionQuestViewDelegate{
     func didQuestButton(type: MissionQuest) {
         print("이거눌림 \(type)")
+        
+        //코드로 뷰를 Show하는 부분 입니다.
         let storyboard = UIStoryboard(name: "MissionClear", bundle: nil)
-             let secondVC = storyboard.instantiateViewController(identifier: "MissionClear")
-             show(secondVC, sender: self)
+        let secondVC = storyboard.instantiateViewController(identifier: "MissionClear") as! MissionClearViewController
+        secondVC.missionType = type
+        show(secondVC, sender: self)
     }
 }
 
@@ -55,7 +58,7 @@ extension MissionViewController{
     private func settingTextLabel(){
         let questText1 = "지금까지\n\(dailyClearQuest)개의 일일 미션과\n"
         let questText2 = "\(weeklyClearQuest)개의 주간 미션을 완료했어요!"
-
+        
         let questTextLabelString = missionAessts.changeTextColor(fullText: questText1, color: UIColor(hex: "FF8166"),changeWords: ["\(dailyClearQuest)","일일 미션"])
         
         let questTextLabelStringPart2 =  missionAessts.changeTextColor(fullText: questText2, color: UIColor(hex: "6261F8"),changeWords: ["\(weeklyClearQuest)","주간 미션"])

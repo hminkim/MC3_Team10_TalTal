@@ -10,17 +10,23 @@ import UIKit
 import SwiftUI
 
 class MissionClearViewController: UIViewController {
+    
+    //타입설정
+    var missionType : MissionQuest = .daily
+    
 	@IBOutlet var missionTypeLabel: UILabel!
 	@IBOutlet var reflectionView: UIView!
 	@IBOutlet var reflectionTextView: UITextView!
 	@IBOutlet var reflectionTextCountLable: UILabel!
-	@IBOutlet var confirmButton: UIButton!
-	@IBOutlet var cancelButton: UIButton!
-	private var isTextViewSelected: Bool = true
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var confirmButton: UIBarButtonItem!
+
+    
+    private var isTextViewSelected: Bool = true
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+        settingViewDesign()
 		reflectionTextView.delegate = self
 		view.backgroundColor = UIColor(red: 248 / 255, green: 248 / 255, blue: 248 / 255, alpha: 1)
 		initMissionTypeLabel()
@@ -45,13 +51,38 @@ class MissionClearViewController: UIViewController {
 		reflectionView.addSubview(reflectionTextCountLable)
 	}
 
-	@IBAction func actionBtnCancel(_ sender: Any) {
-		//TODO: Close Modal
-	}
 
-	@IBAction func actionBtnConfirm(_ sender: Any) {
-		//TODO: Save Reflection & Close Modal
-	}
+    @IBAction func cancelButtonAction(_ sender: Any) {
+        //TODO: Close Modal
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func confirmButtonAction(_ sender: Any) {
+        //TODO: Save Reflection & Close Modal
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+//MARK: 주간미션 일간 미션 구분을 위한 셋팅
+
+extension MissionClearViewController{
+    
+    //버튼 색상등 설정할 부분
+    private func settingViewDesign(){
+       let array = returnTextAndColor()
+       missionTypeLabel.text = array[0] as? String
+       missionTypeLabel.backgroundColor = array[1] as? UIColor
+   }
+    
+    private func returnTextAndColor()->Array<Any>{
+        switch missionType{
+        case.daily:
+            return ["일간 미션", UIColor(named: "PointPink")!]
+        case.weekly:
+            return  ["주간 미션", UIColor(named: "PointBlue")!]
+        }
+    }
+    
 }
 
 extension MissionClearViewController: UITextViewDelegate {
