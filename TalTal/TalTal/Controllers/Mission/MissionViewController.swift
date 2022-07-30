@@ -19,6 +19,15 @@ final class MissionViewController: UIViewController {
     // 유저디폴트
     let defaults = UserDefaults.standard
     
+    //MARK: 준아가 여기보세요
+    /*
+     유저디폴트에서 주간 미션과 일간 미션을 받아오게 만들어서 아래의 변수에 넣거나
+     함수에 값을가져오게 만들어주세요.
+     */
+    var dailyBtnValue = true //true 클리어함
+    var weeklyBtnValue = false //false 아직클리어안함
+    
+
     //더미 데이터입니다.
     var dailyClearQuest = 5
     var dailyQuestStirng = "햇빛이 선명하게 나뭇잎을 핥고 있었다.햇빛이 선명하게 나뭇잎을 핥고 있었다"
@@ -33,6 +42,7 @@ final class MissionViewController: UIViewController {
         settingQuestView()
         settingTextLabel()
         configureMission()
+        isMissonClear(daily: dailyBtnValue, weekly: weeklyBtnValue)
     }
     
 }
@@ -75,9 +85,22 @@ extension MissionViewController : MissionClearViewDelegate{
     func questButtonIsEnabled(type:MissionQuest){
         switch type{
         case.daily:
-            dailyView.questButtonClose()
+            dailyView.questButtonOpen(type: .daily)
         case.weekly:
-            weeklyView.questButtonClose()
+            weeklyView.questButtonOpen(type: .weekly)
+        }
+    }
+    
+    //MARK:  준아가 여기야 여기
+    //뷰디드 로드에 넣음
+    //이 함수가 실행되면 dailyBtnValue, weeklyBtnValue에 따라서 해당 버튼이 활성화 비활성화됨
+    func isMissonClear(daily:Bool, weekly:Bool){
+        if daily {
+            questButtonIsUnabled(type: .daily)
+        }
+        
+        if weekly{
+            questButtonIsUnabled(type: .weekly)
         }
     }
     
