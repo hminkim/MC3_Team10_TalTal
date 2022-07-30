@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CompleteMission" representedClassName="CompleteMission" syncable="YES">
         <attribute name="clearDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="intention" optional="YES" attributeType="String"/>
         <attribute name="reflection" optional="YES" attributeType="String"/>
-        <attribute name="stage" attributeType="String"/>
+        <attribute name="stageValue" attributeType="String"/>
         <attribute name="typeValue" attributeType="String" customClassName="Status"/>
     </entity>
     <elements>
