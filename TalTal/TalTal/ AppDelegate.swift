@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
+		
+		// 앱이 처음 실행되었을 때 클리어 된 미션들을 받아오는 함수
+		MissionDAO.shared.setupMission()
+
 		return true
 	}
 
