@@ -15,9 +15,9 @@ protocol MissionClearViewDelegate {
 class MissionClearViewController: UIViewController {
     
     var delegate: MissionClearViewDelegate?
-    
     //타입설정
     var missionType : MissionQuest = .daily
+    var questLabelText = ""
     private var isTextViewSelected: Bool = true
 
 	@IBOutlet var missionTypeLabel: UILabel!
@@ -26,7 +26,10 @@ class MissionClearViewController: UIViewController {
 	@IBOutlet var reflectionTextCountLable: UILabel!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var confirmButton: UIBarButtonItem!
-
+    //퀘스트가 연결될 레이블
+    @IBOutlet weak var questLabel: UILabel!
+    
+    
     @IBAction func cancelButtonAction(_ sender: Any) {
         //TODO: Close Modal
         self.dismiss(animated: true, completion: nil)
@@ -48,6 +51,7 @@ class MissionClearViewController: UIViewController {
 		view.backgroundColor = UIColor(red: 248 / 255, green: 248 / 255, blue: 248 / 255, alpha: 1)
 		initMissionTypeLabel()
 		initReflection()
+        questLabel.text = questLabelText
 	}
 
 }
@@ -98,16 +102,18 @@ extension MissionClearViewController{
 extension MissionClearViewController: UITextViewDelegate {
 	func textViewDidChange(_ textView: UITextView) {
 		// 연속으로 Enter 입력시 방지
-		if textView.text.last == "\n" {
-			let index = textView.text.index(textView.text.endIndex, offsetBy: -2)
-			if textView.text[index] == "\n" {
-				let start = textView.text.startIndex
-				let end = textView.text.index(textView.text.endIndex, offsetBy: -1)
-				let range = start..<end
-				textView.text = String(textView.text[range])
-			}
-		}
-
+        // MARK: 버그있어서 주석처리하고 라인제한 걸었습니다.
+        // Toby확인해주세요 -Ruyha-
+//		if textView.text.last == "\n" {
+//			let index = textView.text.index(textView.text.endIndex, offsetBy: -2)
+//			if textView.text[index] == "\n" {
+//				let start = textView.text.startIndex
+//				let end = textView.text.index(textView.text.endIndex, offsetBy: -1)
+//				let range = start..<end
+//				textView.text = String(textView.text[range])
+//			}
+//		}
+//
 // 50 글자 이상 방지
 		if textView.text.count > 50 {
 			let start = textView.text.startIndex

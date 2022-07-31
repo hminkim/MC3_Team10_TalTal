@@ -24,17 +24,14 @@ final class MissionViewController: UIViewController {
      유저디폴트에서 주간 미션과 일간 미션을 받아오게 만들어서 아래의 변수에 넣거나
      함수에 값을가져오게 만들어주세요.
      */
-    var dailyBtnValue = true //true 클리어함
+    var dailyBtnValue = false //true 클리어함
     var weeklyBtnValue = false //false 아직클리어안함
     
-
-    //더미 데이터입니다.
     var dailyClearQuest = 5
-    var dailyQuestStirng = "햇빛이 선명하게 나뭇잎을 핥고 있었다.햇빛이 선명하게 나뭇잎을 핥고 있었다"
+    var dailyQuestStirng = "안녕하세요. 탈탈입니다."
     
-    //더미 데이터입니다.
     var weeklyClearQuest = 1
-    var weeklyQuestStirng = "햇빛이 선명하게 나뭇잎을 핥고 있었다.햇빛이 선명하게 나뭇잎을 핥고 있었다"
+    var weeklyQuestStirng = "안녕하세요. 탈탈입니다."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +48,22 @@ final class MissionViewController: UIViewController {
 //델리게이트 패턴을 사용해 데일리인지 위클리 인지 확인한다.
 extension MissionViewController : MissionQuestViewDelegate{
     func didQuestButton(type: MissionQuest) {
-        print("이거눌림 \(type)")
-        
         //코드로 뷰를 Show하는 부분 입니다.
         let storyboard = UIStoryboard(name: "MissionClear", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "MissionClear") as! MissionClearViewController
         secondVC.missionType = type
         secondVC.delegate = self
+        secondVC.questLabelText = setQuestTextReturn(type: type)
         show(secondVC, sender: self)
+    }
+    
+    func setQuestTextReturn(type:MissionQuest) -> String{
+        switch type{
+        case.daily:
+            return dailyQuestStirng
+        case.weekly:
+            return weeklyQuestStirng
+        }
     }
 }
 
