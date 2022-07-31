@@ -23,7 +23,8 @@ class MissionDataManager {
 	/// - nil 모든 임무 완수
 	func requestDailyMission(stage: MissionStage) -> Mission? {
 		var missions: Set<Mission>
-
+		
+		// Stage에 따른 전체 미션 갖고오기
 		switch stage {
 		case .beginner:
 			missions = beginnerDailyMissions
@@ -33,17 +34,20 @@ class MissionDataManager {
 			missions = advancedDailyMissions
 		}
 
-
 		var filterMissons: Set<Mission> = missions
-
+		
+		// stage 구분 + daily와 weekly를 구분 -> filterMissions에서 이미 깬 값 제거
 		for ele in completeMissions {
 			if ele.stage == stage && ele.type == .daily {
 				filterMissons.remove(.init(content: ele.content!, stage: ele.stage, intention: ele.intention!))
 			}
 		}
 
+		// 필터링 된 미션 중에서 랜덤값 추출
 		let result = filterMissons.randomElement()
 
+		// result가 nil 이면 filterMissions가 비어있다는 뜻 -> 다음 난이도로 변경해야 한다. -> 다음 난이도로 변경하는 재귀함수 호출
+		// 재귀함수 탈출 조건 : 난이도가 advanced & result == nil 이면 -> 모든 미션을 꺴다는 뜻
 		if result == nil {
 			switch stage {
 			case .beginner:
@@ -65,7 +69,8 @@ class MissionDataManager {
 	/// - nil 모든 임무 완수
 	func requestWeeklyMission(stage: MissionStage) -> Mission? {
 		var missions: Set<Mission>
-
+		
+		// Stage에 따른 전체 미션 갖고오기
 		switch stage {
 		case .beginner:
 			missions = beginnerWeeklyMissions
@@ -77,6 +82,7 @@ class MissionDataManager {
 
 		var filterMissons: Set<Mission> = missions
 
+		// stage 구분 + daily와 weekly를 구분 -> filterMissions에서 이미 깬 값 제거
 		for ele in completeMissions {
 			if ele.stage == stage && ele.type == .weekly {
 				filterMissons.remove(.init(content: ele.content!, stage: ele.stage, intention: ele.intention!))
@@ -84,8 +90,9 @@ class MissionDataManager {
 		}
 
 		let result = missions.randomElement()
-		//FIXME: 위에 ToDo에 기반해서 고치기
 
+		// result가 nil 이면 filterMissions가 비어있다는 뜻 -> 다음 난이도로 변경해야 한다. -> 다음 난이도로 변경하는 재귀함수 호출
+		// 재귀함수 탈출 조건 : 난이도가 advanced result값이 nil 이면 -> 모든 미션을 꺴다는 뜻
 		if result == nil {
 			switch stage {
 			case .beginner:
@@ -99,7 +106,10 @@ class MissionDataManager {
 			return result
 		}
 	} // reqeustWeeklyMission
-
+	
+	
+	// MARK: - saveMission
+	/// 미션을 CoreData에 저장하는 함수
 	func saveMission(mission: Mission, reflection: String?, type: MissionQuest) {
 		MissionDAO.shared.saveReflection(type: type, stage: mission.stage, content: mission.content, reflection: reflection, intention: mission.intention)
 	}
@@ -107,7 +117,7 @@ class MissionDataManager {
 } // MissionDataManager
 
 
-
+//TODO: fileprivate 대신에 extention + private 조합?
 fileprivate let beginnerDailyMissions: Set<Mission> = Set([
 		.init(content: "잠자리 정리하기", stage: .beginner, intention: "매일 아침 “잠자리를 정리했다는 것”은 그날의 첫 번째 과업을 달성했다는 뜻입니다. 이 작은 성취감이 또 다른 일을 해낼 수 있겠다는 용기로 발전할 수 있을 것입니다."),
 		.init(content: "일어나서 가벼운 스트레칭 하기", stage: .beginner, intention: "잠을 깨기 위해 단 30초라도 몸을 움직이면 기분에 극적인 영향을 미치고 산란했던 정신도 가라앉게 될 것입니다. 스트래칭을 통해 기분 좋은 하루를 시작해보세요."),
