@@ -147,13 +147,13 @@ class MissionDataManager {
 		var filterMissons: Set<Mission> = missions
 		
 		// stage 구분 + daily와 weekly를 구분 -> filterMissions에서 이미 깬 값 제거
-		for ele in completeMissions {
+		for ele in completeWeeklyMissions {
 			if ele.stage == stage && ele.type == .weekly {
-				filterMissons.remove(.init(content: ele.content!, stage: ele.stage, intention: ele.intention!))
+				filterMissons.remove(.init(content: ele.content!, stage: .beginner, intention: ele.intention!))
 			}
 		}
 		
-		let result = missions.randomElement()
+		let result = filterMissons.randomElement()
 		
 		// result가 nil 이면 filterMissions가 비어있다는 뜻 -> 다음 난이도로 변경해야 한다. -> 다음 난이도로 변경하는 재귀함수 호출
 		// 재귀함수 탈출 조건 : 난이도가 advanced result값이 nil 이면 -> 모든 미션을 꺴다는 뜻
