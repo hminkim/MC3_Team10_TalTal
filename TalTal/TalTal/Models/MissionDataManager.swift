@@ -10,8 +10,8 @@ import Foundation
 class MissionDataManager {
 	static var shared = MissionDataManager()
 	private var completeMissions: [CompleteMission]
-	private var completeDailyMissions:[CompleteMission]
-	private var completeWeeklyMissions:[CompleteMission]
+	private var completeDailyMissions: [CompleteMission]
+	private var completeWeeklyMissions: [CompleteMission]
 	
 	private init() {
 		//FIXME: 동기화시 문제가 생긴다면 고칠 것
@@ -175,7 +175,9 @@ class MissionDataManager {
 	// MARK: - saveMission
 	/// 미션을 CoreData에 저장하는 함수
 	func saveMission(mission: Mission, reflection: String?, type: MissionQuest) {
-		MissionDAO.shared.saveReflection(type: type, stage: mission.stage, content: mission.content, reflection: reflection, intention: mission.intention)
+		self.completeMissions = MissionDAO.shared.saveReflection(type: type, stage: mission.stage, content: mission.content, reflection: reflection, intention: mission.intention)
+		completeDailyMissions = completeMissions.filter{ $0.type == .daily }
+		completeWeeklyMissions = completeMissions.filter{ $0.type == .weekly }
 	}
 	
 } // MissionDataManager
