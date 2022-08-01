@@ -166,19 +166,23 @@ extension MissionViewController {
     // 앱을 처음으로 켰을 때 유저의 기본 값을 세팅하는 메소드
     private func userInitialSetting() {
         // UserDefaults의 기본 세팅을 합니다
+        // 기존의 코드에서 랜덤을 한번만 불러오는것으로 수정했습니다.
+        let setRandomDailyMisson = MissionDataManager.shared.requestDailyMission(stage: .beginner)
+        let setRandomWeeklyMisson = MissionDataManager.shared.requestWeeklyMission(stage: .beginner)
+        
         UserDefaults.standard.set(Date.now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
         UserDefaults.standard.set(Date.now.addingTimeInterval(getTimeIntervalForNextMonday(Date.now)), forKey: "refreshWeeklyMissionDate")
         UserDefaults.standard.set(MissionStage.beginner.rawValue, forKey: "userStage")
-        UserDefaults.standard.set(MissionDataManager.shared.requestDailyMission(stage: .beginner)!.content, forKey: "currentDailyMission")
-        UserDefaults.standard.set(MissionDataManager.shared.requestWeeklyMission(stage: .beginner)!.content, forKey: "currentWeeklyMission")
+        UserDefaults.standard.set(setRandomDailyMisson!.content, forKey: "currentDailyMission")
+        UserDefaults.standard.set(setRandomWeeklyMisson!.content, forKey: "currentWeeklyMission")
         UserDefaults.standard.set(0, forKey: "clearDailyMissionCount")
         UserDefaults.standard.set(0, forKey: "clearWeeklyMissionCount")
         UserDefaults.standard.set(false, forKey: "isDailyMissionClear")
         UserDefaults.standard.set(false, forKey: "isWeeklyMissionClear")
         
         // 현재 보여줄 미션을 가져옵니다
-        self.dailyMisson = MissionDataManager.shared.requestDailyMission(stage: .beginner)
-        self.weeklyMission = MissionDataManager.shared.requestWeeklyMission(stage: .beginner)
+        self.dailyMisson = setRandomDailyMisson
+        self.weeklyMission = setRandomWeeklyMisson
         
         // 현재 UI의 내용을 담고있는 변수들에 값을 넣습니다
         dailyClearQuest = UserDefaults.standard.integer(forKey: "clearDailyMissionCount")
@@ -198,8 +202,6 @@ extension MissionViewController {
          
         // TODO: 현재 작동에는 문제가 없지만 더 좋은 코드로 리팩토링 할 수 있을 것 같습니다. 추후에 변경하겠습니다.
         guard let currentUserStage = MissionStage(rawValue: UserDefaults.standard.string(forKey: "userStage") ?? "") else { return }
-        self.dailyMisson = MissionDataManager.shared.requestDailyMission(stage: currentUserStage)
-        self.weeklyMission = MissionDataManager.shared.requestWeeklyMission(stage: currentUserStage)
         
         // TODO: 모든 미션을 깬 경우 처리를 해야합니다(엔딩뷰)
         if dailyMisson == nil && weeklyMission == nil {
@@ -214,6 +216,7 @@ extension MissionViewController {
         if dailyMisson != nil {
             // 필요하면 일일 미션 변경
             if dateFormatter.string(from: now) >= dateFormatter.string(from: UserDefaults.standard.object(forKey: "refreshDailyMissionDate") as? Date ?? now) {
+                self.dailyMisson = MissionDataManager.shared.requestDailyMission(stage: currentUserStage)
                 UserDefaults.standard.set(now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
                 UserDefaults.standard.set(dailyMisson!.content, forKey: "currentDailyMission")
                 UserDefaults.standard.set(false, forKey: "isDailyMissionClear")
@@ -226,6 +229,7 @@ extension MissionViewController {
         if weeklyMission != nil {
             // 필요하면 주간 미션 변경
             if dateFormatter.string(from: now) >= dateFormatter.string(from: UserDefaults.standard.object(forKey: "refreshWeeklyMissionDate") as? Date ?? now) {
+                self.weeklyMission = MissionDataManager.shared.requestWeeklyMission(stage: currentUserStage)
                 UserDefaults.standard.set(now.addingTimeInterval(getTimeIntervalForNextMonday(now)), forKey: "refreshWeeklyMissionDate")
                 UserDefaults.standard.set(weeklyMission!.content, forKey: "currentWeeklyMission")
                 UserDefaults.standard.set(false, forKey: "isWeeklyMissionClear")
