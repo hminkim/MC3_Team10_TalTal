@@ -40,7 +40,7 @@ class MissionDataManager {
 	func requestMission(stage: MissionStage, type: MissionQuest) -> Mission? {
 		var missions: Set<Mission>
 
-		// Stage에 따른 전체 미션 갖고오기
+		// Stage에 따른 전체 미션 갖고오기 ( missions에 저장)
 		switch stage {
 		case .beginner:
 			missions = type == .daily ? beginnerDailyMissions : beginnerWeeklyMissions
@@ -99,17 +99,18 @@ class MissionDataManager {
 		
 		var filterMissons: Set<Mission> = missions
 
-		// stage 구분 + daily와 weekly를 구분 -> filterMissions에서 이미 깬 값 제거
-		for ele in completeMissions {
+		// stage 구분 + daily와 weekly를 구분 -> filterMissions에서 이미 깬 값(CoreData에 들어있었던 값) 제거
+		for ele in completeDailyMissions {
 			if ele.stage == stage && ele.type == .daily {
+				// filtermission에서 ele(이미 깬 값) 제거 / 제거할 값이 없어도 알아서 처리 됨
 				filterMissons.remove(.init(content: ele.content!, stage: ele.stage, intention: ele.intention!))
 			}
 		}
 		
-		// 필터링 된 미션 중에서 랜덤값 추출
+		// 깨지 않은 Mission들 중에서 랜덤값 추출
 		let result = filterMissons.randomElement()
 		
-		// result가 nil 이면 filterMissions가 비어있다는 뜻 -> 다음 난이도로 변경해야 한다. -> 다음 난이도로 변경하는 재귀함수 호출
+		// result가 nil 이면 filterMissions가 비어있다는 뜻 -> 다음 난이도로 변경해야 한다. -> 다음 난이도(stage 파라미터)로 변경하는 재귀함수 호출
 		// 재귀함수 탈출 조건 : 난이도가 advanced & result == nil 이면 -> 모든 미션을 꺴다는 뜻
 		if result == nil {
 			switch stage {
@@ -149,13 +150,14 @@ class MissionDataManager {
 		// stage 구분 + daily와 weekly를 구분 -> filterMissions에서 이미 깬 값 제거
 		for ele in completeWeeklyMissions {
 			if ele.stage == stage && ele.type == .weekly {
-				filterMissons.remove(.init(content: ele.content!, stage: .beginner, intention: ele.intention!))
-			}
+				// filtermission에서 ele(이미 깬 값) 제거 / 제거할 값이 없어도 알아서 처리 됨
+				filterMissons.remove(.init(content: ele.content!, stage: stage, intention: ele.intention!))
 		}
 		
+		// 깨지 않은 Mission들 중에서 랜덤값 추출
 		let result = filterMissons.randomElement()
 		
-		// result가 nil 이면 filterMissions가 비어있다는 뜻 -> 다음 난이도로 변경해야 한다. -> 다음 난이도로 변경하는 재귀함수 호출
+		// result가 nil 이면 filterMissions가 비어있다는 뜻 -> 다음 난이도로 변경해야 한다. -> 다음 난이도(stage 파라미터)로 변경하는 재귀함수 호출
 		// 재귀함수 탈출 조건 : 난이도가 advanced result값이 nil 이면 -> 모든 미션을 꺴다는 뜻
 		if result == nil {
 			switch stage {
