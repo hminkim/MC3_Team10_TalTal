@@ -24,6 +24,7 @@ class HistoryViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		missionTableView.delegate = self
+		missionTableView.dataSource = self
 	}
 	
 	// 화면에 진입할 때 마다 테이블뷰를 다시 그림
