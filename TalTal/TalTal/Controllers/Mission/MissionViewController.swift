@@ -27,11 +27,12 @@ final class MissionViewController: UIViewController {
     var dailyBtnValue = UserDefaults.standard.bool(forKey: "isDailyMissionClear")
     var weeklyBtnValue = UserDefaults.standard.bool(forKey: "isWeeklyMissionClear")
     
-    var dailyClearQuest = 5
+    // 한눈에 봐도 에러가 보이는 화면으로 변경
+    var dailyClearQuest = 404
     var dailyQuestStirng = "안녕하세요. 탈탈입니다."
     
-    var weeklyClearQuest = 1
-    var weeklyQuestStirng = "안녕하세요. 탈탈입니다."
+    var weeklyClearQuest = 404
+    var weeklyQuestStirng = "앱을 재설치 해주세요."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -199,13 +200,6 @@ extension MissionViewController {
         // TODO: 현재 작동에는 문제가 없지만 더 좋은 코드로 리팩토링 할 수 있을 것 같습니다. 추후에 변경하겠습니다.
         guard let currentDailyUserStage = MissionStage(rawValue: UserDefaults.standard.string(forKey: "dailyUserStage") ?? "") else { return }
         guard let currentWeeklyUserStage = MissionStage(rawValue: UserDefaults.standard.string(forKey: "weeklyUserStage") ?? "") else { return }
-        
-        // TODO: 모든 미션을 깬 경우 처리를 해야합니다(엔딩뷰)
-        // FIXME: 엔딩뷰 다른곳에서 처리해야됨 ㅇㅅㅇ
-//        if dailyMisson == nil && weeklyMission == nil {
-//            print("RIdkdkdkdkdkdr")
-//            return
-//        }
         
         // 앱에 접속한 날짜와 refresh가 되어야 할 날짜를 비교하기 위해 DateFormatter을 사용했습니다
         let now = Date.now
