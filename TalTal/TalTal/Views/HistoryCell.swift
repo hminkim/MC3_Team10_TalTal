@@ -15,6 +15,10 @@ class HistoryCell: UITableViewCell {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
+        // 테이블뷰 셀이 클릭 되었을때 백그라운드 컬러 제거
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.clear
+        selectedBackgroundView = backgroundView
 		// Initialization code
 	}
 	

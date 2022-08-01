@@ -4,13 +4,6 @@
 //
 //  Created by Ruyha on 2022/07/25.
 //
-//FIXME: 버튼 비활성화되었었을때 리로드 걸리면 색기본 색으로 나옴 RuyHa
-//MARK: 히스토리에 완료된 미션이 안보임
-//FIXME: 미션 클리어한 갯수 유저 디폴트에 키값 바꾸기 Joon
-//FIXME: 유저디폴트에 유저가 미션클리어 했는지를 확인해야됨. Joon
-//FIXME: 코어데이터와 로컬데이터 동기화
-//MARK: 히스토리뷰에 코어데이터 안넘어오는 이슈
-//완료시 FIXME로 수정
 
 import UIKit
 @IBDesignable
