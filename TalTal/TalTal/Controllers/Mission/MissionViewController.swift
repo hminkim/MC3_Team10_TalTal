@@ -86,7 +86,6 @@ extension MissionViewController: MissionClearViewDelegate {
         self.viewDidLoad()
         
         //TODO: 싱글톤 내에서 데이터 동기화 처리해야 함
-        
         questButtonIsUnabled(type: type)
     }
     
@@ -98,8 +97,11 @@ extension MissionViewController: MissionClearViewDelegate {
         switch type {
         case.daily:
             dailyView.questButtonClose()
+            dailyView.questButton.setTitle("오늘도 해냈어요!!", for: .normal)
         case.weekly:
             weeklyView.questButtonClose()
+            weeklyView.questButton.setTitle("이번주도 해냈어요!!", for: .normal)
+
         }
     }
     
