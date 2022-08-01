@@ -17,13 +17,56 @@ class MissionDataManager {
 		completeMissions = MissionDAO.shared.fetchMissionData()
 	}
 
+	func requestMission(stage: MissionStage, type: MissionQuest) -> Mission? {
+		var missions: Set<Mission>
+
+		// Stage에 따른 전체 미션 갖고오기
+		switch stage {
+		case .beginner:
+			missions = type == .daily ? beginnerDailyMissions : beginnerWeeklyMissions
+		case .intermediate:
+			missions = type == .daily ? intermediateDailyMissions : intermediateWeeklyMissions
+		case .advancded:
+			missions = type == .daily ? advancedDailyMissions : advancedWeeklyMissions
+		}
+
+
+		var filterMissons: Set<Mission> = missions
+
+		// stage 구분 + daily와 weekly를 구분 -> filterMissions에서 이미 깬 값 제거
+		for ele in completeMissions {
+			if ele.stage == stage && ele.type == type {
+				filterMissons.remove(.init(content: ele.content!, stage: ele.stage, intention: ele.intention!))
+			}
+		}
+
+		// 필터링 된 미션 중에서 랜덤값 추출
+		let result = filterMissons.randomElement()
+
+		// result가 nil 이면 filterMissions가 비어있다는 뜻 -> 다음 난이도로 변경해야 한다. -> 다음 난이도로 변경하는 재귀함수 호출
+		// 재귀함수 탈출 조건 : 난이도가 advanced & result == nil 이면 -> 모든 미션을 꺴다는 뜻
+		if result == nil {
+			switch stage {
+			case .beginner:
+				return requestMission(stage: .intermediate, type: type)
+			case .intermediate:
+				return requestMission(stage: .advancded, type: type)
+			case .advancded:
+				return nil
+			}
+		} else {
+			return result
+		}
+	} // requestMission
+
 	// MARK: - requestDailyMission
 	/// 출력 값
 	/// - Mission Type 정상 출력
 	/// - nil 모든 임무 완수
+	@available(*, deprecated, renamed: "requestMission")
 	func requestDailyMission(stage: MissionStage) -> Mission? {
 		var missions: Set<Mission>
-		
+
 		// Stage에 따른 전체 미션 갖고오기
 		switch stage {
 		case .beginner:
@@ -35,7 +78,7 @@ class MissionDataManager {
 		}
 
 		var filterMissons: Set<Mission> = missions
-		
+
 		// stage 구분 + daily와 weekly를 구분 -> filterMissions에서 이미 깬 값 제거
 		for ele in completeMissions {
 			if ele.stage == stage && ele.type == .daily {
@@ -67,9 +110,10 @@ class MissionDataManager {
 	/// 출력 값
 	/// - Mission Type 정상 출력
 	/// - nil 모든 임무 완수
+	@available(*, deprecated, renamed: "requestMission")
 	func requestWeeklyMission(stage: MissionStage) -> Mission? {
 		var missions: Set<Mission>
-		
+
 		// Stage에 따른 전체 미션 갖고오기
 		switch stage {
 		case .beginner:
@@ -106,8 +150,8 @@ class MissionDataManager {
 			return result
 		}
 	} // reqeustWeeklyMission
-	
-	
+
+
 	// MARK: - saveMission
 	/// 미션을 CoreData에 저장하는 함수
 	func saveMission(mission: Mission, reflection: String?, type: MissionQuest) {
