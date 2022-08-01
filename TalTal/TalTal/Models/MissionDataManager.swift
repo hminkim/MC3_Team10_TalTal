@@ -130,7 +130,7 @@ class MissionDataManager {
 	// MARK: - saveMission
 	/// 미션을 CoreData에 저장하는 함수
 	func saveMission(mission: Mission, reflection: String?, type: MissionQuest) {
-		MissionDAO.shared.fetchReflection(type: type, stage: mission.stage, content: mission.content, reflection: reflection, intention: mission.intention)
+		MissionDAO.shared.saveReflection(type: type, stage: mission.stage, content: mission.content, reflection: reflection, intention: mission.intention)
 	}
 	
 } // MissionDataManager
