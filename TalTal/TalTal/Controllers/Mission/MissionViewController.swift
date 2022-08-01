@@ -4,10 +4,10 @@
 //
 //  Created by Ruyha on 2022/07/25.
 //
-//MARK: 버튼 비활성화되었었을때 리로드 걸리면 색기본 색으로 나옴 RuyHa
+//FIXME: 버튼 비활성화되었었을때 리로드 걸리면 색기본 색으로 나옴 RuyHa
 //MARK: 히스토리에 완료된 미션이 안보임
-//MARK: 미션 클리어한 갯수 유저 디폴트에 키값 바꾸기
-//MARK: 유저디폴트에 유저가 미션클리어 했는지를 확인해야됨.
+//FIXME: 미션 클리어한 갯수 유저 디폴트에 키값 바꾸기 Joon
+//FIXME: 유저디폴트에 유저가 미션클리어 했는지를 확인해야됨. Joon
 //MARK: 코어데이터와 로컬데이터 동기화
 //MARK: 히스토리뷰에 코어데이터 안넘어오는 이슈
 //완료시 FIXME로 수정
@@ -26,16 +26,13 @@ final class MissionViewController: UIViewController {
     private var dailyMisson: Mission? = nil
     private var weeklyMission: Mission? = nil
     
-    // 유저디폴트
-    let defaults = UserDefaults.standard
-    
     
     /*
      유저디폴트에서 주간 미션과 일간 미션을 받아오게 만들어서 아래의 변수에 넣거나
      함수에 값을가져오게 만들어주세요.
      */
-    var dailyBtnValue = false //true 클리어함
-    var weeklyBtnValue = false //false 아직클리어안함
+    var dailyBtnValue = UserDefaults.standard.bool(forKey: "isDailyMissionClear")
+    var weeklyBtnValue = UserDefaults.standard.bool(forKey: "isWeeklyMissionClear")
     
     var dailyClearQuest = 5
     var dailyQuestStirng = "안녕하세요. 탈탈입니다."
@@ -85,9 +82,11 @@ extension MissionViewController: MissionClearViewDelegate {
         switch type {
             // 주간/일간 값에 따라서 Clear Count 증가
         case .daily:
-            defaults.set(defaults.integer(forKey: "dailyClearMission") + 1, forKey: "dailyClearMission")
+            UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "clearDailyMissionCount") + 1, forKey: "clearDailyMissionCount")
+            UserDefaults.standard.set(true, forKey: "isDailyMissionClear")
         case .weekly:
-            defaults.set(defaults.integer(forKey: "weeklyClearMission") + 1, forKey: "weeklyClearMission")
+            UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "clearWeeklyMissionCount") + 1, forKey: "clearWeeklyMissionCount")
+            UserDefaults.standard.set(true, forKey: "isWeeklyMissionClear")
         }
         // 저장된 값을 다시 보여주기 위해서 뷰 리로드
         self.viewDidLoad()
@@ -166,29 +165,39 @@ extension MissionViewController {
     
     // 앱을 처음으로 켰을 때 유저의 기본 값을 세팅하는 메소드
     private func userInitialSetting() {
-        defaults.set(Date.now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
-        defaults.set(Date.now.addingTimeInterval(getTimeIntervalForNextMonday(Date.now)), forKey: "refreshWeeklyMissionDate")
-        defaults.set(MissionStage.beginner.rawValue, forKey: "userStage")
-        defaults.set(MissionDataManager.shared.requestDailyMission(stage: .beginner)!.content, forKey: "currentDailyMission")
-        defaults.set(MissionDataManager.shared.requestWeeklyMission(stage: .beginner)!.content, forKey: "currentWeeklyMission")
-        defaults.set(0, forKey: "dailyClearMission")
-        defaults.set(0, forKey: "weeklyClearMission")
+        // UserDefaults의 기본 세팅을 합니다
+        UserDefaults.standard.set(Date.now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
+        UserDefaults.standard.set(Date.now.addingTimeInterval(getTimeIntervalForNextMonday(Date.now)), forKey: "refreshWeeklyMissionDate")
+        UserDefaults.standard.set(MissionStage.beginner.rawValue, forKey: "userStage")
+        UserDefaults.standard.set(MissionDataManager.shared.requestDailyMission(stage: .beginner)!.content, forKey: "currentDailyMission")
+        UserDefaults.standard.set(MissionDataManager.shared.requestWeeklyMission(stage: .beginner)!.content, forKey: "currentWeeklyMission")
+        UserDefaults.standard.set(0, forKey: "clearDailyMissionCount")
+        UserDefaults.standard.set(0, forKey: "clearWeeklyMissionCount")
+        UserDefaults.standard.set(false, forKey: "isDailyMissionClear")
+        UserDefaults.standard.set(false, forKey: "isWeeklyMissionClear")
+        
+        // 현재 보여줄 미션을 가져옵니다
         self.dailyMisson = MissionDataManager.shared.requestDailyMission(stage: .beginner)
         self.weeklyMission = MissionDataManager.shared.requestWeeklyMission(stage: .beginner)
-        dailyClearQuest = defaults.integer(forKey: "dailyClearMission")
-        dailyQuestStirng = defaults.string(forKey: "currentDailyMission")!
-        weeklyClearQuest = defaults.integer(forKey: "weeklyClearMission")
-        weeklyQuestStirng = defaults.string(forKey: "currentWeeklyMission")!
+        
+        // 현재 UI의 내용을 담고있는 변수들에 값을 넣습니다
+        dailyClearQuest = UserDefaults.standard.integer(forKey: "clearDailyMissionCount")
+        dailyQuestStirng = UserDefaults.standard.string(forKey: "currentDailyMission")!
+        weeklyClearQuest = UserDefaults.standard.integer(forKey: "clearWeeklyMissionCount")
+        weeklyQuestStirng = UserDefaults.standard.string(forKey: "currentWeeklyMission")!
+        dailyBtnValue = UserDefaults.standard.bool(forKey: "isDailyMissionClear")
+        weeklyBtnValue = UserDefaults.standard.bool(forKey: "isWeeklyMissionClear")
     }
     
     private func configureMission() {
         // 앱 첫 실행 검사
-        guard let _ = defaults.object(forKey: "refreshDailyMissionDate") else {
+        guard let _ = UserDefaults.standard.object(forKey: "refreshDailyMissionDate") else {
             userInitialSetting()
             return
         }
-        
-        guard let currentUserStage = MissionStage(rawValue: defaults.string(forKey: "userStage") ?? "") else { return }
+         
+        // TODO: 현재 작동에는 문제가 없지만 더 좋은 코드로 리팩토링 할 수 있을 것 같습니다. 추후에 변경하겠습니다.
+        guard let currentUserStage = MissionStage(rawValue: UserDefaults.standard.string(forKey: "userStage") ?? "") else { return }
         self.dailyMisson = MissionDataManager.shared.requestDailyMission(stage: currentUserStage)
         self.weeklyMission = MissionDataManager.shared.requestWeeklyMission(stage: currentUserStage)
         
@@ -204,38 +213,40 @@ extension MissionViewController {
         
         if dailyMisson != nil {
             // 필요하면 일일 미션 변경
-            if dateFormatter.string(from: now) >= dateFormatter.string(from: defaults.object(forKey: "refreshDailyMissionDate") as? Date ?? now) {
-                defaults.set(now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
-                defaults.set(dailyMisson!.content, forKey: "currentDailyMission")
-                dailyBtnValue = false // 미션 완료 버튼 초기화
+            if dateFormatter.string(from: now) >= dateFormatter.string(from: UserDefaults.standard.object(forKey: "refreshDailyMissionDate") as? Date ?? now) {
+                UserDefaults.standard.set(now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
+                UserDefaults.standard.set(dailyMisson!.content, forKey: "currentDailyMission")
+                UserDefaults.standard.set(false, forKey: "isDailyMissionClear")
             }
         } else { // 모든 일일 미션 클리어
-            defaults.set(nil, forKey: "currentDailyMission")
-            dailyBtnValue = true
+            UserDefaults.standard.set(nil, forKey: "currentDailyMission")
+            UserDefaults.standard.set(true, forKey: "isDailyMissionClear")
         }
         
         if weeklyMission != nil {
             // 필요하면 주간 미션 변경
-            if dateFormatter.string(from: now) >= dateFormatter.string(from: defaults.object(forKey: "refreshWeeklyMissionDate") as? Date ?? now) {
-                defaults.set(now.addingTimeInterval(getTimeIntervalForNextMonday(now)), forKey: "refreshWeeklyMissionDate")
-                defaults.set(weeklyMission!.content, forKey: "currentWeeklyMission")
-                weeklyBtnValue = false // 미션 완료 버튼 초기화
+            if dateFormatter.string(from: now) >= dateFormatter.string(from: UserDefaults.standard.object(forKey: "refreshWeeklyMissionDate") as? Date ?? now) {
+                UserDefaults.standard.set(now.addingTimeInterval(getTimeIntervalForNextMonday(now)), forKey: "refreshWeeklyMissionDate")
+                UserDefaults.standard.set(weeklyMission!.content, forKey: "currentWeeklyMission")
+                UserDefaults.standard.set(false, forKey: "isWeeklyMissionClear")
             }
         } else { // 모든 주간 미션 클리어
-            defaults.set(nil, forKey: "currentWeeklyMission")
-            weeklyBtnValue = true
+            UserDefaults.standard.set(nil, forKey: "currentWeeklyMission")
+            UserDefaults.standard.set(true, forKey: "isWeeklyMissionClear")
         }
         
         // MARK: 클리어 한 미션 수와 미션에 실제 데이터(유저디폴트 값)를 넣습니다
-        dailyClearQuest = defaults.integer(forKey: "dailyClearMission")
-        dailyQuestStirng = defaults.string(forKey: "currentDailyMission") ?? "모든 미션을 클리어 하셨습니다"
-        weeklyClearQuest = defaults.integer(forKey: "weeklyClearMission")
-        weeklyQuestStirng = defaults.string(forKey: "currentWeeklyMission") ?? "모든 미션을 클리어 하셨습니다"
+        dailyClearQuest = UserDefaults.standard.integer(forKey: "clearDailyMissionCount")
+        dailyQuestStirng = UserDefaults.standard.string(forKey: "currentDailyMission") ?? "모든 미션을 클리어 하셨습니다"
+        weeklyClearQuest = UserDefaults.standard.integer(forKey: "clearWeeklyMissionCount")
+        weeklyQuestStirng = UserDefaults.standard.string(forKey: "currentWeeklyMission") ?? "모든 미션을 클리어 하셨습니다"
+        dailyBtnValue = UserDefaults.standard.bool(forKey: "isDailyMissionClear")
+        weeklyBtnValue = UserDefaults.standard.bool(forKey: "isWeeklyMissionClear")
         
         // userStage 업데이트
         // TODO: Daily와 Weekly의 userStage를 구분할 필요가 있을 것 같아요. 사실 동작이야 제대로 하지만 논리적으로 좀 이상해요(일일 미션은 계속 깨서 userStage가 올라가야 하지만 주간 미션을 하나도 안깼다면?). 하지만 이걸 건들기에는 시간이 부족하니 나중에 리팩토링 할 때 하면 좋을 것 같아요
         if (weeklyMission != nil) && (currentUserStage != weeklyMission!.stage) {
-            defaults.set(weeklyMission!.stage.rawValue, forKey: "userStage")
+            UserDefaults.standard.set(weeklyMission!.stage.rawValue, forKey: "userStage")
         }
     }
     
