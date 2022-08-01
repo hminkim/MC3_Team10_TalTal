@@ -29,7 +29,6 @@ class HistoryViewController: UIViewController {
 	// 화면에 진입할 때 마다 테이블뷰를 다시 그림
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		missionDataManager.setupMission()
 		missionTableView.reloadData()
 	}
 	
@@ -56,9 +55,9 @@ extension HistoryViewController: UITableViewDataSource {
 
 		// 미션에 타입에 따라 미션 데이터의 갯수만큼 셀 생성
 		if status == .daily {
-			return missionDataManager.completeDailyMission.count
+			return MissionDataManager.shared.getCompleteMission(type: .daily).count
 		} else if status == .weekly {
-			return missionDataManager.completeWeeklyMission.count
+			return MissionDataManager.shared.getCompleteMission(type: .weekly).count
 		}
 		return 0
 	}
@@ -73,12 +72,12 @@ extension HistoryViewController: UITableViewDataSource {
 		
 		if status == .daily {
 			cell.cellView.backgroundColor = UIColor(named: "PointLightPink")
-			cell.missionLabel.text = missionDataManager.completeDailyMission[indexPath.row].content
-			cell.dateLabel.text = missionDataManager.completeDailyMission[indexPath.row].clearDate?.timeToString()
+			cell.missionLabel.text = MissionDataManager.shared.getCompleteMission(type: .daily)[indexPath.row].content
+			cell.dateLabel.text = MissionDataManager.shared.getCompleteMission(type: .daily)[indexPath.row].clearDate?.timeToString()
 		} else if status == .weekly {
 			cell.cellView.backgroundColor = UIColor(named: "PointLightBlue")
-			cell.missionLabel.text = missionDataManager.completeWeeklyMission[indexPath.row].content
-			cell.dateLabel.text = missionDataManager.completeWeeklyMission[indexPath.row].clearDate?.timeToString()
+			cell.missionLabel.text = MissionDataManager.shared.getCompleteMission(type: .weekly)[indexPath.row].content
+			cell.dateLabel.text = MissionDataManager.shared.getCompleteMission(type: .weekly)[indexPath.row].clearDate?.timeToString()
 		}
 		return cell
 	}

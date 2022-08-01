@@ -21,10 +21,8 @@ final class MissionDAO {
 	// context (임시 저장소 같은 느낌??)
 	lazy var context = appDelegate?.persistentContainer.viewContext
 	
-	// 타입 별 미션을 담아둘 배열 선언
+	// 타입 별 미션을 담아둘 배열 선언 !!!!!
 	var completeMission:[CompleteMission] = []
-	var completeDailyMission:[CompleteMission] = []
-	var completeWeeklyMission:[CompleteMission] = []
 	
 	//MARK: [Read] 코어데이터에 저장된 Mission 데이터 읽어오는 메서드
 	func fetchMissionData() -> [CompleteMission] {
@@ -51,7 +49,7 @@ final class MissionDAO {
 	}
 	
 	//MARK: [Create] 코어데이터에 데이터 생성하는 메서드 (회고 저장)
-	func fetchReflection(type: MissionQuest, stage: MissionStage, content: String?, reflection: String?, intention: String?) {
+	func saveReflection(type: MissionQuest, stage: MissionStage, content: String?, reflection: String?, intention: String?) {
 		if let context = context {
 			// context에 있는 데이터를 그려줄 형태 파악
 			if let entity = NSEntityDescription.entity(forEntityName: "CompleteMission", in: context) {
@@ -70,14 +68,5 @@ final class MissionDAO {
 			}
 		}
 		completeMission = fetchMissionData()
-	}
-	
-	// 데이터 정리하는 함수
-	func setupMission() {
-		completeMission = fetchMissionData()
-		
-		// 미션 타입을 통해 미션의 종류를 분류하여 배열에 담음
-		completeDailyMission = completeMission.filter{ $0.type == .daily }
-		completeWeeklyMission = completeMission.filter{ $0.type == .weekly }
 	}
 }
