@@ -21,6 +21,9 @@ final class MissionDAO {
 	// context (임시 저장소 같은 느낌??)
 	lazy var context = appDelegate?.persistentContainer.viewContext
 	
+	// 타입 별 미션을 담아둘 배열 선언 !!!!!
+	var completeMission:[CompleteMission] = []
+	
 	//MARK: [Read] 코어데이터에 저장된 Mission 데이터 읽어오는 메서드
 	func fetchMissionData() -> [CompleteMission] {
 		
@@ -64,5 +67,6 @@ final class MissionDAO {
 				appDelegate?.saveContext()
 			}
 		}
+		completeMission = fetchMissionData()
 	}
 }

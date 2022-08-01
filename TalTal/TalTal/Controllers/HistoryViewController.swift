@@ -21,11 +21,6 @@ class HistoryViewController: UIViewController {
 	// segmentedControl에 따른 다른 히스토리를 보여주기 위한 변수
 	var status: MissionQuest = .daily
 	
-	// 타입 별 미션을 담아둘 배열 선언
-	var completeMission:[CompleteMission] = []
-	var completeDailyMission:[CompleteMission] = []
-	var completeWeeklyMission:[CompleteMission] = []
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		missionTableView.delegate = self
@@ -34,7 +29,7 @@ class HistoryViewController: UIViewController {
 	// 화면에 진입할 때 마다 테이블뷰를 다시 그림
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		setupMission()
+		missionTableView.reloadData()
 	}
 	
 	// segmentedControl에 따라서
@@ -60,9 +55,9 @@ extension HistoryViewController: UITableViewDataSource {
 
 		// 미션에 타입에 따라 미션 데이터의 갯수만큼 셀 생성
 		if status == .daily {
-			return completeDailyMission.count
+			return MissionDataManager.shared.getCompleteMission(type: .daily).count
 		} else if status == .weekly {
-			return completeWeeklyMission.count
+			return MissionDataManager.shared.getCompleteMission(type: .weekly).count
 		}
 		return 0
 	}
@@ -77,34 +72,18 @@ extension HistoryViewController: UITableViewDataSource {
 		
 		if status == .daily {
 			cell.cellView.backgroundColor = UIColor(named: "PointLightPink")
-			cell.missionLabel.text = completeDailyMission[indexPath.row].content
-			cell.dateLabel.text = completeDailyMission[indexPath.row].clearDate?.timeToString()
+			cell.missionLabel.text = MissionDataManager.shared.getCompleteMission(type: .daily)[indexPath.row].content
+			cell.dateLabel.text = MissionDataManager.shared.getCompleteMission(type: .daily)[indexPath.row].clearDate?.timeToString()
 		} else if status == .weekly {
 			cell.cellView.backgroundColor = UIColor(named: "PointLightBlue")
-			cell.missionLabel.text = completeWeeklyMission[indexPath.row].content
-			cell.dateLabel.text = completeWeeklyMission[indexPath.row].clearDate?.timeToString()
+			cell.missionLabel.text = MissionDataManager.shared.getCompleteMission(type: .weekly)[indexPath.row].content
+			cell.dateLabel.text = MissionDataManager.shared.getCompleteMission(type: .weekly)[indexPath.row].clearDate?.timeToString()
 		}
 		return cell
 	}
 }
 
-//TODO: 테이블 뷰 셀을 클릭했을 때 ReflectionView로 연결 -> Joon
 extension HistoryViewController: UITableViewDelegate {
-	
-	// 처음 뷰를 그려줄 때 데이터 정리하는 함수
-	func setupMission() {
-		missionTableView.dataSource = self
-		
-		completeMission = missionDataManager.fetchMissionData()
-		// 미션 타입을 통해 미션의 종류를 분류하여 배열에 담음
-		completeDailyMission = completeMission.filter({ CompleteMission in
-			CompleteMission.type == .daily
-		})
-		completeWeeklyMission = completeMission.filter({ CompleteMission in
-			CompleteMission.type == .weekly
-		})
-		missionTableView.reloadData()
-	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		performSegue(withIdentifier: "toDetail", sender: indexPath)
