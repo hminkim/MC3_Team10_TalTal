@@ -11,12 +11,13 @@ class MissionDataManager {
 	static var shared = MissionDataManager()
 	private var completeMissions: [CompleteMission]
 
-
 	private init() {
 		//FIXME: 동기화시 문제가 생긴다면 고칠 것
 		completeMissions = MissionDAO.shared.fetchMissionData()
+		
 	}
-
+	
+	
 	// MARK: - requestDailyMission
 	/// 출력 값
 	/// - Mission Type 정상 출력
