@@ -221,11 +221,11 @@ extension MissionViewController {
                     UserDefaults.standard.set(now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
                     UserDefaults.standard.set(dailyMisson!.content, forKey: "currentDailyMission")
                     UserDefaults.standard.set(false, forKey: "isDailyMissionClear")
+                } else { // 모든 일일 미션 클리어
+                    UserDefaults.standard.set(nil, forKey: "currentDailyMission")
+                    UserDefaults.standard.set(true, forKey: "isDailyMissionClear")
                 }
             }
-        } else { // 모든 일일 미션 클리어
-            UserDefaults.standard.set(nil, forKey: "currentDailyMission")
-            UserDefaults.standard.set(true, forKey: "isDailyMissionClear")
         }
         
         if weeklyMission != nil {
@@ -236,11 +236,11 @@ extension MissionViewController {
                     UserDefaults.standard.set(now.addingTimeInterval(getTimeIntervalForNextMonday(now)), forKey: "refreshWeeklyMissionDate")
                     UserDefaults.standard.set(weeklyMission!.content, forKey: "currentWeeklyMission")
                     UserDefaults.standard.set(false, forKey: "isWeeklyMissionClear")
+                } else { // 모든 주간 미션 클리어
+                    UserDefaults.standard.set(nil, forKey: "currentWeeklyMission")
+                    UserDefaults.standard.set(true, forKey: "isWeeklyMissionClear")
                 }
             }
-        } else { // 모든 주간 미션 클리어
-            UserDefaults.standard.set(nil, forKey: "currentWeeklyMission")
-            UserDefaults.standard.set(true, forKey: "isWeeklyMissionClear")
         }
         
         // MARK: 클리어 한 미션 수와 미션에 실제 데이터(유저디폴트 값)를 넣습니다
