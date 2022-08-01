@@ -217,9 +217,11 @@ extension MissionViewController {
             // 필요하면 일일 미션 변경
             if dateFormatter.string(from: now) >= dateFormatter.string(from: UserDefaults.standard.object(forKey: "refreshDailyMissionDate") as? Date ?? now) {
                 self.dailyMisson = MissionDataManager.shared.requestDailyMission(stage: currentUserStage)
-                UserDefaults.standard.set(now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
-                UserDefaults.standard.set(dailyMisson!.content, forKey: "currentDailyMission")
-                UserDefaults.standard.set(false, forKey: "isDailyMissionClear")
+                if dailyMisson != nil {
+                    UserDefaults.standard.set(now.addingTimeInterval(3600 * 24), forKey: "refreshDailyMissionDate")
+                    UserDefaults.standard.set(dailyMisson!.content, forKey: "currentDailyMission")
+                    UserDefaults.standard.set(false, forKey: "isDailyMissionClear")
+                }
             }
         } else { // 모든 일일 미션 클리어
             UserDefaults.standard.set(nil, forKey: "currentDailyMission")
@@ -230,9 +232,11 @@ extension MissionViewController {
             // 필요하면 주간 미션 변경
             if dateFormatter.string(from: now) >= dateFormatter.string(from: UserDefaults.standard.object(forKey: "refreshWeeklyMissionDate") as? Date ?? now) {
                 self.weeklyMission = MissionDataManager.shared.requestWeeklyMission(stage: currentUserStage)
-                UserDefaults.standard.set(now.addingTimeInterval(getTimeIntervalForNextMonday(now)), forKey: "refreshWeeklyMissionDate")
-                UserDefaults.standard.set(weeklyMission!.content, forKey: "currentWeeklyMission")
-                UserDefaults.standard.set(false, forKey: "isWeeklyMissionClear")
+                if weeklyMission != nil {
+                    UserDefaults.standard.set(now.addingTimeInterval(getTimeIntervalForNextMonday(now)), forKey: "refreshWeeklyMissionDate")
+                    UserDefaults.standard.set(weeklyMission!.content, forKey: "currentWeeklyMission")
+                    UserDefaults.standard.set(false, forKey: "isWeeklyMissionClear")
+                }
             }
         } else { // 모든 주간 미션 클리어
             UserDefaults.standard.set(nil, forKey: "currentWeeklyMission")
