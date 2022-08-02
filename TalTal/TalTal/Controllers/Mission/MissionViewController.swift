@@ -101,7 +101,6 @@ extension MissionViewController: MissionClearViewDelegate {
         case.weekly:
             weeklyView.questButtonClose()
             weeklyView.questButton.setTitle("이번주도 해냈어요!!", for: .normal)
-
         }
     }
     
