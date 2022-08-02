@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3653E5042893BE44005E6E30 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3653E5022893BE44005E6E30 /* MissionModel.swift */; };
+		3653E5052893BE44005E6E30 /* MissionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3653E5032893BE44005E6E30 /* MissionDataManager.swift */; };
+		702E25B02898FE20002CB6E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 702E25B22898FE20002CB6E3 /* Localizable.strings */; };
+		709996B028990DD600FF9BDC /* StirngExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709996AF28990DD600FF9BDC /* StirngExtension.swift */; };
 		70AAD5DD288DD303001CEE5F /* Mission.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70AAD5DC288DD303001CEE5F /* Mission.storyboard */; };
 		70AAD5DF288DD317001CEE5F /* MissionClear.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70AAD5DE288DD317001CEE5F /* MissionClear.storyboard */; };
 		70AAD5E1288DD32B001CEE5F /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70AAD5E0288DD32B001CEE5F /* History.storyboard */; };
@@ -15,18 +19,29 @@
 		70AAD5E7288DD397001CEE5F /* MissionClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5E6288DD397001CEE5F /* MissionClearViewController.swift */; };
 		70AAD5E9288DD3A0001CEE5F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5E8288DD3A0001CEE5F /* HistoryViewController.swift */; };
 		70AAD5EB288DD3AE001CEE5F /* ReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */; };
-		70AAD5ED288DDE3E001CEE5F /* ShowMissionClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5EC288DDE3E001CEE5F /* ShowMissionClearViewController.swift */; };
-		70AAD5F0288DDE63001CEE5F /* ShowReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5EF288DDE63001CEE5F /* ShowReflectionViewController.swift */; };
-		B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BA28894B960013EEC6 /* AppDelegate.swift */; };
+		70ACFB04288E7B20006C23E5 /* MissionQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */; };
+		70ACFB07288E7B67006C23E5 /* MissionQuestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */; };
+		70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */; };
+		70DEFD9A28912CD300F6C0F8 /* MissionAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DEFD9928912CD300F6C0F8 /* MissionAssets.swift */; };
+		B25B12BB28894B960013EEC6 /*  AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BA28894B960013EEC6 /*  AppDelegate.swift */; };
 		B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BC28894B960013EEC6 /* SceneDelegate.swift */; };
 		B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B12BE28894B960013EEC6 /* TabbarViewController.swift */; };
 		B25B12C228894B960013EEC6 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25B12C028894B960013EEC6 /* Tabbar.storyboard */; };
-		B25B12C528894B960013EEC6 /* TalTal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B25B12C328894B960013EEC6 /* TalTal.xcdatamodeld */; };
 		B25B12C728894B990013EEC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25B12C628894B990013EEC6 /* Assets.xcassets */; };
 		B25B12CA28894B990013EEC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25B12C828894B990013EEC6 /* LaunchScreen.storyboard */; };
+		FBDA911B288EEFE600D126E6 /* MissionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA911A288EEFE600D126E6 /* MissionDAO.swift */; };
+		FBDA9121288EF31500D126E6 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA9120288EF31400D126E6 /* HistoryCell.swift */; };
+		FBE0137B2892B8C9007D1819 /* TalTal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B25B12C328894B960013EEC6 /* TalTal.xcdatamodeld */; };
+		FBE0139228937E9C007D1819 /* CompleteMission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE0139028937E9C007D1819 /* CompleteMission+CoreDataClass.swift */; };
+		FBE0139328937E9C007D1819 /* CompleteMission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE0139128937E9C007D1819 /* CompleteMission+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3653E5022893BE44005E6E30 /* MissionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
+		3653E5032893BE44005E6E30 /* MissionDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDataManager.swift; sourceTree = "<group>"; };
+		702E25B12898FE20002CB6E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		702E25B528990417002CB6E3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		709996AF28990DD600FF9BDC /* StirngExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StirngExtension.swift; sourceTree = "<group>"; };
 		70AAD5DC288DD303001CEE5F /* Mission.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mission.storyboard; sourceTree = "<group>"; };
 		70AAD5DE288DD317001CEE5F /* MissionClear.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MissionClear.storyboard; sourceTree = "<group>"; };
 		70AAD5E0288DD32B001CEE5F /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
@@ -35,10 +50,12 @@
 		70AAD5E6288DD397001CEE5F /* MissionClearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionClearViewController.swift; sourceTree = "<group>"; };
 		70AAD5E8288DD3A0001CEE5F /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionViewController.swift; sourceTree = "<group>"; };
-		70AAD5EC288DDE3E001CEE5F /* ShowMissionClearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMissionClearViewController.swift; sourceTree = "<group>"; };
-		70AAD5EF288DDE63001CEE5F /* ShowReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowReflectionViewController.swift; sourceTree = "<group>"; };
+		70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionQuestView.swift; sourceTree = "<group>"; };
+		70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionQuestView.xib; sourceTree = "<group>"; };
+		70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		70DEFD9928912CD300F6C0F8 /* MissionAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionAssets.swift; sourceTree = "<group>"; };
 		B25B12B728894B960013EEC6 /* TalTal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalTal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B25B12BA28894B960013EEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B25B12BA28894B960013EEC6 /*  AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AppDelegate.swift"; sourceTree = "<group>"; };
 		B25B12BC28894B960013EEC6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B25B12BE28894B960013EEC6 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		B25B12C128894B960013EEC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tabbar.storyboard; sourceTree = "<group>"; };
@@ -46,6 +63,10 @@
 		B25B12C628894B990013EEC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B25B12C928894B990013EEC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B25B12CB28894B990013EEC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBDA911A288EEFE600D126E6 /* MissionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDAO.swift; sourceTree = "<group>"; };
+		FBDA9120288EF31400D126E6 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		FBE0139028937E9C007D1819 /* CompleteMission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompleteMission+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FBE0139128937E9C007D1819 /* CompleteMission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompleteMission+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +83,8 @@
 		70AAD5DA288DD04C001CEE5F /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				70ACFB05288E7B48006C23E5 /* Mission */,
 				B25B12C028894B960013EEC6 /* Tabbar.storyboard */,
-				70AAD5DC288DD303001CEE5F /* Mission.storyboard */,
 				70AAD5DE288DD317001CEE5F /* MissionClear.storyboard */,
 				70AAD5E0288DD32B001CEE5F /* History.storyboard */,
 				70AAD5E2288DD342001CEE5F /* Reflection.storyboard */,
@@ -74,28 +95,47 @@
 		70AAD5DB288DD064001CEE5F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				70ACFB02288E7AEA006C23E5 /* Mission */,
 				B25B12BE28894B960013EEC6 /* TabbarViewController.swift */,
-				70AAD5E4288DD37B001CEE5F /* MissionViewController.swift */,
 				70AAD5E6288DD397001CEE5F /* MissionClearViewController.swift */,
 				70AAD5E8288DD3A0001CEE5F /* HistoryViewController.swift */,
 				70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */,
-				70AAD5EE288DDE44001CEE5F /* ShowControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		70AAD5EE288DDE44001CEE5F /* ShowControllers */ = {
+		70ACFB02288E7AEA006C23E5 /* Mission */ = {
 			isa = PBXGroup;
 			children = (
-				70AAD5EC288DDE3E001CEE5F /* ShowMissionClearViewController.swift */,
-				70AAD5EF288DDE63001CEE5F /* ShowReflectionViewController.swift */,
+				70AAD5E4288DD37B001CEE5F /* MissionViewController.swift */,
+				70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */,
+				70DEFD9928912CD300F6C0F8 /* MissionAssets.swift */,
 			);
-			path = ShowControllers;
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		70ACFB05288E7B48006C23E5 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				70AAD5DC288DD303001CEE5F /* Mission.storyboard */,
+				70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		70ACFB08288E7BE2006C23E5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */,
+				709996AF28990DD600FF9BDC /* StirngExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		B25B12AE28894B960013EEC6 = {
 			isa = PBXGroup;
 			children = (
+				702E25B22898FE20002CB6E3 /* Localizable.strings */,
 				B25B12B928894B960013EEC6 /* TalTal */,
 				B25B12B828894B960013EEC6 /* Products */,
 			);
@@ -112,9 +152,12 @@
 		B25B12B928894B960013EEC6 /* TalTal */ = {
 			isa = PBXGroup;
 			children = (
+				70ACFB08288E7BE2006C23E5 /* Extension */,
+				FBDA9111288EEC8300D126E6 /* Views */,
+				FBDA9110288EEC7800D126E6 /* Models */,
 				70AAD5DB288DD064001CEE5F /* Controllers */,
 				70AAD5DA288DD04C001CEE5F /* StoryBoard */,
-				B25B12BA28894B960013EEC6 /* AppDelegate.swift */,
+				B25B12BA28894B960013EEC6 /*  AppDelegate.swift */,
 				B25B12BC28894B960013EEC6 /* SceneDelegate.swift */,
 				B25B12C628894B990013EEC6 /* Assets.xcassets */,
 				B25B12C828894B990013EEC6 /* LaunchScreen.storyboard */,
@@ -122,6 +165,34 @@
 				B25B12C328894B960013EEC6 /* TalTal.xcdatamodeld */,
 			);
 			path = TalTal;
+			sourceTree = "<group>";
+		};
+		FB8C480B2892711E0061AB52 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FBE0139028937E9C007D1819 /* CompleteMission+CoreDataClass.swift */,
+				FBE0139128937E9C007D1819 /* CompleteMission+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FBDA9110288EEC7800D126E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB8C480B2892711E0061AB52 /* CoreData */,
+				FBDA911A288EEFE600D126E6 /* MissionDAO.swift */,
+				3653E5032893BE44005E6E30 /* MissionDataManager.swift */,
+				3653E5022893BE44005E6E30 /* MissionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FBDA9111288EEC8300D126E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FBDA9120288EF31400D126E6 /* HistoryCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +237,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = B25B12AE28894B960013EEC6;
 			productRefGroup = B25B12B828894B960013EEC6 /* Products */;
@@ -186,6 +258,8 @@
 				B25B12C728894B990013EEC6 /* Assets.xcassets in Resources */,
 				B25B12C228894B960013EEC6 /* Tabbar.storyboard in Resources */,
 				70AAD5DD288DD303001CEE5F /* Mission.storyboard in Resources */,
+				702E25B02898FE20002CB6E3 /* Localizable.strings in Resources */,
+				70ACFB07288E7B67006C23E5 /* MissionQuestView.xib in Resources */,
 				70AAD5DF288DD317001CEE5F /* MissionClear.storyboard in Resources */,
 				70AAD5E3288DD342001CEE5F /* Reflection.storyboard in Resources */,
 				70AAD5E1288DD32B001CEE5F /* History.storyboard in Resources */,
@@ -199,14 +273,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70AAD5F0288DDE63001CEE5F /* ShowReflectionViewController.swift in Sources */,
+				FBDA911B288EEFE600D126E6 /* MissionDAO.swift in Sources */,
 				B25B12BF28894B960013EEC6 /* TabbarViewController.swift in Sources */,
-				B25B12C528894B960013EEC6 /* TalTal.xcdatamodeld in Sources */,
+				70DEFD9A28912CD300F6C0F8 /* MissionAssets.swift in Sources */,
+				FBE0139328937E9C007D1819 /* CompleteMission+CoreDataProperties.swift in Sources */,
+				FBDA9121288EF31500D126E6 /* HistoryCell.swift in Sources */,
 				70AAD5E7288DD397001CEE5F /* MissionClearViewController.swift in Sources */,
 				70AAD5EB288DD3AE001CEE5F /* ReflectionViewController.swift in Sources */,
-				70AAD5ED288DDE3E001CEE5F /* ShowMissionClearViewController.swift in Sources */,
-				B25B12BB28894B960013EEC6 /* AppDelegate.swift in Sources */,
+				709996B028990DD600FF9BDC /* StirngExtension.swift in Sources */,
+				70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */,
+				70ACFB04288E7B20006C23E5 /* MissionQuestView.swift in Sources */,
+				B25B12BB28894B960013EEC6 /*  AppDelegate.swift in Sources */,
+				FBE0139228937E9C007D1819 /* CompleteMission+CoreDataClass.swift in Sources */,
+				3653E5042893BE44005E6E30 /* MissionModel.swift in Sources */,
+				3653E5052893BE44005E6E30 /* MissionDataManager.swift in Sources */,
+				B25B12BB28894B960013EEC6 /*  AppDelegate.swift in Sources */,
 				B25B12BD28894B960013EEC6 /* SceneDelegate.swift in Sources */,
+				FBE0137B2892B8C9007D1819 /* TalTal.xcdatamodeld in Sources */,
 				70AAD5E9288DD3A0001CEE5F /* HistoryViewController.swift in Sources */,
 				70AAD5E5288DD37B001CEE5F /* MissionViewController.swift in Sources */,
 			);
@@ -215,6 +298,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		702E25B22898FE20002CB6E3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				702E25B12898FE20002CB6E3 /* en */,
+				702E25B528990417002CB6E3 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		B25B12C028894B960013EEC6 /* Tabbar.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -238,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -298,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -355,7 +449,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P2UJWPTGRX;
+				DEVELOPMENT_TEAM = ML59XN7A6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TalTal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -370,8 +464,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.Toby.TalTal;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.MC3.TalTal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -386,7 +480,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P2UJWPTGRX;
+				DEVELOPMENT_TEAM = ML59XN7A6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TalTal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -401,8 +495,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.Toby.TalTal;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.MC3.TalTal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
