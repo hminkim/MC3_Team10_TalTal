@@ -54,8 +54,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rd6-vB-bFZ">
                                 <rect key="frame" x="16" y="197.5" width="382" height="136"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAo-IN-zPB">
-                                        <rect key="frame" x="24" y="13" width="334" height="19.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자가 추가한 회고" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAo-IN-zPB">
+                                        <rect key="frame" x="24" y="13" width="334" height="110"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -65,6 +65,7 @@
                                 <constraints>
                                     <constraint firstItem="aAo-IN-zPB" firstAttribute="leading" secondItem="Rd6-vB-bFZ" secondAttribute="leading" constant="24" id="9LL-7V-aPr"/>
                                     <constraint firstAttribute="trailing" secondItem="aAo-IN-zPB" secondAttribute="trailing" constant="24" id="Iic-pA-z4v"/>
+                                    <constraint firstAttribute="bottom" secondItem="aAo-IN-zPB" secondAttribute="bottom" constant="13" id="R1C-jP-Eb2"/>
                                     <constraint firstAttribute="height" constant="136" id="R4b-WB-GI4"/>
                                     <constraint firstItem="aAo-IN-zPB" firstAttribute="top" secondItem="Rd6-vB-bFZ" secondAttribute="top" constant="13" id="sDg-vU-hsS"/>
                                 </constraints>
@@ -84,8 +85,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnv-Xu-uBU">
                                 <rect key="frame" x="16" y="405" width="382" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNC-ha-Em3">
-                                        <rect key="frame" x="24" y="13" width="334" height="19.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션의 의도" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNC-ha-Em3">
+                                        <rect key="frame" x="24" y="13" width="334" height="124"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -96,6 +97,7 @@
                                     <constraint firstItem="ZNC-ha-Em3" firstAttribute="leading" secondItem="cnv-Xu-uBU" secondAttribute="leading" constant="24" id="0aT-1f-Q2z"/>
                                     <constraint firstAttribute="trailing" secondItem="ZNC-ha-Em3" secondAttribute="trailing" constant="24" id="HQh-BL-UBX"/>
                                     <constraint firstItem="ZNC-ha-Em3" firstAttribute="top" secondItem="cnv-Xu-uBU" secondAttribute="top" constant="13" id="ccI-yL-3v1"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZNC-ha-Em3" secondAttribute="bottom" constant="13" id="mn0-qp-cYx"/>
                                     <constraint firstAttribute="height" constant="150" id="pVd-N8-QAw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>

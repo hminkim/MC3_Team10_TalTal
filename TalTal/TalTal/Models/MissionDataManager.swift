@@ -152,6 +152,7 @@ class MissionDataManager {
 			if ele.stage == stage && ele.type == .weekly {
 				// filtermission에서 ele(이미 깬 값) 제거 / 제거할 값이 없어도 알아서 처리 됨
 				filterMissons.remove(.init(content: ele.content!, stage: stage, intention: ele.intention!))
+            }
 		}
 		
 		// 깨지 않은 Mission들 중에서 랜덤값 추출

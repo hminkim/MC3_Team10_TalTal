@@ -4,13 +4,6 @@
 //
 //  Created by Ruyha on 2022/07/25.
 //
-//FIXME: 버튼 비활성화되었었을때 리로드 걸리면 색기본 색으로 나옴 RuyHa
-//MARK: 히스토리에 완료된 미션이 안보임
-//FIXME: 미션 클리어한 갯수 유저 디폴트에 키값 바꾸기 Joon
-//FIXME: 유저디폴트에 유저가 미션클리어 했는지를 확인해야됨. Joon
-//FIXME: 코어데이터와 로컬데이터 동기화
-//MARK: 히스토리뷰에 코어데이터 안넘어오는 이슈
-//완료시 FIXME로 수정
 
 import UIKit
 @IBDesignable
@@ -34,11 +27,12 @@ final class MissionViewController: UIViewController {
     var dailyBtnValue = UserDefaults.standard.bool(forKey: "isDailyMissionClear")
     var weeklyBtnValue = UserDefaults.standard.bool(forKey: "isWeeklyMissionClear")
     
-    var dailyClearQuest = 5
+    // 한눈에 봐도 에러가 보이는 화면으로 변경
+    var dailyClearQuest = 404
     var dailyQuestStirng = "안녕하세요. 탈탈입니다."
     
-    var weeklyClearQuest = 1
-    var weeklyQuestStirng = "안녕하세요. 탈탈입니다."
+    var weeklyClearQuest = 404
+    var weeklyQuestStirng = "앱을 재설치 해주세요."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +86,6 @@ extension MissionViewController: MissionClearViewDelegate {
         self.viewDidLoad()
         
         //TODO: 싱글톤 내에서 데이터 동기화 처리해야 함
-        
         questButtonIsUnabled(type: type)
     }
     
@@ -104,8 +97,11 @@ extension MissionViewController: MissionClearViewDelegate {
         switch type {
         case.daily:
             dailyView.questButtonClose()
+            dailyView.questButton.setTitle("오늘도 해냈어요!!", for: .normal)
         case.weekly:
             weeklyView.questButtonClose()
+            weeklyView.questButton.setTitle("이번주도 해냈어요!!", for: .normal)
+
         }
     }
     
@@ -206,13 +202,6 @@ extension MissionViewController {
         // TODO: 현재 작동에는 문제가 없지만 더 좋은 코드로 리팩토링 할 수 있을 것 같습니다. 추후에 변경하겠습니다.
         guard let currentDailyUserStage = MissionStage(rawValue: UserDefaults.standard.string(forKey: "dailyUserStage") ?? "") else { return }
         guard let currentWeeklyUserStage = MissionStage(rawValue: UserDefaults.standard.string(forKey: "weeklyUserStage") ?? "") else { return }
-        
-        // TODO: 모든 미션을 깬 경우 처리를 해야합니다(엔딩뷰)
-        // FIXME: 엔딩뷰 다른곳에서 처리해야됨 ㅇㅅㅇ
-//        if dailyMisson == nil && weeklyMission == nil {
-//            print("RIdkdkdkdkdkdr")
-//            return
-//        }
         
         // 앱에 접속한 날짜와 refresh가 되어야 할 날짜를 비교하기 위해 DateFormatter을 사용했습니다
         let now = Date.now
