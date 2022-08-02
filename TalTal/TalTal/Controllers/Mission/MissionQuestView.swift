@@ -67,7 +67,6 @@ final class MissionQuestView: UIView {
 extension MissionQuestView{
     
     // questButton을 설정하기위한 코드들입니다.
-    //  보라색 글씨를 검색하면 어떻게 사용하는건지 구글신이 알려주실겁니다.
     private func questButtonSetting(type: MissionQuest){
         self.questButton.setTitle("미션완료", for: .normal)
         self.questButton.setTitleColor(.white, for: .normal)
