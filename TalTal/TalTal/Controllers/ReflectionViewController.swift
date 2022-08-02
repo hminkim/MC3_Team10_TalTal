@@ -53,8 +53,13 @@ final class ReflectionViewController: UIViewController {
             break
         }
         
+        let now = Date.now
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY.MM.dd."
+        
         // 각 UILabel의 텍스트 설정
         missionLabel.text = missionData?.content
+        dateLabel.text = dateFormatter.string(from: missionData?.clearDate ?? Date.now)
         reflectionLabel.text = missionData?.reflection
         missionInformationLabel.text = missionData?.intention
         
