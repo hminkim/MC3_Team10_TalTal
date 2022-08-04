@@ -19,6 +19,7 @@
 		70AAD5E7288DD397001CEE5F /* MissionClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5E6288DD397001CEE5F /* MissionClearViewController.swift */; };
 		70AAD5E9288DD3A0001CEE5F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5E8288DD3A0001CEE5F /* HistoryViewController.swift */; };
 		70AAD5EB288DD3AE001CEE5F /* ReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */; };
+		70ACC640289BB89D00ECEF42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70ACC642289BB89D00ECEF42 /* InfoPlist.strings */; };
 		70ACFB04288E7B20006C23E5 /* MissionQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */; };
 		70ACFB07288E7B67006C23E5 /* MissionQuestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */; };
 		70ACFB0A288E7C07006C23E5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */; };
@@ -50,6 +51,8 @@
 		70AAD5E6288DD397001CEE5F /* MissionClearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionClearViewController.swift; sourceTree = "<group>"; };
 		70AAD5E8288DD3A0001CEE5F /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		70AAD5EA288DD3AE001CEE5F /* ReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionViewController.swift; sourceTree = "<group>"; };
+		70ACC641289BB89D00ECEF42 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		70ACC643289BB89F00ECEF42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70ACFB03288E7B20006C23E5 /* MissionQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionQuestView.swift; sourceTree = "<group>"; };
 		70ACFB06288E7B67006C23E5 /* MissionQuestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionQuestView.xib; sourceTree = "<group>"; };
 		70ACFB09288E7C07006C23E5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 		B25B12AE28894B960013EEC6 = {
 			isa = PBXGroup;
 			children = (
+				70ACC642289BB89D00ECEF42 /* InfoPlist.strings */,
 				702E25B22898FE20002CB6E3 /* Localizable.strings */,
 				B25B12B928894B960013EEC6 /* TalTal */,
 				B25B12B828894B960013EEC6 /* Products */,
@@ -263,6 +267,7 @@
 				70AAD5DF288DD317001CEE5F /* MissionClear.storyboard in Resources */,
 				70AAD5E3288DD342001CEE5F /* Reflection.storyboard in Resources */,
 				70AAD5E1288DD32B001CEE5F /* History.storyboard in Resources */,
+				70ACC640289BB89D00ECEF42 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +310,15 @@
 				702E25B528990417002CB6E3 /* ko */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		70ACC642289BB89D00ECEF42 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70ACC641289BB89D00ECEF42 /* ko */,
+				70ACC643289BB89F00ECEF42 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		B25B12C028894B960013EEC6 /* Tabbar.storyboard */ = {
@@ -449,7 +463,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2D5CY8C92L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TalTal/Info.plist;
@@ -482,7 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2D5CY8C92L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TalTal/Info.plist;

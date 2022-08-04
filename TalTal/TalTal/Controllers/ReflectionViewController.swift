@@ -25,11 +25,15 @@ final class ReflectionViewController: UIViewController {
     
     var missionData: CompleteMission?
     
-    
     // MARK: - viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //MARK: IPod touch 에서 문구가 짤리는것을 방지
+        // UIDevice.current.model 이 아이팟 터치도 아이폰으로 나와서 불가피 하게 화면 크기로 조절
+        if UIScreen.main.bounds.height == 568.0{
+            missionLabel.font = UIFont.boldSystemFont(ofSize: 18)
+            missionInformationLabel.font = UIFont.systemFont(ofSize: 15)
+        }
         configureUI()
         
     }
@@ -53,7 +57,6 @@ final class ReflectionViewController: UIViewController {
             break
         }
         
-        let now = Date.now
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY.MM.dd."
         
