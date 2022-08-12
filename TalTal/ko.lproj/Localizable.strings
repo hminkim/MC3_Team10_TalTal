@@ -7,3 +7,91 @@
 */
 
 "Mission Clear" = "미션완료";
+
+
+//MARK: DailyMisson
+// -beginner-
+"beginnerDailyMissionContent01" = "잠자리 정리하기";
+"beginnerDailyMissionIntention01" = "매일 아침 \"잠자리를 정리했다는 것\"은 그날의 첫 번째 과업을 달성했다는 뜻입니다. 이 작은 성취감이 또 다른 일을 해낼 수 있겠다는 용기로 발전할 수 있을 것입니다.";
+
+"beginnerDailyMissionContent02" = "일어나서 가벼운 스트레칭 하기";
+"beginnerDailyMissionIntention02" = "잠을 깨기 위해 단 30초라도 몸을 움직이면 기분에 극적인 영향을 미치고 산란했던 정신도 가라앉게 될 것입니다. 스트래칭을 통해 기분 좋은 하루를 시작해보세요.";
+
+"beginnerDailyMissionContent03" = "산책 해보기";
+"beginnerDailyMissionIntention03" = "산책을 하면서 기분이 좋아지셨나요? 신선한 공기를 마시거나 몸을 움직이면 세로토닌의 효과로 기분이 좋아질 수 있습니다. 생각이 많아지면 가벼운 산책 어떨까요?";
+
+"beginnerDailyMissionContent04" = "좋아하는 음식 먹기";
+"beginnerDailyMissionIntention04" = "좋아하는 음식을 먹으니 어땠나요? 음식을 먹게 되면 도파민이 방출되기 때문에 기분이 좋아질 수 있습니다. 기분 좋은 하루의 마무리가 되었을까요?";
+
+"beginnerDailyMissionContent05" = "작업 공간 정리하기";
+"beginnerDailyMissionIntention05" = "깔끔해진 작업공간을 보니 어떤가요? 별거 아닌 것 같지만 생각보다 만족스럽지 않나요? 마음 한구석을 찜찜하게 만들었던 지난날들을 한번 정리해 보아요.";
+
+"beginnerDailyMissionContent06" = "개발자 동료와 커피 한잔하기";
+"beginnerDailyMissionIntention06" = "간단하게 커피 한잔 하면서 나누는 사소한 대화는 어떠셨나요? 팀원들과 사소한 대화를 하면서 친해진다면 분명 협업을 할 때도 편할거에요.";
+
+"beginnerDailyMissionContent07" = "HIG 가볍게 읽어보기";
+"beginnerDailyMissionIntention07" = "HIG는 iOS앱 개발의 꽃입니다. 한 번씩 가볍게 읽다 보면 분명 새로운 정보의 습득과 개발에도 많은 도움이 될거에요.";
+
+// -intermediate-
+"IntermediateDailyMissionContent01" = "일어나서 명상 해보기";
+"IntermediateDailyMissionIntention01" = "\'명상\'을 하는 이유는 마음 챙김 수련을 하기 위해서입니다. 명상을 하다 보면 현재의 상황을 직시하고 사소한 일에 예민하게 반응하지 않고 침착한 태도를 유지하는 데 도움이 될 것입니다.";
+
+"IntermediateDailyMissionContent02" = "만족할 만한 수면을 해보기";
+"IntermediateDailyMissionIntention02" = "수면의 질을 높이는 것은 정말 중요합니다. 자기의 최적의 환경을 만들어야 몸의 생체리듬이 무너지지 않고 피로가 잘 풀리는 적절한 휴식을 할 수 있습니다.";
+
+"IntermediateDailyMissionContent03" = "거울 속에 나와 눈 마주치고 미소 짓기";
+"IntermediateDailyMissionIntention03" = "거울 속에 나에게 밝고 따뜻한 미소를 보내주셨나요? 우리는 웃는 사람을 보면 괜스레 기분이 좋아집니다. 의식적으로 입꼬리를 올리며 자신이 이쁘다는 생각을 계속해 보는 건 어떨까요?";
+
+"IntermediateDailyMissionContent04" = "운동 30분 이상 하기";
+"IntermediateDailyMissionIntention04" = "운동은 세로토닌 분비를 촉진시키는 등 우울증 약만큼의 효과를 보입니다. 처음에는 너무 힘들겠지만 조금씩 성취하면서 자신에게 성공 경험을 부여해 보는 건 어떨까요?";
+
+"IntermediateDailyMissionContent05" = "View Lifecycle 다시 한번 찾아보기";
+"IntermediateDailyMissionIntention05" = "UIKit을 통해 개발을 한다면 View lifecycle은 꼭 알아야 합니다. 오랜만에 다시 찾아본다면 처음 공부할때와는 다른 느낌일거에요. 그때보다 성장했으니까요.";
+
+"IntermediateDailyMissionContent06" = "사수 혹은 부사수와 커피 한잔하기";
+"IntermediateDailyMissionIntention06" = "개발자도 소통이 잘 되어야 한다고 우리는 생각합니다. 특히 사수 혹은 부사수와는 더 자주 오래 소통을 해야 해요. 가볍게 커피 한잔하면서 대화해 보는건 어떠셨나요?";
+
+"IntermediateDailyMissionContent07" = "Swift만의 특징 고민해보기";
+"IntermediateDailyMissionIntention07" = "Swift만의 특징은 무엇이였나요? 오랜만에 다시 찾아보니 조금 더 잘 이해되지 않았나요? 당신이 꾸준히 Swift를 공부하는 동안 성장했다는 뜻일거에요.";
+
+
+// -advanced-
+"AdvancedDailyMissionContent01" = "퇴근하고 SNS 안해보기";
+"AdvancedDailyMissionIntention01" = "SNS는 그 사람의 하이라이트 부분만 보여줍니다. 그것만 보고 남과 나를 비교한다면 우울감에 빠질 수 있습니다. 그런 감정이 들면 SNS를 멀리해보세요.";
+
+"AdvancedDailyMissionContent02" = "나의 장점 3가지 생각해보기";
+"AdvancedDailyMissionIntention02" = "나의 장점을 찾는 일이 어려웠나요? 우리 모두 강점의 씨앗을 가지고 있습니다. 그 강점은 잘하는 것이 아니라 자신에게 힘을 주는 것, 에너지를 얻는 것, 오래 할 수 있는 것 등이 될 것입니다.";
+
+"AdvancedDailyMissionContent03" = "가장 중요한 일을 2시간 집중해서 하기";
+"AdvancedDailyMissionIntention03" = "이 과정은 한 번에 2시간을 집중하는 것을 말합니다. 2시간 정도를 한 가지에 집중을 하면 반드시 그날 한 가지의 성과는 남길 수 있을 것입니다.";
+
+"AdvancedDailyMissionContent04" = "취준생 시절에 작성했던 프로젝트 구경하기";
+"AdvancedDailyMissionIntention04" = "오랜만에 본 자신의 과거는 어떠셨나요? 그때의 노력 덕분에 지금의 당신은 멋진 개발자로 성장하고 있지 않나요? 오늘 하루도 고생했어요. :D";
+
+"AdvancedDailyMissionContent05" = "오늘은 칼퇴근 해보기";
+"AdvancedDailyMissionIntention05" = "가끔은 남들과는 다르게 누구보다 빠르게 칼퇴근하고 쉬는게 도움이 될때도 있습니다. 오늘 하루도 고생했어요. :D";
+
+"AdvancedDailyMissionContent06" = "그동안 완료한 미션 돌아보기";
+"AdvancedDailyMissionIntention06" = "탈탈과 함께한 시간은 어떠셨나요? 우리는 당신이 당신 스스로의 노력을 운으로 느끼지 않길 바랬어요. 지금 당신의 모습은 당신이 노력한 결과니까요.";
+
+
+
+//MARK: WeeklyMIsson
+
+// -beginner-
+"beginnerWeeklyMissionContent01" = "디자이너에게 일주일 동안 3번 웃으면서 인사해보기";
+"beginnerWeeklyMissionIntention01" = "자신의 역량을 강화시키기 위한 첫 시작은 \"인사\"입니다. 인사를 통해 상대방에게 ‘좋은 첫인상’을 주는 것이 좋습니다. 이를 통해 다양한 인간관계를 맺게 될 것입니다.";
+
+// -intermediate-
+"IntermediateWeeklyMissionContent01" = "코드 리뷰를 3번 이상 주고 받아 보기";
+"IntermediateWeeklyMissionIntention01" = "코드 리뷰를 하다 보면 자신이 알고 있는 개념과 모르는 개념을 정확하게 알 수 있을 것입니다. 혹시 부족한 부분이 있었나요? 그럼 그 부분을 공부하면서 더욱 발전해 보면 어떨까요?";
+
+"IntermediateWeeklyMissionContent02" = "기술 블로그 만들기(혹은 포스팅하기)";
+"IntermediateWeeklyMissionIntention02" = "기술 블로그를 운영한다면 누군가는 분명 당신이 알려준 정보를 감사해 할거에요. 당신도 누군가의 유튜브와 블로그를 보고 공부를 했던 것 처럼요. ";
+
+// -advanced-
+"AdvancedWeeklyMissionContent01" = "내가 과거에 만든 코드를 리팩토링 해보기";
+"AdvancedWeeklyMissionIntention01" = "과거 내가 만든 코드를 보면서 리팩토링이 필요한 부분이 보였나요? 여러분은 조금씩이라도 꾸준히 성장하고 있다는 뜻입니다. 지금처럼 계속 발전한다면 당신은 충분히 실력 있는 개발자가 될 것입니다.";
+
+"AdvancedWeeklyMissionContent02" = "회사에서 만드는 앱의 수익모델 찾아보기";
+"AdvancedWeeklyMissionIntention02" = "많은 개발자들이 \"그냥\" 개발만 한다고 합니다. 우리는 당신이 최소한 당신이 만드는 앱의 목적이나 수익모델 등 당신이 왜 그 앱을 만들고 있는지 알고 개발하기를 바랐어요.";

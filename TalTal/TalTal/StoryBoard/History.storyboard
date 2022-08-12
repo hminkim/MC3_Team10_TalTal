@@ -103,17 +103,27 @@
                                     </tableView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW9-bc-NP1" userLabel="nilClearMissionLabel">
+                                <rect key="frame" x="0.0" y="98.666666666666686" width="375" height="630.33333333333326"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dXH-Tq-Ujw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="3sb-ad-7Ey" userLabel="404TopLable Leading"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xW9-bc-NP1" secondAttribute="trailing" id="BMo-XN-ocf"/>
                             <constraint firstItem="Jao-N8-my8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="E3V-KP-oSq"/>
+                            <constraint firstItem="xW9-bc-NP1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="I8E-k5-LlV"/>
                             <constraint firstItem="dXH-Tq-Ujw" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.08" id="J2f-hY-Y3x" userLabel="404TopLable Height "/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Jao-N8-my8" secondAttribute="bottom" id="aVp-U0-uZT" userLabel="Stack View Bottom"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dXH-Tq-Ujw" secondAttribute="trailing" constant="16" id="anI-2F-cUk" userLabel="404TopLabel Trailing"/>
                             <constraint firstItem="dXH-Tq-Ujw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gKR-54-cg8" userLabel="404TopLable Top"/>
                             <constraint firstItem="Jao-N8-my8" firstAttribute="width" secondItem="dXH-Tq-Ujw" secondAttribute="width" id="ktA-JG-jnh" userLabel="Stack View Width"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xW9-bc-NP1" secondAttribute="bottom" id="tjp-Zw-8UA"/>
+                            <constraint firstItem="xW9-bc-NP1" firstAttribute="top" secondItem="dXH-Tq-Ujw" secondAttribute="bottom" id="vSq-wX-0S7"/>
                             <constraint firstItem="Jao-N8-my8" firstAttribute="top" secondItem="dXH-Tq-Ujw" secondAttribute="bottom" id="yUh-X3-7He" userLabel="Stack View Top"/>
                         </constraints>
                     </view>
@@ -123,6 +133,7 @@
                         <outlet property="historyMainLabel" destination="2DG-cM-HgV" id="7mE-Z1-QKF"/>
                         <outlet property="missioSegmentedControl" destination="ege-A2-Oop" id="QLw-Ax-JMb"/>
                         <outlet property="missionTableView" destination="TMn-Q6-S1c" id="kHm-bo-AnS"/>
+                        <outlet property="nilClearMissionLabel" destination="xW9-bc-NP1" id="E0n-pt-GIY"/>
                         <outlet property="segmentedController" destination="ege-A2-Oop" id="Zka-3Y-69G"/>
                         <segue destination="9Ek-6Z-lIh" kind="presentation" identifier="toDetail" id="ZW3-bb-cCt"/>
                     </connections>
